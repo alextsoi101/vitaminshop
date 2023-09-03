@@ -1,0 +1,36 @@
+.filterbyreviews {
+  display: block;
+  
+  .maintext {
+    @include font-size($font-size-rg, $font-weight-light, $text-grey);
+    letter-spacing: 1px;
+  }
+
+  .labels {
+    @include flex-column;
+    margin-top: 15px;
+    gap: 10px;
+
+    label {
+      @include flex-center-y;
+      cursor: pointer;
+  
+      input {
+        width: 18px;
+        height: 18px;
+        accent-color: green;
+        cursor: pointer;
+      }
+      .rating {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  button {
+    @include buttonbase;
+    margin: 20px 0 0 0;
+    width: 100px;
+    height: 40px;
+  }
+}

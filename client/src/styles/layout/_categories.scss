@@ -1,0 +1,26 @@
+.categories {
+  @include flex-center;
+  gap: 32px;
+  padding: 100px 25px 120px;
+  background: $grey-lightest;
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .categories {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 50px 25px 50px;
+    background: $grey-lightest;
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .categories {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 100px 25px 120px;
+    background: $grey-lightest;
+  }
+}

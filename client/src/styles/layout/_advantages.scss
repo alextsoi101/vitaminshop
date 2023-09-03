@@ -1,0 +1,85 @@
+.advantages {
+  @include flex-center;
+  padding: 100px 0px;
+  background: $grey-lightest;
+
+  .advantages-content-wrapper {
+    width: 1180px;
+  }
+
+  h1 {
+    color: $text-dark;
+
+    span {
+      color: $text-yellow;
+    }
+  }
+
+  .advantages-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 50px;
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .advantages {
+    @include flex-center;
+    padding: 25px;
+    background: $grey-lightest;
+  
+    .advantages-content-wrapper {
+      width: auto;
+    }
+  
+    h1 {
+      @include font-size($font-size-xxl, $font-weight-semibold, $text-dark);
+      text-align: center;
+  
+      span {
+        color: $text-yellow;
+      }
+    }
+  
+    .advantages-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 32px;
+      row-gap: 5px;
+      margin-top: 32px;
+      margin-left: 16px;
+      max-width: 1200px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .advantages {
+    @include flex-center;
+    padding: 100px 0px;
+    background: $grey-lightest;
+  
+    .advantages-content-wrapper {
+      width: 1180px;
+    }
+  
+    h1 {
+      @include font-size($font-size-xxxl, $font-weight-semibold, $text-dark);
+  
+      span {
+        color: $text-yellow;
+      }
+    }
+  
+    .advantages-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 50px;
+      margin-left: 16px;
+    }
+  }
+}

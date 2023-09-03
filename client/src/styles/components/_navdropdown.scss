@@ -1,0 +1,91 @@
+.dropdown {
+  height: 100%;
+
+  &:hover span {
+    color: $text-white !important;
+    transition: 0.2s;
+  }
+
+  &:hover span::before {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+
+  &:hover span::after {
+    transition: transform 0.4s;
+    transform: rotate(180deg);
+    background-color: $white !important;
+  }
+
+  &:hover .dropdown-menu {
+    visibility: visible;
+    transform: scale(1);
+    transition: transform 0.2s;
+    transform-origin: center top;
+  }
+}
+
+.dropdown-toggle { 
+  @include flex-center; 
+  @include font-size($font-size-rg, $font-weight-light, $text-white);
+  height: 100%;
+  padding: 0px 16px 0px 16px;
+  transition: 0.2s;
+
+  span {
+    position: relative;
+    transition: 0.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100%;
+      border-bottom: $green-light 1px solid;
+      width: 81%;
+      transition: transform 0.6s cubic-bezier(.28,.75,.22,.95);
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
+
+    &::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin-left: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: $white;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-image: url("../../assets/icons/dropdownarrow.svg");
+    transition: transform 0.4s;
+    transition: 0.2s;
+    }
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 225px;
+  box-sizing: border-box;
+  padding: 15px;
+  visibility: hidden;
+  background: $white;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.09);
+  cursor: default;
+  transform: scale(0.94);
+  // transition: transform 0.2s;
+
+  li {
+    @include font-size($font-size-sm, $font-weight-light, $text-dark);
+    padding: 4px 0px 4px 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $green-light;
+    }
+  }
+}

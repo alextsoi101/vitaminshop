@@ -1,0 +1,84 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .shopfilter {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 290px;
+    padding-right: 0px;
+  
+    .text-filters {
+      @include font-size($font-size-lg, $font-weight-regular, $text-dark);
+      padding: 5px 0px;
+    }
+  
+    .forms-container {
+      @include flex-column;
+      gap: 16px;
+  
+      hr {
+        border: transparent;
+        background: $hr-grey-dark;
+        height: 1px;
+      }
+  
+      .btn-clear-filters {
+        @include center-x;
+        @include flex-center;
+        @include font-size($font-size-rg, $font-weight-regular, $text-green);
+        width: 200px;
+        height: 40px;
+        background: $grey-light;
+        border: 1px solid $green;
+        border-radius: 100px;
+        transition: 0.2s;
+  
+        &:hover {
+          color: $text-green;
+          background: $grey-semilight;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .shopfilter {
+    box-sizing: border-box;
+    width: 290px;
+    padding-right: 30px;
+  
+    .text-filters {
+      @include font-size($font-size-lg, $font-weight-regular, $text-dark);
+      padding: 5px 0px;
+    }
+  
+    .forms-container {
+      @include flex-column;
+      gap: 16px;
+  
+      hr {
+        border: transparent;
+        background: $hr-grey-dark;
+        height: 1px;
+      }
+  
+      .btn-clear-filters {
+        @include center-x;
+        @include flex-center;
+        @include font-size($font-size-rg, $font-weight-regular, $text-green);
+        width: 200px;
+        height: 40px;
+        background: $grey-light;
+        border: 1px solid $green;
+        border-radius: 100px;
+        transition: 0.2s;
+  
+        &:hover {
+          color: $text-green;
+          background: $grey-semilight;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}

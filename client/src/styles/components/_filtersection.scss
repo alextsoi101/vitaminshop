@@ -1,0 +1,69 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .filtersection {
+    @include flex-center-y;
+    position: sticky;
+    top: 111px;
+    z-index: 10;
+    overflow: clip;
+    height: 40px;
+    padding: 0px 20px;
+    border-bottom: 1px solid $border-grey;
+    background: $white;
+    -webkit-box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    -moz-box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    transition: all 0.2s;
+    
+    &:active {
+      background: $grey-light;
+    }
+  
+    .filtericon {
+      @include flex-center;
+      font-size: 12px;
+    }
+  
+    .showfilters-text {
+      @include font-size($font-size-xs, $font-weight-semibold, $text-dark);
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .filtersection {
+    @include flex-center-y;
+    position: sticky;
+    top: 142px;
+    z-index: 10;
+    overflow: clip;
+    height: 40px;
+    padding: 0px 20px;
+    border-bottom: 1px solid $border-grey;
+    background: $white;
+    -webkit-box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    -moz-box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,.06);
+    transition: all 0.2s;
+    
+    &:active {
+      background: $grey-light;
+    }
+  
+    .filtericon {
+      @include flex-center;
+      font-size: 12px;
+    }
+  
+    .showfilters-text {
+      @include font-size($font-size-xs, $font-weight-semibold, $text-dark);
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .filtersection {
+    display: none;
+  }
+}

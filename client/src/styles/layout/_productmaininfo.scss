@@ -1,0 +1,227 @@
+.productmaininfo {
+  @include flex-column;
+  gap: 15px;
+
+  .text-vitamins {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    color: $text-dark;
+  }
+
+  .product-categories {
+    display: flex;
+    gap: 16px;
+
+    .product-category {
+      @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+      padding: 8px 16px;
+      background: $grey-med;
+      border-radius: 8px;
+    }
+  }
+
+  .product-price-rating {
+    @include flex-center-y;
+    justify-content: space-between;
+
+    .product-price {
+      @include font-size($font-size-lg, $font-weight-medium, $text-red);
+    }
+
+    .product-rating {
+      @include flex-center-y;
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+
+      .rate {
+        margin-left: 6px;
+      }
+      .divider {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        margin: 0px 15px;
+        color: $text-grey-lightest;
+        
+      }
+      .text-reviews {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        margin-left: 6px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productmaininfo {
+    @include flex-column;
+    gap: 12px;
+    width: calc(100vw - 50px);
+  
+    .text-vitamins {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 3px;
+    }
+  
+    h2 {
+      font-size: $font-size-lg;
+      color: $text-dark;
+    }
+  
+    .product-categories {
+      display: flex;
+      gap: 8px;
+  
+      .product-category {
+        @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+        padding: 4px 10px;
+        background: $grey-med;
+        border-radius: 8px;
+      }
+    }
+  
+    .product-price-rating {
+      @include flex-center-y;
+      justify-content: space-between;
+  
+      .product-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+  
+        .rate {
+          margin-left: 6px;
+        }
+        .divider {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin: 0px 15px;
+          color: $text-grey-lightest;
+          
+        }
+        .text-reviews {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .productmaininfo {
+    @include flex-column;
+    gap: 12px;
+    width: 100%;
+  
+    .text-vitamins {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 3px;
+    }
+  
+    h2 {
+      font-size: $font-size-lg;
+      color: $text-dark;
+    }
+  
+    .product-categories {
+      display: flex;
+      gap: 8px;
+  
+      .product-category {
+        @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+        padding: 4px 10px;
+        background: $grey-med;
+        border-radius: 8px;
+      }
+    }
+  
+    .product-price-rating {
+      @include flex-center-y;
+      justify-content: space-between;
+  
+      .product-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+  
+        .rate {
+          margin-left: 6px;
+        }
+        .divider {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin: 0px 15px;
+          color: $text-grey-lightest;
+          
+        }
+        .text-reviews {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .productmaininfo {
+    @include flex-column;
+    gap: 15px;
+    width: 100%;
+  
+    .text-vitamins {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 3px;
+    }
+  
+    h2 {
+      font-size: $font-size-xxl;
+      color: $text-dark;
+    }
+  
+    .product-categories {
+      display: flex;
+      gap: 16px;
+  
+      .product-category {
+        @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+        padding: 8px 16px;
+        background: $grey-med;
+        border-radius: 8px;
+      }
+    }
+  
+    .product-price-rating {
+      @include flex-center-y;
+      justify-content: space-between;
+  
+      .product-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+  
+        .rate {
+          margin-left: 6px;
+        }
+        .divider {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin: 0px 15px;
+          color: $text-grey-lightest;
+          
+        }
+        .text-reviews {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}

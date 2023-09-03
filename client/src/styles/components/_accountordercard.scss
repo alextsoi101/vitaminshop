@@ -1,0 +1,44 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .accountordercard {
+    @include flex-column;
+    justify-content: flex-end;
+    width: 100%;
+  
+    .order-id {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+      top: 0px;
+      left: 0px;
+    }
+  
+    .order-info {
+      @include flex-center-y;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      row-gap: 8px;
+      padding: 10px 0px;
+  
+      .order-date {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+  
+        span {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        }
+      }
+  
+      .order-total {
+        margin-right: 10px;
+        width: 130px;
+
+        .total-text-wrapper {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+
+          span {
+            @include font-size($font-size-sm, $font-weight-regular, $text-green-light);
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

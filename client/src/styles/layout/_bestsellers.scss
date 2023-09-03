@@ -1,0 +1,147 @@
+.bestsellers {
+  @include flex-center;
+  padding: 100px 0px 85px;
+  background: $white;
+
+  .bestsellers-content-wrapper {
+    width: 1200px;
+  }
+
+  h1 {
+    color: $text-dark;
+  }
+
+  .bestsellers-cards {
+    @include flex-center-x;
+    margin-top: 70px;
+    gap: 32px;
+
+    .bestsellers-product-cards {
+      @include flex-center-x;
+      gap: 32px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .bestsellers {
+    @include flex-center;
+    padding: 50px 25px;
+    background: $white;
+  
+    .bestsellers-content-wrapper {
+      width: auto;
+    }
+  
+    h1 {
+      @include font-size($font-size-xxl, $font-weight-semibold, $text-dark);
+      text-align: center;
+    }
+  
+    .bestsellers-cards {
+      @include flex-column-center-x;
+      margin-top: 30px;
+      gap: 0px;
+
+      .bestsellers-product-cards {
+        @include flex-center-x;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        gap: 16px;
+        max-width: 390px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .bestsellers {
+    @include flex-center;
+    padding: 50px 25px;
+    background: $white;
+  
+    .bestsellers-content-wrapper {
+      width: auto;
+    }
+  
+    h1 {
+      @include font-size(48px, $font-weight-semibold, $text-dark);
+      text-align: center;
+    }
+  
+    .bestsellers-cards {
+      @include flex-column-center-x;
+      margin-top: 30px;
+      width: auto;
+      gap: 0px;
+
+      .bestsellers-product-cards {
+        @include flex-center-x;
+        flex-wrap: nowrap;
+        margin-top: 30px;
+        gap: 16px;
+        max-width: 100vw;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .bestsellers {
+    @include flex-center;
+    padding: 50px 25px;
+    background: $white;
+  
+    .bestsellers-content-wrapper {
+      width: auto;
+    }
+  
+    h1 {
+      @include font-size($font-size-xxxl, $font-weight-semibold, $text-dark);
+      text-align: center;
+    }
+  
+    .bestsellers-cards {
+      @include flex-center;
+      flex-direction: row;
+      margin-top: 30px;
+      width: auto;
+      gap: 30px;
+
+      .bestsellers-product-cards {
+        @include flex-center-x;
+        flex-wrap: nowrap;
+        margin-top: 0px;
+        gap: 16px;
+        max-width: 100vw;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .bestsellers {
+    @include flex-center;
+    padding: 100px 0px 65px;
+    background: $white;
+  
+    .bestsellers-content-wrapper {
+      width: 1200px;
+    }
+  
+    h1 {
+      color: $text-dark;
+    }
+  
+    .bestsellers-cards {
+      @include flex-center-x;
+      margin-top: 70px;
+      gap: 32px;
+  
+      .bestsellers-product-cards {
+        @include flex-center-x;
+        gap: 32px;
+      }
+    }
+  }
+}

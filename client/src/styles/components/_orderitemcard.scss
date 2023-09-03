@@ -1,0 +1,110 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .orderitemcard {
+    @include flex-center-y;
+    padding: 16px 0px;
+    border-bottom: 1px solid $border-grey-light;
+  
+    .orderitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .orderitem-info {
+      @include flex-column;
+      margin-left: 16px;
+      width: calc(100% - 64px);
+  
+      .orderitem-name {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        width: 200px;
+      }
+  
+      .orderitem-count-price {
+        @include flex-center-y;
+        justify-content: space-between;
+        margin-top: 5px;
+        width: 100%;
+        
+        .orderitem-count {
+          @include flex-center-y;
+  
+          .item-count {
+            @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+          }
+  
+          .orderitem-productprice {
+            @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+            margin-left: 12px;
+          }
+        }
+  
+        .orderitem-totalprice {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .orderitemcard {
+    @include flex-center-y;
+    padding: 24px 0px;
+    border-bottom: 1px solid $border-grey-light;
+  
+    .orderitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .orderitem-info {
+      @include flex-center-y;
+      flex-direction: row;
+      margin-left: 16px;
+      width: calc(100% - 64px);
+  
+      .orderitem-name {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        width: 200px;
+      }
+  
+      .orderitem-count-price {
+        @include flex-center-y;
+        justify-content: space-between;
+        margin-top: 0px;
+        width: calc(100%);
+        
+        .orderitem-count {
+          @include flex-center-y;
+  
+          .item-count {
+            @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+          }
+  
+          .orderitem-productprice {
+            @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+            margin-left: 30px;
+          }
+        }
+  
+        .orderitem-totalprice {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+      }
+    }
+  }
+}

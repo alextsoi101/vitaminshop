@@ -1,0 +1,341 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .productcard {
+    width: 160px;
+    background: $white;
+  
+    .productcard-img {
+      @include flex-center;
+      height: 160px;
+      background: $product-image-bg-grey;
+      border-radius: 8px;
+      cursor: pointer;
+  
+      img {
+        width: 120px;
+        height: 120px;
+        transition: 0.2s;
+      }
+  
+      &:hover img {
+        transform: scale(1.2);
+        transition: 0.2s;
+      }
+    }
+  
+    .productcard-info {
+      @include flex-column;
+      align-items: center;
+      margin-top: 15px;
+  
+      .text-vitamins {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey-light);
+      }
+  
+      .product-name {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        text-align: center;
+        margin-top: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+  
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-regular, $text-green);
+        }
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-xs, $font-weight-regular, $text-dark-black);
+        margin-top: 8px;
+  
+        img {
+          margin-right: 6px;
+        }
+        .divider {
+          padding: 0px 8px;
+          color: $text-grey-lightest;
+        }
+        .span-reviews {
+          margin-left: 6px;
+          color: $text-grey-light;
+        }
+      }
+  
+      .product-categories {
+        @include flex-center-x;
+        flex-wrap: wrap;
+        margin-top: 4px;
+  
+        .product-category {
+          @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+          padding: 4px 10px;
+          margin: 4px 4px;
+          background: $grey-light;
+          border-radius: 4px;
+        }
+      }
+  
+      .product-price {
+        @include font-size($font-size-sm, $font-weight-medium, $text-red);
+        margin-top: 10px;
+      }
+  
+      .product-sizes {
+        @include flex-center-x;
+        margin-top: 10px;
+  
+        .product-size {
+          @include font-size($font-size-xs, $font-weight-regular, $text-dark);
+          padding: 4px 8px;
+          margin: 0px 4px;
+          background: none;
+          border: $border-grey 1px solid;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: $grey-light;
+          }
+        }
+      }
+  
+      .product-btn {
+        @include buttonbase;
+        font-size: $font-size-xs;
+        margin-top: 16px;
+        width: auto;
+        padding: 0px 24px;
+        height: 36px;
+      }
+  
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .productcard {
+    width: 225px;
+    background: $white;
+  
+    .productcard-img {
+      @include flex-center;
+      height: 230px;
+      background: $product-image-bg-grey;
+      border-radius: 8px;
+      cursor: pointer;
+  
+      img {
+        width: 165px;
+        height: 165px;
+        transition: 0.2s;
+      }
+  
+      &:hover img {
+        transform: scale(1.2);
+        transition: 0.2s;
+      }
+    }
+  
+    .productcard-info {
+      @include flex-column;
+      align-items: center;
+      margin-top: 24px;
+  
+      .text-vitamins {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      }
+  
+      .product-name {
+        @include font-size($font-size-md, $font-weight-regular, $text-dark);
+        text-align: center;
+        margin-top: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+  
+        &:hover {
+          @include font-size($font-size-md, $font-weight-regular, $text-green);
+        }
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        margin-top: 8px;
+  
+        img {
+          margin-right: 6px;
+        }
+        .divider {
+          padding: 0px 12px 0px 12px;
+          color: $text-grey-lightest;
+        }
+        .span-reviews {
+          margin-left: 6px;
+          color: $text-grey-light;
+        }
+      }
+  
+      .product-categories {
+        @include flex-center-x;
+        row-gap: 8px;
+        margin-top: 8px;
+  
+        .product-category {
+          @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+          padding: 5px 10px 5px 10px;
+          margin: 0px 4px;
+          background: $grey-light;
+          border-radius: 4px;
+        }
+      }
+  
+      .product-price {
+        @include font-size($font-size-rg, $font-weight-medium, $text-red);
+        margin-top: 20px;
+      }
+  
+      .product-sizes {
+        @include flex-center-x;
+        margin-top: 20px;
+  
+        .product-size {
+          @include font-size($font-size-xs, $font-weight-regular, $text-dark);
+          padding: 5px 10px 5px 10px;
+          margin: 0px 4px 0px 4px;
+          background: none;
+          border: $border-grey 1px solid;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: $grey-light;
+          }
+        }
+      }
+  
+      .product-btn {
+        @include buttonbase;
+        @include font-size($font-size-sm, $font-weight-regular, $text-white);
+        margin-top: 20px;
+        width: 128px;
+        height: 40px;
+      }
+  
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .productcard {
+    width: 20vw;
+    max-width: 275px;
+    background: $white;
+  
+    .productcard-img {
+      @include flex-center;
+      height: 230px;
+      background: $product-image-bg-grey;
+      border-radius: 8px;
+      cursor: pointer;
+  
+      img {
+        width: 165px;
+        height: 165px;
+        transition: 0.2s;
+      }
+  
+      &:hover img {
+        transform: scale(1.2);
+        transition: 0.2s;
+      }
+    }
+  
+    .productcard-info {
+      @include flex-column;
+      align-items: center;
+      margin-top: 24px;
+  
+      .text-vitamins {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      }
+  
+      .product-name {
+        @include font-size($font-size-md, $font-weight-regular, $text-dark);
+        text-align: center;
+        margin-top: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+  
+        &:hover {
+          @include font-size($font-size-md, $font-weight-regular, $text-green);
+        }
+      }
+  
+      .product-rating {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        margin-top: 8px;
+  
+        img {
+          margin-right: 6px;
+        }
+        .divider {
+          padding: 0px 12px 0px 12px;
+          color: $text-grey-lightest;
+        }
+        .span-reviews {
+          margin-left: 6px;
+          color: $text-grey-light;
+        }
+      }
+  
+      .product-categories {
+        @include flex-center-x;
+        margin-top: 8px;
+  
+        .product-category {
+          @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+          padding: 5px 10px 5px 10px;
+          margin: 0px 4px 0px 4px;
+          background: $grey-light;
+          border-radius: 4px;
+        }
+      }
+  
+      .product-price {
+        @include font-size($font-size-rg, $font-weight-medium, $text-red);
+        margin-top: 20px;
+      }
+  
+      .product-sizes {
+        @include flex-center-x;
+        margin-top: 20px;
+  
+        .product-size {
+          @include font-size($font-size-xs, $font-weight-regular, $text-dark);
+          padding: 5px 10px 5px 10px;
+          margin: 0px 4px 0px 4px;
+          background: none;
+          border: $border-grey 1px solid;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: $grey-light;
+          }
+        }
+      }
+  
+      .product-btn {
+        @include buttonbase;
+        @include font-size($font-size-sm, $font-weight-regular, $text-white);
+        margin-top: 20px;
+        width: 128px;
+        height: 40px;
+      }
+    }
+  }
+}

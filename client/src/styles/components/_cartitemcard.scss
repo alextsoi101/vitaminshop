@@ -1,0 +1,393 @@
+.cartitemcard {
+  @include flex-center-y;
+  position: relative;
+  padding: 24px 0px;
+  border-bottom: 1px solid $border-grey-light;
+
+  .cartitem-image {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid $border-grey-light;
+    border-radius: 6px;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  .cartitem-info {
+    @include flex-center-y;
+    margin-left: 16px;
+    width: calc(100% - 64px);
+    
+
+    .cartitem-name {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      width: 170px;
+    }
+    
+    .cartitem-info-other {
+      @include flex-center-y;
+      justify-content: space-between;
+      width: calc(100% - 118px);
+      
+
+      .cartitem-size {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        margin-left: 10px;
+        width: 50px;
+
+      }
+  
+      .cartitem-counter-price {
+        // @include flex-center-y;
+        justify-content: space-between;
+        
+        width: calc(100% - 100px);
+        
+        .cartitem-counter {
+          @include flex-center-y;
+  
+          .cartitem-productprice {
+            @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+            margin-left: 15px;
+          }
+        }
+  
+        .cartitem-totalprice {
+          @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+        }
+      }
+    }
+  }
+
+  .delete-btn {
+    padding: 1px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 18px;
+    height: 18px;
+    background: none;
+    border: 1px solid $white;
+    border-radius: 100px;
+    transition: all 0.2s;
+
+    &:hover {
+      border: 1px solid $border-grey-dark;
+    }
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+  .delete-btn {
+    padding: 1px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 18px;
+    height: 18px;
+    background: none;
+    border: 1px solid $white;
+    border-radius: 100px;
+    transition: all 0.2s;
+
+    &:hover {
+      border: 1px solid $border-grey-dark;
+    }
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+@media (min-width: $layout-breakpoint-xs) {
+  .cartitemcard {
+    @include flex-center-y;
+    position: relative;
+    padding: 16px 0px;
+    border-bottom: 1px solid $border-grey-light;
+    width: 100%;
+  
+    .cartitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .cartitem-info {
+      @include flex-column-center-x;
+      align-items: flex-start;
+      margin-left: 5px;
+      width: calc(100% - 64px);
+      
+  
+      .cartitem-name-size {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        width: 200px;
+
+        .cartitem-name {
+          width: 180px;
+        }
+
+        .cartitem-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          margin-left: 10px;
+        }
+      }
+      
+      .cartitem-info-other {
+        @include flex-center-y;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 5px;
+    
+        .cartitem-counter-price {
+          @include flex-column;
+          justify-content: space-between;
+          width: 100%;
+          
+          .cartitem-counter {
+            @include flex-center-y;
+    
+            .cartitem-productprice {
+              @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+              margin-left: 8px;
+            }
+          }
+    
+          .cartitem-totalprice {
+            @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  
+    .delete-btn {
+      padding: 1px;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      width: 18px;
+      height: 18px;
+      background: none;
+      border: 1px solid $white;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover {
+        border: 1px solid $border-grey-dark;
+      }
+  
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 340px) {
+  .cartitemcard {
+    @include flex-center-y;
+    position: relative;
+    padding: 16px 0px;
+    border-bottom: 1px solid $border-grey-light;
+    width: 100%;
+  
+    .cartitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .cartitem-info {
+      @include flex-column-center-x;
+      align-items: flex-start;
+      margin-left: 5px;
+      width: calc(100% - 64px);
+      
+  
+      .cartitem-name-size {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        width: 200px;
+
+        .cartitem-name {
+          width: 180px;
+        }
+
+        .cartitem-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          margin-left: 10px;
+        }
+      }
+      
+      .cartitem-info-other {
+        @include flex-center-y;
+        justify-content: space-between;
+        margin-top: 5px;
+        width: 100%;
+    
+        .cartitem-counter-price {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          
+          .cartitem-counter {
+            @include flex-center-y;
+    
+            .cartitem-productprice {
+              @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+              margin-left: 8px;
+            }
+          }
+    
+          .cartitem-totalprice {
+            @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  
+    .delete-btn {
+      padding: 1px;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      width: 18px;
+      height: 18px;
+      background: none;
+      border: 1px solid $white;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover {
+        border: 1px solid $border-grey-dark;
+      }
+  
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .cartitemcard {
+    @include flex-center-y;
+    position: relative;
+    padding: 24px 0px;
+    border-bottom: 1px solid $border-grey-light;
+    width: 100%;
+  
+    .cartitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .cartitem-info {
+      @include flex-center-y;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-left: 16px;
+      width: calc(100% - 72px);
+      
+  
+      .cartitem-name-size {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        display: flex;
+        width: 220px;
+
+        .cartitem-name {
+          width: 200px;
+        }
+
+        .cartitem-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          margin-left: 10px;
+        }
+      }
+      
+      .cartitem-info-other {
+        @include flex-center-y;
+        margin-top: 0px;
+        justify-content: space-between;
+        width: 60%;
+    
+        .cartitem-counter-price {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          
+          .cartitem-counter {
+            @include flex-center-y;
+            margin-left: 0px;
+    
+            .cartitem-productprice {
+              @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+              margin-left: 8px;
+            }
+          }
+    
+          .cartitem-totalprice {
+            @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+          }
+        }
+      }
+    }
+  
+    .delete-btn {
+      padding: 1px;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      width: 18px;
+      height: 18px;
+      background: none;
+      border: 1px solid $white;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover {
+        border: 1px solid $border-grey-dark;
+      }
+  
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

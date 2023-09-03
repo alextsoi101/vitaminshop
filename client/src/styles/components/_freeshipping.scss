@@ -1,0 +1,46 @@
+.freeshipping {
+  
+  .shipping-free {
+    margin-top: 16px;
+
+    .yourorderover-text {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+
+      .span-100 {
+        @include font-size($font-size-sm, $font-weight-medium, $text-red);
+      }
+    }
+
+    .shippingisfree-text {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green);
+      margin-top: 5px;
+    }
+  }
+
+  .shipping-not-free {
+    margin-top: 16px;
+
+    .getfree-text {
+      @include font-size($font-size-sm, $font-weight-medium, $text-grey);
+
+      .span-shipping {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      }
+
+      .span-100 {
+        @include font-size($font-size-sm, $font-weight-medium, $text-red);
+      }
+    }
+
+    .continueshopping-text {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      margin-top: 5px;
+      text-decoration: underline;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $text-green;
+      }
+    }
+  }
+}

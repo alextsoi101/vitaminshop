@@ -1,0 +1,86 @@
+.cartmodalitemcard {
+    @include flex-center-y;
+    padding: 24px 0px;
+    border-bottom: 1px solid $border-grey-light;
+  
+    .cartmodalitem-image {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-grey-light;
+      border-radius: 6px;
+  
+      img {
+        width: 40px;
+      }
+    }
+  
+    .cartmodalitem-info {
+      @include flex-column-center-y;
+      position: relative;
+      margin-left: 16px;
+      width: 100%;
+  
+      .cartmodalitem-name-deletebtn {
+        @include flex-center-y;
+        justify-content: space-between;
+        width: 100%;
+
+        .item-name-size {
+          @include font-size($font-size-rg, $font-weight-light, $text-grey-dark);
+          max-width: calc(100% - 34px);
+
+          .item-name {
+            @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+          }
+          .item-size {
+            @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+            margin-left: 5px;
+          }
+        }
+
+        .delete-btn {
+          @include flex-center;
+          width: 18px;
+          height: 18px;
+          background: none;
+          border: 1px solid $border-grey-med;
+          border-radius: 100px;
+          transition: all 0.2s;
+
+          &:hover {
+            border: 1px solid $border-grey-dark;
+          }
+
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+  
+      .cartmodalitem-count-price {
+        @include flex-center-y;
+        justify-content: space-between;
+        margin-top: 5px;
+        width: 100%;
+        
+        .cartmodalitem-count {
+          @include flex-center-y;
+
+          .item-count {
+            @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+          }
+  
+          .cartmodalitem-productprice {
+            @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+            margin-left: 12px;
+          }
+        }
+  
+        .cartmodalitem-totalprice {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+      }
+    }
+  }

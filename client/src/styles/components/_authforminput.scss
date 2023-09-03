@@ -1,0 +1,93 @@
+.authforminput {
+  @include flex-column;
+  gap: 2px;
+  width: 100%;
+
+  label {
+    @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+    letter-spacing: 1px;
+  }
+
+  .authform-input {
+    @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+    box-sizing: border-box;
+    height: 45px;
+    padding: 0px 16px;
+    border: 1px solid $border-grey-semilight;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    &::placeholder {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      line-height: 0px;
+    }
+
+    &:focus {
+      border: 1px solid $border-grey-med;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .authforminput {
+    @include flex-column;
+    gap: 2px;
+    width: 100%;
+  
+    label {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      letter-spacing: 1px;
+    }
+  
+    .authform-input {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      box-sizing: border-box;
+      height: 40px;
+      padding: 0px 16px;
+      border: 1px solid $border-grey-semilight;
+      border-radius: 8px;
+      transition: all 0.2s;
+  
+      &::placeholder {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        line-height: 0px;
+      }
+  
+      &:focus {
+        border: 1px solid $border-grey-med;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .authforminput {
+    @include flex-column;
+    gap: 2px;
+    width: 100%;
+  
+    label {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      letter-spacing: 1px;
+    }
+  
+    .authform-input {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      box-sizing: border-box;
+      height: 45px;
+      padding: 0px 16px;
+      border: 1px solid $border-grey-semilight;
+      border-radius: 8px;
+      transition: all 0.2s;
+  
+      &::placeholder {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        line-height: 0px;
+      }
+  
+      &:focus {
+        border: 1px solid $border-grey-med;
+      }
+    }
+  }
+}

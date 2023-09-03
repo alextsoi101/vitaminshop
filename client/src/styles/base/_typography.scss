@@ -1,0 +1,40 @@
+body {
+  font-family: $font-name-lexend, $font-family-sans-serif;
+}
+
+h1 {
+  font-size: $font-size-xxxl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-h1;
+  letter-spacing: -3px;
+  margin: 0px;
+}
+
+h2 {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-h2;
+  margin: 0px;
+}
+
+h3 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  margin: 0px;
+}
+
+h3 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+}
+
+p {
+  margin: 0px;
+}
+
+textarea {
+  font-family: $font-name-lexend, $font-family-sans-serif;
+}
+

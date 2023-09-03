@@ -1,0 +1,120 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_orderstepper';
+@import '../components/_cart';
+@import '../components/_cartitemcard';
+@import '../components/_checkoutorder';
+@import '../components/_paymentmethods';
+@import '../components/_paymentmethod';
+@import '../components/_freeshipping';
+@import '../components/_applypromo';
+@import '../components/_orderbenefits';
+@import '../components/_orderbenefitcard';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .cartpage {
+    padding-bottom: 50px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 60px;
+      background: $grey-light;
+    }
+  
+    .cartpage-content {
+      @include flex-column-center-x;
+      margin-top: 20px;
+  
+      .cartpage-cart-benefits {
+        box-sizing: border-box;
+        width: calc(100vw - 40px);
+  
+        .cartpage-benefits {
+          display: none;
+        }
+      }
+  
+      .cartpage-checkoutcard {
+        box-sizing: border-box;
+        width: calc(100vw - 40px);
+        margin-top: 20px;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .cartpage {
+    padding-bottom: 100px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 80px;
+      background: $grey-light;
+    }
+  
+    .cartpage-content {
+      @include flex-column-center-x;
+      margin-top: 20px;
+  
+      .cartpage-cart-benefits {
+        box-sizing: border-box;
+        width: calc(100vw - 50px);
+  
+        .cartpage-benefits {
+          display: none;
+        }
+      }
+  
+      .cartpage-checkoutcard {
+        box-sizing: border-box;
+        width: calc(100vw - 50px);
+        margin-left: 0px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .cartpage {
+    padding-bottom: 100px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 80px;
+      background: $grey-light;
+    }
+  
+    .cartpage-content {
+      @include flex-center-x;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px 30px;
+      margin-top: 20px;
+  
+      .cartpage-cart-benefits {
+        box-sizing: border-box;
+        width: 60vw;
+        max-width: 650px;
+  
+        .cartpage-benefits {
+          display: block;
+          margin-top: 30px;
+        }
+      }
+  
+      .cartpage-checkoutcard {
+        box-sizing: border-box;
+        width: 32vw;
+        max-width: 400px;
+        margin-left: 60px;
+        margin-top: 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.productcounter {
+  display: flex;
+  gap: 4px;
+
+  button {
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    border-radius: 100px;
+    transition: all 0.2s;
+
+    &:hover{
+      background: $grey-light;
+    }
+  }
+
+  .count {
+    @include flex-center;
+    @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+    width: 36px;
+    height: 36px;
+    background: $grey-light;
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productcounter {
+    display: flex;
+    gap: 1px;
+  
+    button {
+      @include flex-center;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover{
+        background: $grey-light;
+      }
+    }
+  
+    .count {
+      @include flex-center;
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      width: 32px;
+      height: 32px;
+      background: $grey-light;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .productcounter {
+    display: flex;
+    gap: 4px;
+  
+    button {
+      @include flex-center;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover{
+        background: $grey-light;
+      }
+    }
+  
+    .count {
+      @include flex-center;
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      width: 36px;
+      height: 36px;
+      background: $grey-light;
+      border-radius: 4px;
+    }
+  }
+}

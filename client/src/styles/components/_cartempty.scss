@@ -1,0 +1,91 @@
+.cartempty {
+  @include flex-column-center;
+  gap: 30px;
+  padding: 100px;
+
+  .cartempty-img {
+    @include flex-center;
+    background: $grey-med;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .cartempty-text {
+    @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+  }
+
+  .cartempty-button {
+    @include buttonbase;
+    @include font-size($font-size-rg, $font-weight-medium, $text-white);
+    padding: 18px 40px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .cartempty {
+    @include flex-column-center;
+    gap: 30px;
+    padding: 15%;
+  
+    .cartempty-img {
+      @include flex-center;
+      background: $grey-med;
+      width: 150px;
+      height: 150px;
+      border-radius: 100px;
+  
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  
+    .cartempty-text {
+      @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+      text-align: center;
+    }
+  
+    .cartempty-button {
+      @include buttonbase;
+      @include font-size($font-size-sm, $font-weight-medium, $text-white);
+      padding: 10px 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .cartempty {
+    @include flex-column-center;
+    gap: 30px;
+    padding: 100px;
+  
+    .cartempty-img {
+      @include flex-center;
+      background: $grey-med;
+      width: 150px;
+      height: 150px;
+      border-radius: 100px;
+  
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  
+    .cartempty-text {
+      @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+    }
+  
+    .cartempty-button {
+      @include buttonbase;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      padding: 18px 40px;
+    }
+  }
+}

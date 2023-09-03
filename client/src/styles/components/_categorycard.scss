@@ -1,0 +1,39 @@
+.categorycard {
+  box-sizing: border-box;
+  padding: 32px;
+  width: 360px;
+  background: $white;
+  border: 1px solid $border-grey-light;
+  border-radius: 12px;
+
+  .categorycard-img {
+    @include flex-center;
+    height: 230px;
+    background: $grey-light;
+    border-radius: 8px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  h2 {
+    margin-top: 32px;
+    color: $text-dark;
+  }
+
+  .categorycard-description {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+    margin-top: 15px;
+  }
+
+  .categorycard-link {
+    margin-top: 32px;
+
+    a {
+      @include font-size($font-size-rg, $font-weight-regular, $text-green);
+      text-decoration: underline;
+    }
+  }
+}

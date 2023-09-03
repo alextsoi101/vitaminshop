@@ -1,0 +1,28 @@
+.forminput {
+  @include flex-column;
+  gap: 6px;
+  width: 100%;
+
+  label {
+    @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+    letter-spacing: 1px;
+  }
+
+  .form-input {
+    @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+    box-sizing: border-box;
+    height: 45px;
+    padding: 0px 16px;
+    border: 1px solid $grey-light;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    &::placeholder {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-lightest);
+    }
+
+    &:focus {
+      border: 1px solid $border-grey-med;
+    }
+  }
+}

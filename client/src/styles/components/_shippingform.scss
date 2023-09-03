@@ -1,0 +1,240 @@
+.shippingform {
+
+  .shippingform-header {
+    @include flex-center-y;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-grey-med;
+
+    .maintext {
+      @include font-size($font-size-lg, $font-weight-regular, $text-dark-black);
+    }
+
+    .shipping-item-count {
+      @include font-size($font-size-rg, $font-weight-light, $text-grey);
+    }
+  }
+
+  .shippingform-inputs {
+    @include flex-column;
+    gap: 20px;
+    margin-top: 30px;
+
+    .name {
+      display: flex;
+      gap: 20px;
+    }
+
+    .country {
+      //-------
+    }
+
+    .address {
+      //-------
+    }
+
+    .city-state-zip {
+      display: flex;
+      gap: 20px;
+    }
+
+    .phone-email {
+      display: flex;
+      gap: 20px;
+    }
+
+    .notes {
+      @include flex-column;
+      width: 100%;
+
+      label {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+        letter-spacing: 1px;
+      }
+      
+      .notes-textarea {
+        box-sizing: border-box;
+        margin-top: 6px;
+        height: 100px;
+        width: 100%;
+        padding: 16px;
+        outline: none;
+        border: 1px solid $grey-light;
+        border-radius: 8px;
+        resize: none;
+        transition: all 0.2s;
+
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-lightest);
+        }
+
+        &:focus {
+          border: 1px solid $border-grey-med;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .shippingform {
+
+    .shippingform-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-grey-med;
+  
+      .maintext {
+        @include font-size($font-size-lg, $font-weight-regular, $text-dark-black);
+      }
+  
+      .shipping-item-count {
+        @include font-size($font-size-rg, $font-weight-light, $text-grey);
+      }
+    }
+  
+    .shippingform-inputs {
+      @include flex-column;
+      gap: 16px;
+      margin-top: 30px;
+  
+      .name {
+        @include flex-column;
+        gap: 16px;
+      }
+  
+      .country {
+        //-------
+      }
+  
+      .address {
+        //-------
+      }
+  
+      .city-state-zip {
+        @include flex-column;
+        gap: 16px;
+      }
+  
+      .phone-email {
+        @include flex-column;
+        gap: 16px;
+      }
+  
+      .notes {
+        @include flex-column;
+        width: 100%;
+  
+        label {
+          @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+          letter-spacing: 1px;
+        }
+        
+        .notes-textarea {
+          box-sizing: border-box;
+          margin-top: 6px;
+          height: 100px;
+          width: 100%;
+          padding: 16px;
+          outline: none;
+          border: 1px solid $grey-light;
+          border-radius: 8px;
+          resize: none;
+          transition: all 0.2s;
+  
+          &::placeholder {
+            @include font-size($font-size-sm, $font-weight-regular, $text-grey-lightest);
+          }
+  
+          &:focus {
+            border: 1px solid $border-grey-med;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .shippingform {
+
+    .shippingform-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-grey-med;
+  
+      .maintext {
+        @include font-size($font-size-lg, $font-weight-regular, $text-dark-black);
+      }
+  
+      .shipping-item-count {
+        @include font-size($font-size-rg, $font-weight-light, $text-grey);
+      }
+    }
+  
+    .shippingform-inputs {
+      @include flex-column;
+      gap: 20px;
+      margin-top: 30px;
+  
+      .name {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+  
+      .country {
+        //-------
+      }
+  
+      .address {
+        //-------
+      }
+  
+      .city-state-zip {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+  
+      .phone-email {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+  
+      .notes {
+        @include flex-column;
+        width: 100%;
+  
+        label {
+          @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+          letter-spacing: 1px;
+        }
+        
+        .notes-textarea {
+          box-sizing: border-box;
+          margin-top: 6px;
+          height: 100px;
+          width: 100%;
+          padding: 16px;
+          outline: none;
+          border: 1px solid $grey-light;
+          border-radius: 8px;
+          resize: none;
+          transition: all 0.2s;
+  
+          &::placeholder {
+            @include font-size($font-size-sm, $font-weight-regular, $text-grey-lightest);
+          }
+  
+          &:focus {
+            border: 1px solid $border-grey-med;
+          }
+        }
+      }
+    }
+  }
+}

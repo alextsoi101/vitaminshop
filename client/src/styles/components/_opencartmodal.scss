@@ -1,0 +1,209 @@
+.opencartmodal-wrapper {
+  box-sizing: border-box;
+}
+
+.opencartmodal {
+  @include flex-center-y;
+  float: right;
+  height: 100%;
+  background: none;
+  border: none;
+
+  &:hover .cartitemcount{
+    transform: translateY(-5px);
+    transition: 0.2s;
+  }
+
+  &:hover .cart-subtotal {
+    color: $text-green-light;
+  }
+
+  .cart-subtotal {
+    @include font-size($font-size-rg, $font-weight-light, $text-white);
+    line-height: 0px;
+    transition: all 0.2s;
+  }
+
+  .cart-img-container {
+    @include flex-center;
+    margin-left: 5px;
+    padding: 10px 0px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .cartitemcount {
+      @include flex-center;
+      @include font-size(10px, $font-weight-regular, $text-white);
+      line-height: 0px;
+      position: relative;
+      top: 6px;
+      right: 9px;
+      width: 18px;
+      height: 18px;
+      background: $grey;
+      border-radius: 100px;
+      transition: 0.2s;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .opencartmodal-wrapper {
+    box-sizing: border-box;
+  }
+  
+  .opencartmodal {
+    @include flex-center-y;
+    float: right;
+    height: 100%;
+    background: none;
+    border: none;
+  
+    &:hover .cartitemcount{
+      transform: translateY(-5px);
+      transition: 0.2s;
+    }
+  
+    &:hover .cart-subtotal {
+      color: $text-green-light;
+    }
+  
+    .cart-subtotal {
+      display: none;
+    }
+  
+    .cart-img-container {
+      @include flex-center;
+      margin-left: 0px;
+      padding: 10px 0px;
+  
+      img {
+        width: 25px;
+        height: 25px;
+      }
+  
+      .cartitemcount {
+        @include flex-center;
+        @include font-size(10px, $font-weight-regular, $text-white);
+        line-height: 0px;
+        position: relative;
+        top: 6px;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        background: $grey;
+        border-radius: 100px;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .opencartmodal-wrapper {
+    box-sizing: border-box;
+    // width: 140px;
+  }
+  
+  .opencartmodal {
+    @include flex-center-y;
+    float: right;
+    height: 100%;
+    background: none;
+    border: none;
+  
+    &:hover .cartitemcount{
+      transform: translateY(-5px);
+      transition: 0.2s;
+    }
+  
+    &:hover .cart-subtotal {
+      color: $text-green-light;
+    }
+  
+    .cart-subtotal {
+      display: none;
+    }
+  
+    .cart-img-container {
+      @include flex-center;
+      margin-left: 0px;
+      padding: 10px 0px;
+  
+      img {
+        width: 30px;
+        height: 30px;
+      }
+  
+      .cartitemcount {
+        @include flex-center;
+        @include font-size(10px, $font-weight-regular, $text-white);
+        line-height: 0px;
+        position: relative;
+        top: 6px;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        background: $grey;
+        border-radius: 100px;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .opencartmodal-wrapper {
+    box-sizing: border-box;
+    // width: 140px;
+  }
+  
+  .opencartmodal {
+    @include flex-center-y;
+    float: right;
+    height: 100%;
+    background: none;
+    border: none;
+  
+    &:hover .cartitemcount{
+      transform: translateY(-5px);
+      transition: 0.2s;
+    }
+  
+    &:hover .cart-subtotal {
+      color: $text-green-light;
+    }
+  
+    .cart-subtotal {
+      display: none;
+    }
+  
+    .cart-img-container {
+      @include flex-center;
+      margin-left: 5px;
+      padding: 10px 0px;
+  
+      img {
+        width: 30px;
+        height: 30px;
+      }
+  
+      .cartitemcount {
+        @include flex-center;
+        @include font-size(10px, $font-weight-regular, $text-white);
+        line-height: 0px;
+        position: relative;
+        top: 6px;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        background: $grey;
+        border-radius: 100px;
+        transition: 0.2s;
+      }
+    }
+  }
+}

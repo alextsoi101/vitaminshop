@@ -1,0 +1,98 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .search-results {
+    box-sizing: border-box;
+    position: absolute;
+    top: 100px;
+    left: 13px;
+    z-index: 100;
+    width: calc(100vw - 70px);
+
+    .search-results-empty {
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+      height: 40px;
+      background: $white;
+      border: $border-grey 1px solid;
+    }
+
+    ul {
+      border: $border-grey 1px solid;
+      border-bottom: none;
+      background: $white;
+    }
+  
+    button {
+      @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      box-sizing: border-box;
+      height: 40px;
+      width: 100%;
+      background: $btn-green;
+      border: none;
+  
+      &:hover {
+        background: $btn-green-hover;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .search-results {
+    box-sizing: border-box;
+    position: absolute;
+    top: 129px;
+    left: 25px;
+    z-index: 100;
+    width: calc(100vw - 100px);
+
+    ul {
+      border: $border-grey 1px solid;
+      border-bottom: none;
+      background: $white;
+    }
+  
+    button {
+      @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      box-sizing: border-box;
+      height: 40px;
+      width: 100%;
+      background: $btn-green;
+      border: none;
+  
+      &:hover {
+        background: $btn-green-hover;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .search-results {
+    box-sizing: border-box;
+    position: static;
+    z-index: 100;
+    width: 400px;
+
+    ul {
+      border: $border-grey 1px solid;
+      border-bottom: none;
+      background: $white;
+    }
+  
+    button {
+      @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      box-sizing: border-box;
+      height: 40px;
+      width: 100%;
+      background: $btn-green;
+      border: none;
+  
+      &:hover {
+        background: $btn-green-hover;
+        transition: 0.2s;
+      }
+    }
+  }
+}

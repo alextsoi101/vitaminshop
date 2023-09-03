@@ -1,0 +1,32 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .search {
+    @include flex-column;
+    width: 100vw;
+    height: auto;
+    -webkit-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    -moz-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .search {
+    @include flex-column;
+    width: 100vw;
+    height: auto;
+    -webkit-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    -moz-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .search {
+    @include flex-column;
+    width: 450px;
+    height: 100%;
+    -webkit-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    -moz-box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+    box-shadow: 0 3px 10px -5px rgba(0,0,0,.18);
+  }
+}

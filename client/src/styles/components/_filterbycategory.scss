@@ -1,0 +1,45 @@
+.filterbycategory {
+  display: block;
+  
+  .maintext {
+    @include font-size($font-size-rg, $font-weight-light, $text-grey);
+    letter-spacing: 1px;
+  }
+
+  .labels {
+    @include flex-column;
+    margin-top: 15px;
+    gap: 10px;
+    
+    label {
+      @include flex-center-y;
+      cursor: pointer;
+
+      &:hover .category-name {
+        @include font-size($font-size-rg, $font-weight-regular, $text-green-light);
+        transition: 0.2s;
+      }
+      &:hover .category-count {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-dark);
+        transition: 0.2s;
+      }
+
+      input {
+        width: 19px;
+        height: 19px;
+        accent-color: green;
+        cursor: pointer;
+      }
+      .category-name {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+        margin-left: 10px;
+        transition: 0.2s;
+      }
+      .category-count {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+        margin-left: 20px;
+        transition: 0.2s;
+      }
+    }
+  }
+}

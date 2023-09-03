@@ -1,0 +1,50 @@
+.productreviews {
+
+  .review-cards {
+    @include flex-column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid $border-grey;
+    border-radius: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+
+    button {
+      @include font-size($font-size-sm, $font-weight-regular, $text-green); 
+      align-self: flex-start;
+      background: $white;
+      padding: 8px 24px;
+      border: 1px solid $border-grey;
+      border-radius: 100px;
+      transition: all 0.2s;
+
+      &:hover {
+        border: 1px solid $border-green;
+      }
+    }
+  }
+
+  .reviews-empty {
+    @include flex-column-center-x;
+
+    .noreviews-text {
+      @include font-size($font-size-md, $font-weight-regular, $text-grey-dark); 
+    }
+    .befirst-text {
+      margin-top: 30px;
+      @include font-size($font-size-lg, $font-weight-regular, $text-grey-dark); 
+
+      span {
+        @include font-size($font-size-xl, $font-weight-medium, $text-dark-black);
+      }
+    }
+    .noemail-text {
+      margin-top: 10px;
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+    }
+  }
+
+  .add-review {
+    margin-top: 24px;
+  }
+}

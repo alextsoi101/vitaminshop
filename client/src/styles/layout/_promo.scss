@@ -1,0 +1,85 @@
+.promo {
+  @include flex-center;
+  @include font-size($font-size-sm, $font-weight-light, rgba(255, 255, 255, 0.7));
+  height: 36px;
+  background: $green-dark;
+
+  .main-text {
+    display: flex;
+
+    .limited-offer-text {
+      margin-right: 5px;
+    }
+  
+    .promovalue {
+      color: $text-yellow;
+      margin-right: 5px;
+    }
+  
+    .promocode {
+      color: $text-yellow;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .timer {
+    @include font-size($font-size-rg, $font-weight-light, $text-white);
+    width: 95px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .promo {
+    @include flex-center;
+    @include font-size($font-size-xs, $font-weight-light, rgba(255, 255, 255, 0.7));
+    height: 36px;
+    background: $green-dark;
+
+    .limited-offer-text {
+      display: none;
+    }
+  
+    .promovalue {
+      color: $text-yellow;
+    }
+  
+    .promocode {
+      color: $text-yellow;
+    }
+  
+    .timer {
+      @include font-size($font-size-xs, $font-weight-light, $text-white);
+      width: 75px;
+      margin-left: 15px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .promo {
+    @include flex-center;
+    @include font-size($font-size-sm, $font-weight-light, rgba(255, 255, 255, 0.7));
+    height: 36px;
+    background: $green-dark;
+
+    .limited-offer-text {
+      display: flex;
+    }
+  
+    .promovalue {
+      color: $text-yellow;
+    }
+  
+    .promocode {
+      color: $text-yellow;
+    }
+  
+    .timer {
+      @include font-size($font-size-rg, $font-weight-light, $text-white);
+      width: 75px;
+      margin-left: 15px;
+    }
+  }
+}

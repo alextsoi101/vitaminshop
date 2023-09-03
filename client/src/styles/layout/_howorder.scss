@@ -1,0 +1,101 @@
+.howorder {
+  @include flex-column-center-x;
+  padding-bottom: 110px;
+  background: $dark-black;
+
+  h1 {
+    margin-top: 270px;
+    text-align: center;
+  }
+
+  .howorder-description {
+    @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+    margin-top: 20px;
+    width: 750px;
+    text-align: center;
+  }
+
+  .howorder-cards {
+    @include flex-center-x;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  button {
+    @include buttonbase;
+    margin-top: 80px;
+    font-size: $font-size-rg;
+    font-weight: $font-weight-medium;
+    padding: 20px 56px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .howorder {
+    @include flex-column-center-x;
+    padding-bottom: 50px;
+    background: $dark-black;
+  
+    h1 {
+      @include font-size($font-size-xxl, $font-weight-regular, $text-white);
+      margin-top: 100px;
+      text-align: center;
+    }
+  
+    .howorder-description {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+      margin-top: 20px;
+      width: 80vw;
+      text-align: center;
+    }
+  
+    .howorder-cards {
+      @include flex-center-x;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    button {
+      @include buttonbase;
+      margin-top: 80px;
+      font-size: $font-size-rg;
+      font-weight: $font-weight-medium;
+      padding: 20px 56px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .howorder {
+    @include flex-column-center-x;
+    padding-bottom: 110px;
+    background: $dark-black;
+  
+    h1 {
+      @include font-size($font-size-xxxl, $font-weight-semibold, $text-white);
+      margin-top: 270px;
+      text-align: center;
+    }
+  
+    .howorder-description {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+      margin-top: 20px;
+      width: 750px;
+      text-align: center;
+    }
+  
+    .howorder-cards {
+      @include flex-center-x;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    button {
+      @include buttonbase;
+      margin-top: 80px;
+      font-size: $font-size-rg;
+      font-weight: $font-weight-medium;
+      padding: 20px 56px;
+    }
+  }
+}

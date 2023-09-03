@@ -1,0 +1,93 @@
+.productsizes {
+
+  .maintext {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+    letter-spacing: 1px;
+  }
+
+  .size-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+
+    button {
+      @include font-size($font-size-xs, $font-weight-medium, $text-dark-black);
+      @include flex-center-y;
+      box-sizing: border-box;
+      height: 36px;
+      padding: 0px 14px;
+      background: $grey-light;
+      border: 1px solid $border-grey-light;
+      border-radius: 4px;
+      transition: all 0.2s;
+
+      &:hover {
+        background: $btn-hover-grey;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productsizes {
+
+    .maintext {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 1px;
+    }
+  
+    .size-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+  
+      button {
+        @include font-size($font-size-xs, $font-weight-medium, $text-dark-black);
+        @include flex-center-y;
+        box-sizing: border-box;
+        height: 36px;
+        padding: 0px 14px;
+        background: $grey-light;
+        border: 1px solid $border-grey-light;
+        border-radius: 4px;
+        transition: all 0.2s;
+  
+        &:hover {
+          background: $btn-hover-grey;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .productsizes {
+
+    .maintext {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 1px;
+    }
+  
+    .size-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+  
+      button {
+        @include font-size($font-size-xs, $font-weight-medium, $text-dark-black);
+        @include flex-center-y;
+        box-sizing: border-box;
+        height: 36px;
+        padding: 0px 14px;
+        background: $grey-light;
+        border: 1px solid $border-grey-light;
+        border-radius: 4px;
+        transition: all 0.2s;
+  
+        &:hover {
+          background: $btn-hover-grey;
+        }
+      }
+    }
+  }
+}

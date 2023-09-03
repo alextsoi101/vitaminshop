@@ -1,0 +1,39 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .navbarmobile-wrapper {
+    .closebtn {
+      @include flex-center;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      border: none;
+      padding: 2px;
+      background: none;
+    }
+
+    .navbarmobile-browse {
+      margin-top: 20px;
+      
+      .text-browse {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+        letter-spacing: 2px;
+      }
+
+      .browse-menu {
+
+        .browse-menu-item {
+          @include flex-center-y;
+          @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+          margin-top: 5px;
+          padding: 4px 0px;
+
+          span {
+            margin-left: 5px;
+          }
+        }
+        .logout-item {
+          color: $text-red;
+        }
+      }
+    }
+  }
+}

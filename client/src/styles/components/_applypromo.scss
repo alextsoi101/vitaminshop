@@ -1,0 +1,131 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .applypromo {
+
+    .applypromo-form {
+      display: flex;
+  
+      input {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        box-sizing: border-box;
+        width: calc(100% - 136px);
+        outline: none;
+        padding: 0px 16px;
+        border: 1px solid $border-grey-light;
+        border-radius: 8px;
+    
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-lightest);
+        }
+      }
+    
+      button {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        margin-left: 12px;
+        box-sizing: border-box;
+        width: 120px;
+        height: 40px;
+        background-color: $btn-grey;
+        border: 1px solid $border-grey-light;
+        border-radius: 100px;
+        transition: all 0.2s;
+    
+        &:hover {
+          border: 1px solid $border-green;
+        }
+      }
+    }
+  
+    .promo-error {
+      @include font-size($font-size-sm, $font-weight-medium, $text-red);
+      margin-top: 10px;
+    }
+  
+    .promo-applied {
+      margin-top: 10px;
+  
+      .applied-text {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green-light);
+      }
+  
+      .promo-info {
+        display: flex;
+        margin-top: 5px;
+  
+        .promo-text {
+          @include font-size($font-size-sm, $font-weight-medium, $text-yellow);
+        }
+  
+        .percent-discount {
+          @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .applypromo {
+
+    .applypromo-form {
+      display: flex;
+  
+      input {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        box-sizing: border-box;
+        width: calc(100% - 142px);
+        outline: none;
+        padding: 0px 20px;
+        border: 1px solid $border-grey-light;
+        border-radius: 8px;
+    
+        &::placeholder {
+          @include font-size($font-size-rg, $font-weight-regular, $text-grey-lightest);
+        }
+      }
+    
+      button {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        margin-left: 12px;
+        box-sizing: border-box;
+        width: 130px;
+        height: 45px;
+        background-color: $btn-grey;
+        border: 1px solid $border-grey-light;
+        border-radius: 100px;
+        transition: all 0.2s;
+    
+        &:hover {
+          border: 1px solid $border-green;
+        }
+      }
+    }
+  
+    .promo-error {
+      @include font-size($font-size-sm, $font-weight-medium, $text-red);
+      margin-top: 10px;
+    }
+  
+    .promo-applied {
+      margin-top: 10px;
+  
+      .applied-text {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green-light);
+      }
+  
+      .promo-info {
+        display: flex;
+        margin-top: 5px;
+  
+        .promo-text {
+          @include font-size($font-size-sm, $font-weight-medium, $text-yellow);
+        }
+  
+        .percent-discount {
+          @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

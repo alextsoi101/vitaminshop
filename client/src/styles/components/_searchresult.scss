@@ -1,0 +1,34 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .search-result {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 6px;
+    border-bottom: $border-grey 1px solid;
+    cursor: pointer;
+  
+    &:hover {
+      background: $grey-light;
+    }
+    
+    .img-wrapper {
+      max-width: 50px;
+    }
+  
+    .resultimg {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .result-text {
+      margin-left: 10px;
+  
+      .result-name {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-dark);
+      }
+  
+      .result-price {
+        @include font-size($font-size-sm, $font-weight-regular, $text-green-light);
+      }
+    }
+  }
+}

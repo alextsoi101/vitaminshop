@@ -1,0 +1,48 @@
+.shortdescription {
+
+  .maintext {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+    letter-spacing: 1px;
+  }
+  
+  .description {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+    margin-top: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $border-grey-light;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .shortdescription {
+
+    .maintext {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 1px;
+    }
+    
+    .description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+      margin-top: 8px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $border-grey-light;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .shortdescription {
+
+    .maintext {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      letter-spacing: 1px;
+    }
+    
+    .description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+      margin-top: 12px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $border-grey-light;
+    }
+  }
+}

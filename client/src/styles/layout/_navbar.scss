@@ -1,0 +1,36 @@
+.navbar {
+  @include flex-center-x;
+  position: sticky;
+  top: 0;
+  height: 55px;
+  background: $navbar-dark;
+  z-index: 20;
+
+  .nav {
+    @include flex-center;
+    cursor: pointer;
+  
+    &:hover .navlink span, &:hover .dropdown-toggle span{
+      color: $text-grey-light;
+      transition: 0.2s;
+    }
+  
+    &:hover ::after {
+      background-color: $text-grey-light;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .navbar {
+    @include flex-center-x;
+  }
+}
+
+

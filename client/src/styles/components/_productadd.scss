@@ -1,0 +1,419 @@
+.productadd {
+  padding: 24px;
+  border: 1px solid $border-grey-light;
+  border-radius: 16px;
+
+  .productadd-info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-grey-light;
+
+    .info-name-size-count {
+      @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      display: flex;
+      gap: 10px;
+
+      .info-name {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+      }
+      .info-size {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        
+      }
+      .info-count {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        
+      }
+    }
+
+    .info-totalprice {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+    }
+  }
+
+  .counter-add {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .counter {
+      @include flex-center-y;
+      padding: 8px 16px;
+      border: 1px solid $border-grey-light;
+      border-radius: 10px;
+
+      .divider {
+        margin: 0px 15px;
+        width: 1px;
+        height: 20px;
+        background: $grey-light; 
+      }
+
+      .instock {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+      }
+    }
+
+    .button-add {
+      @include buttonbase;
+      @include flex-center-y;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      box-sizing: border-box;
+      width: 230px;
+      padding-left: 30px;
+
+      .divider {
+        @include font-size($font-size-sm, $font-weight-light, $text-white);
+        margin: 0px 15px;
+      }
+    }
+  }
+
+  .order-info {
+    @include flex-column;
+    margin-top: 24px;
+    gap: 12px;
+
+    .order-info-item {
+      @include flex-center-y;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .order-info-text {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+        margin-left: 8px;
+      }
+
+      .span-100 {
+        color: $text-yellow;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productadd {
+    padding: 20px;
+    border: 1px solid $border-grey-light;
+    border-radius: 16px;
+  
+    .productadd-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .info-name-size-count {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+        display: flex;
+        gap: 6px;
+  
+        .info-name {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+        }
+        .info-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+        .info-count {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+      }
+  
+      .info-totalprice {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-top: 8px;
+      }
+    }
+  
+    .counter-add {
+      @include flex-column;
+      margin-top: 20px;
+  
+      .counter {
+        @include flex-center-y;
+        padding: 6px 8px;
+        border: 1px solid $border-grey-light;
+        border-radius: 10px;
+        max-width: 240px;
+  
+        .divider {
+          margin: 0px 15px;
+          width: 1px;
+          height: 20px;
+          background: $grey-light; 
+        }
+  
+        .instock {
+          @include font-size($font-size-xs, $font-weight-medium, $text-green);
+        }
+      }
+  
+      .button-add {
+        @include buttonbase;
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-white);
+        box-sizing: border-box;
+        width: 210px;
+        height: 48px;
+        padding-left: 18px;
+        margin-top: 16px;
+  
+        .divider {
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin: 0px 12px;
+        }
+      }
+    }
+  
+    .order-info {
+      @include flex-column;
+      margin-top: 24px;
+      gap: 12px;
+  
+      .order-info-item {
+        @include flex-center-y;
+  
+        img {
+          width: 16px;
+          height: 16px;
+        }
+  
+        .order-info-text {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+          margin-left: 8px;
+        }
+  
+        .span-100 {
+          color: $text-yellow;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .productadd {
+    .counter-add {
+      .counter {
+        .instock {
+          @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .productadd {
+    padding: 24px;
+    border: 1px solid $border-grey-light;
+    border-radius: 16px;
+  
+    .productadd-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .info-name-size-count {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+        display: flex;
+        gap: 10px;
+  
+        .info-name {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+        }
+        .info-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+        .info-count {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+      }
+  
+      .info-totalprice {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-top: 0px;
+      }
+    }
+  
+    .counter-add {
+      @include flex-column;
+      margin-top: 20px;
+  
+      .counter {
+        @include flex-center-y;
+        align-items: center;
+        padding: 8px 16px;
+        border: 1px solid $border-grey-light;
+        border-radius: 10px;
+        max-width: 240px;
+  
+        .divider {
+          margin: 0px 15px;
+          width: 1px;
+          height: 20px;
+          background: $grey-light; 
+        }
+  
+        .instock {
+          @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        }
+      }
+  
+      .button-add {
+        @include buttonbase;
+        @include flex-center-y;
+        @include font-size($font-size-rg, $font-weight-medium, $text-white);
+        box-sizing: border-box;
+        width: 230px;
+        padding-left: 30px;
+  
+        .divider {
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin: 0px 15px;
+        }
+      }
+    }
+  
+    .order-info {
+      @include flex-column;
+      margin-top: 24px;
+      gap: 12px;
+  
+      .order-info-item {
+        @include flex-center-y;
+  
+        img {
+          width: 16px;
+          height: 16px;
+        }
+  
+        .order-info-text {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+          margin-left: 8px;
+        }
+  
+        .span-100 {
+          color: $text-yellow;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .productadd {
+    padding: 24px;
+    border: 1px solid $border-grey-light;
+    border-radius: 16px;
+  
+    .productadd-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .info-name-size-count {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+        display: flex;
+        gap: 10px;
+  
+        .info-name {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+        }
+        .info-size {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+        .info-count {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+          
+        }
+      }
+  
+      .info-totalprice {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-top: 0px;
+      }
+    }
+  
+    .counter-add {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 20px;
+  
+      .counter {
+        @include flex-center-y;
+        align-items: center;
+        padding: 8px 16px;
+        border: 1px solid $border-grey-light;
+        border-radius: 10px;
+        max-width: 240px;
+  
+        .divider {
+          margin: 0px 15px;
+          width: 1px;
+          height: 20px;
+          background: $grey-light; 
+        }
+  
+        .instock {
+          @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        }
+      }
+  
+      .button-add {
+        @include buttonbase;
+        @include flex-center-y;
+        @include font-size($font-size-rg, $font-weight-medium, $text-white);
+        box-sizing: border-box;
+        width: 230px;
+        padding-left: 30px;
+        margin-top: 0px;
+  
+        .divider {
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin: 0px 12px;
+        }
+      }
+    }
+  
+    .order-info {
+      @include flex-column;
+      margin-top: 24px;
+      gap: 12px;
+  
+      .order-info-item {
+        @include flex-center-y;
+  
+        img {
+          width: 16px;
+          height: 16px;
+        }
+  
+        .order-info-text {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+          margin-left: 8px;
+        }
+  
+        .span-100 {
+          color: $text-yellow;
+        }
+      }
+    }
+  }
+}
+

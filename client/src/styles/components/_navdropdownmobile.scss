@@ -1,0 +1,26 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .navdropdownmobile {
+
+    .navdropdownmobile-toggle {
+      @include font-size($font-size-rg, $font-weight-light, $text-dark-black);
+      height: auto;
+      transition: 0.2s;
+    
+      &:active {
+        @include font-size($font-size-rg, $font-weight-light, $text-green-light);
+      }
+    }
+  
+    .navdropdownmobile-menu {
+      margin: 0px 0px 5px 10px;
+      padding: 5px 0px;
+      width: calc(100% - 40px);
+      border-bottom: 1px solid $border-grey-light;
+  
+      .navdropdownmobile-menu-item {
+        @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+        height: 28px;
+      }
+    }
+  }
+}

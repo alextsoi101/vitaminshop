@@ -1,0 +1,217 @@
+.loginform {
+  @include flex-column-center-x;
+  position: relative;
+  box-sizing: border-box;
+  width: 470px;
+  padding: 30px 24px;
+  background: white;
+  border-radius: 12px;
+
+  .close-modal-btn {
+    @include flex-center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 2px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $grey-semilight;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  h2 {
+    color: $text-dark-black;
+  }
+
+  .loginform-inputs {
+    @include flex-column;
+    gap: 16px;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .error-message {
+    @include font-size($font-size-rg, $font-weight-medium, $text-red);
+    margin-top: 14px;
+  }
+
+  .login-btn {
+    @include buttonbase;
+    @include flex-center;
+    @include font-size($font-size-rg, $font-weight-medium, $text-white);
+    margin-top: 14px;
+    width: 100%;
+    height: 45px;
+  }
+
+  .toggle-text {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+    margin-top: 24px;
+
+    span {
+      @include font-size($font-size-sm, $font-weight-semibold, $text-green);
+      margin-left: 8px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .loginform {
+    @include flex-column-center-x;
+    position: relative;
+    box-sizing: border-box;
+    width: 90vw;
+    padding: 20px 14px;
+    background: white;
+    border-radius: 12px;
+  
+    .close-modal-btn {
+      @include flex-center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 2px;
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover {
+        background: $grey-semilight;
+      }
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    h2 {
+      color: $text-dark-black;
+      font-size: 24px;
+    }
+  
+    .loginform-inputs {
+      @include flex-column;
+      gap: 16px;
+      margin-top: 16px;
+      width: 100%;
+    }
+  
+    .error-message {
+      @include font-size($font-size-rg, $font-weight-medium, $text-red);
+      margin-top: 10px;
+    }
+  
+    .login-btn {
+      @include buttonbase;
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      margin-top: 10px;
+      width: 100%;
+      height: 40px;
+    }
+  
+    .toggle-text {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      margin-top: 14px;
+  
+      span {
+        @include font-size($font-size-sm, $font-weight-semibold, $text-green);
+        margin-left: 8px;
+        cursor: pointer;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .loginform {
+    @include flex-column-center-x;
+    position: relative;
+    box-sizing: border-box;
+    width: 470px;
+    padding: 30px 24px;
+    background: white;
+    border-radius: 12px;
+  
+    .close-modal-btn {
+      @include flex-center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 2px;
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:hover {
+        background: $grey-semilight;
+      }
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    h2 {
+      color: $text-dark-black;
+    }
+  
+    .loginform-inputs {
+      @include flex-column;
+      gap: 16px;
+      margin-top: 16px;
+      width: 100%;
+    }
+  
+    .error-message {
+      @include font-size($font-size-rg, $font-weight-medium, $text-red);
+      margin-top: 14px;
+    }
+  
+    .login-btn {
+      @include buttonbase;
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      margin-top: 14px;
+      width: 100%;
+      height: 45px;
+    }
+  
+    .toggle-text {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      margin-top: 24px;
+  
+      span {
+        @include font-size($font-size-sm, $font-weight-semibold, $text-green);
+        margin-left: 8px;
+        cursor: pointer;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

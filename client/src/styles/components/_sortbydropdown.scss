@@ -1,0 +1,44 @@
+.sortbydropdown {
+  position: relative;
+
+  &:hover .dropdown-menu {
+    visibility: visible;
+    transform: scale(1);
+    transition: transform 0.2s;
+    transform-origin: center top;
+  }
+
+  .dropdown-toggle {
+    @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+    width: 120px;
+    height: 40px;
+    background: none;
+    border: 1px solid $border-grey;
+    border-radius: 100px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 225px;
+    box-sizing: border-box;
+    padding: 15px;
+    visibility: hidden;
+    background: $white;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.09);
+    cursor: default;
+    transform: scale(0.94);
+
+    li {
+      @include font-size($font-size-sm, $font-weight-light, $text-dark);
+      padding: 4px 0px 4px 5px;
+      cursor: pointer;
+  
+      &:hover {
+        color: $green-light;
+      }
+    }
+
+  }
+}

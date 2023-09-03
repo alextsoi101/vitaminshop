@@ -1,0 +1,29 @@
+.benefits {
+  @include flex-center-x;
+  box-sizing: border-box;
+  padding: 80px 64px;
+  height: 356px;
+  background: $grey-light;
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .benefits {
+    @include flex-column-center-x;
+    gap: 32px;
+    box-sizing: border-box;
+    padding: 70px 25px;
+    height: auto;
+    background: $grey-light;
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .benefits {
+    @include flex-center-x;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 80px 64px;
+    height: auto;
+    background: $grey-light;
+  }
+}

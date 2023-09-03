@@ -1,0 +1,17 @@
+.apploader-wrapper {
+  @include flex-column-center;
+  width: 100vw;
+  height: 80vh;
+
+  .apploader {
+    img {
+      width: 20vw;
+      min-width: 170px;
+    }
+
+    .loader-wrapper {
+      @include flex-center-x;
+      margin-top: 20px;   
+    }
+  }
+}

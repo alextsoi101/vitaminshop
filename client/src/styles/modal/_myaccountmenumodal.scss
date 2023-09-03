@@ -1,0 +1,37 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .myaccountmenumodal {
+    box-sizing: border-box;
+    width: 80vw;
+    max-width: 300px;
+    padding: 20px;
+
+    .myaccountmenumodal-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      position: relative;
+      padding-bottom: 5px;
+      height: 30px;
+      border-bottom: 1px solid $border-grey;
+
+      .close-btn {
+        @include flex-center;
+        position: absolute;
+        right: -4px;
+        padding: 0px;
+        color: $text-dark;
+        background: none;
+        border: none;
+        border-radius: 100px;
+        transition: all 0.2s;
+    
+        &:active {
+          color: $text-red;
+        }
+      }
+    }
+  
+    .account-menu-wrapper {
+      margin-top: 5px;
+    }
+  }  
+}

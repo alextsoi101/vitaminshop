@@ -1,0 +1,212 @@
+footer {
+  background: $dark;
+
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 75px 150px 50px 150px;
+
+    p {
+      @include font-size($font-size-lg, $font-weight-medium, $text-white);
+    }
+
+    ul {
+      margin-top: 5px;
+    }
+
+    li {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      padding: 10px 0px;
+    }
+
+    a {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+
+      &:hover {
+        color: $text-green;
+        transition: 0.2s;
+      }
+    }
+
+    .footer-info {
+      width: 270px;
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+
+      .footer-info-text {
+        margin-top: 10px;
+      }
+    }
+    
+  }
+
+  .footer-bottom {
+    @include flex-center;
+    @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+    padding: 30px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  footer {
+    background: $dark;
+  
+    .footer-main {
+      @include flex-column-center-y;
+      gap: 12px;
+      padding: 25px 25px 20px 25px;
+  
+      p {
+        @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      }
+  
+      ul {
+        margin-top: 5px;
+      }
+  
+      li {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-light);
+        padding: 3px 0px;
+      }
+  
+      a {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-light);
+  
+        &:hover {
+          color: $text-green;
+          transition: 0.2s;
+        }
+      }
+  
+      .footer-info {
+        width: auto;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+  
+        .footer-info-text {
+          margin-top: 10px;
+        }
+      }
+      
+    }
+  
+    .footer-bottom {
+      @include flex-center;
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      padding: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  footer {
+    background: $dark;
+  
+    .footer-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 40px;
+  
+      p {
+        @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      }
+  
+      ul {
+        margin-top: 5px;
+      }
+  
+      li {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-light);
+        padding: 3px 0px;
+      }
+  
+      a {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-light);
+  
+        &:hover {
+          color: $text-green;
+          transition: 0.2s;
+        }
+      }
+  
+      .footer-info {
+        width: 270px;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+  
+        .footer-info-text {
+          margin-top: 10px;
+        }
+      }
+      
+    }
+  
+    .footer-bottom {
+      @include flex-center;
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      padding: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  footer {
+    background: $dark;
+  
+    .footer-main {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding: 75px 0px 50px 0px;
+  
+      p {
+        @include font-size($font-size-lg, $font-weight-medium, $text-white);
+      }
+  
+      ul {
+        margin-top: 5px;
+      }
+  
+      li {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        padding: 10px 0px;
+      }
+  
+      a {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+  
+        &:hover {
+          color: $text-green;
+          transition: 0.2s;
+        }
+      }
+  
+      .footer-info {
+        width: 270px;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+  
+        .footer-info-text {
+          margin-top: 10px;
+        }
+      }
+      
+    }
+  
+    .footer-bottom {
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+      padding: 30px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  footer {
+    background: $dark;
+  
+    .footer-main {
+      display: flex;
+      justify-content: center;
+      gap: 110px;
+      padding: 75px 0px 50px 0px;
+    }
+  }
+}

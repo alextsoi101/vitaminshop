@@ -1,0 +1,67 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .myaccountheader {
+    @include flex-center-y;
+    position: sticky;
+    top: 111px;
+    z-index: 10;
+    overflow: clip;
+    padding: 0px 18px;
+    height: 40px;
+    border-bottom: 1px solid $border-grey;
+    background: $white;
+    -webkit-box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    -moz-box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    transition: all 0.2s;
+
+    &:active {
+      background: $grey-light;
+    }
+
+    .myaccount-text {
+      @include font-size($font-size-xs, $font-weight-semibold, $text-dark);
+      margin-left: 5px;
+    }
+
+    .menuicon {
+      @include flex-center;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .myaccountheader {
+    @include flex-center-y;
+    position: sticky;
+    top: 142px;
+    z-index: 10;
+    overflow: clip;
+    padding: 0px 28px;
+    height: 40px;
+    border-bottom: 1px solid $border-grey;
+    background: $white;
+    -webkit-box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    -moz-box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,.08);
+    transition: all 0.2s;
+
+    &:active {
+      background: $grey-light;
+    }
+
+    .myaccount-text {
+      @include font-size($font-size-xs, $font-weight-semibold, $text-dark);
+      margin-left: 5px;
+    }
+
+    .menuicon {
+      @include flex-center;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .myaccountheader {
+    display: none;
+  }
+}

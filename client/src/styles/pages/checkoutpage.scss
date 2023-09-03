@@ -1,0 +1,97 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../../styles/components/_shippingform';
+@import '../../styles/components/_forminput';
+@import '../../styles/components/_placeorder';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .checkoutpage {
+    padding-bottom: 50px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 60px;
+      background: $grey-light;
+    }
+  
+    .checkoutpage-content {
+      @include flex-column-center-x;
+      margin-top: 30px;
+  
+      .checkoutpage-shippingform {
+        box-sizing: border-box;
+        width: calc(100vw - 40px);
+      }
+  
+      .checkoutpage-placeorder {
+        box-sizing: border-box;
+        width: calc(100vw - 40px);
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .checkoutpage {
+    padding-bottom: 50px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 80px;
+      background: $grey-light;
+    }
+  
+    .checkoutpage-content {
+      @include flex-column-center-x;
+      margin-top: 30px;
+  
+      .checkoutpage-shippingform {
+        box-sizing: border-box;
+        width: calc(100vw - 50px);
+      }
+  
+      .checkoutpage-placeorder {
+        box-sizing: border-box;
+        width: calc(100vw - 50px);
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .checkoutpage {
+    padding-bottom: 50px;
+  
+    .stepper-wrapper {
+      @include flex-center;
+      height: 80px;
+      background: $grey-light;
+    }
+  
+    .checkoutpage-content {
+      @include flex-center-x;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 30px;
+      padding: 0px 30px;
+  
+      .checkoutpage-shippingform {
+        box-sizing: border-box;
+        width: 60vw;
+        max-width: 650px;
+      }
+  
+      .checkoutpage-placeorder {
+        box-sizing: border-box;
+        margin-left: 60px;
+        width: 32vw;
+        max-width: 400px;
+      }
+    }
+  }
+}

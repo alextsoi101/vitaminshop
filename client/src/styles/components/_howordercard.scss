@@ -1,0 +1,108 @@
+.howordercard {
+  @include flex-column-center-x;
+  position: relative;
+  margin-top: 70px;
+  width: 550px;
+
+  .stepnumber {
+    @include flex-center;
+    @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+    position: absolute;
+    left: 100px;
+    width: 40px;
+    height: 40px;
+    background: $yellow;
+    border-radius: 100px;
+  }
+
+  img {
+    width: 125px;
+    height: 125px;
+  }
+
+  h3 {
+    margin-top: 24px;
+    color: $text-white;
+  }
+
+  .card-description {
+    @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+    margin-top: 24px;
+    width: 500px;
+    text-align: center;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .howordercard {
+    @include flex-column-center-x;
+    position: relative;
+    margin-top: 70px;
+    width: 80vw;
+  
+    .stepnumber {
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+      position: absolute;
+      left: 100px;
+      width: 28px;
+      height: 28px;
+      background: $yellow;
+      border-radius: 100px;
+    }
+  
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  
+    h3 {
+      margin-top: 24px;
+      color: $text-white;
+    }
+  
+    .card-description {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .howordercard {
+    @include flex-column-center-x;
+    position: relative;
+    margin-top: 70px;
+    width: 550px;
+  
+    .stepnumber {
+      @include flex-center;
+      @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+      position: absolute;
+      left: 100px;
+      width: 40px;
+      height: 40px;
+      background: $yellow;
+      border-radius: 100px;
+    }
+  
+    img {
+      width: 125px;
+      height: 125px;
+    }
+  
+    h3 {
+      margin-top: 24px;
+      color: $text-white;
+    }
+  
+    .card-description {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-light);
+      margin-top: 24px;
+      width: 500px;
+      text-align: center;
+    }
+  }
+}

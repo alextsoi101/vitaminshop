@@ -1,0 +1,160 @@
+
+
+@media (min-width: $layout-breakpoint-xs) {
+  .orderstepper {
+    @include flex-center;
+  
+    .step-connector-none {
+      display: none;
+    }
+  
+    .step {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $white;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        display: none;
+      }
+  
+      .step-connector {
+        width: 5vw;
+        border-top: 1px solid $border-grey;
+        margin: 0px 12px;
+      }
+    }
+  
+    .step-active {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $green-dark;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-left: 8px;
+      }
+  
+      .step-connector {
+        width: 5vw;
+        border-top: 1px solid $border-green-dark;
+        margin: 0px 12px;
+      }
+    }
+  
+    .step-complete {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $grey-green;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        display: none;
+      }
+  
+      .step-connector {
+        width: 5vw;
+        border-top: 1px solid $border-green-dark;
+        margin: 0px 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .orderstepper {
+    @include flex-center;
+  
+    .step-connector-none {
+      display: none;
+    }
+  
+    .step {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $white;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        display: block;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        margin-left: 8px;
+      }
+  
+      .step-connector {
+        width: 75px;
+        border-top: 1px solid $border-grey;
+        margin: 0px 16px;
+      }
+    }
+  
+    .step-active {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $green-dark;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        display: block;
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-left: 8px;
+      }
+  
+      .step-connector {
+        width: 75px;
+        border-top: 1px solid $border-green-dark;
+        margin: 0px 16px;
+      }
+    }
+  
+    .step-complete {
+      @include flex-center-y;
+  
+      .step-icon-wrapper {
+        @include flex-center;
+        width: 30px;
+        height: 30px;
+        background: $grey-green;
+        border-radius: 100px;
+      }
+  
+      .step-text {
+        display: block;
+        @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+        margin-left: 8px;
+      }
+  
+      .step-connector {
+        width: 75px;
+        border-top: 1px solid $border-green-dark;
+        margin: 0px 16px;
+      }
+    }
+  }
+}

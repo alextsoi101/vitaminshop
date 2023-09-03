@@ -1,0 +1,366 @@
+.addreview {
+  @include flex-column;
+  padding: 24px;
+  border: 1px solid $border-grey;
+  border-radius: 16px;
+
+  .maintext {
+    @include font-size($font-size-md, $font-weight-regular, $text-dark-black);
+  }
+
+  .add-rating {
+    @include flex-column;
+    margin-top: 24px;
+
+    .add-rating-text {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+
+      span {
+        color: $text-red;
+      }
+    }
+
+    .rating {
+      margin-top: 5px;
+    }
+  }
+
+  .write-name {
+    @include flex-column;
+    margin-top: 16px;
+
+    .your-name-text {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+
+      span {
+        color: $text-red;
+      }
+    }
+
+    input {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 8px;
+      padding: 8px 16px;
+      width: 400px;
+      border: 1px solid $border-grey;
+      border-radius: 8px;
+      outline: none;
+      resize: vertical;
+      overflow: hidden;
+
+      &::placeholder {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey);
+      }
+    }
+  }
+
+  .write-review {
+    @include flex-column;
+    margin-top: 20px;
+
+    .your-review-text {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+
+      span {
+        color: $text-red;
+      }
+    }
+
+    textarea {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 8px;
+      min-height: 100px;
+      max-height: 200px;
+      padding: 16px;
+      border: 1px solid $border-grey;
+      border-radius: 8px;
+      outline: none;
+      resize: vertical;
+      overflow: hidden;
+
+      &::placeholder {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey);
+      }
+    }
+  }
+
+  .review-status {
+    margin-top: 10px;
+
+    .reviewadded {
+      @include font-size($font-size-sm, $font-weight-medium, $text-green);
+    }
+
+    .reviewerror {
+      @include font-size($font-size-sm, $font-weight-regular, $text-red);
+    }
+  }
+
+  .submit-btn {
+    @include buttonbase;
+    @include font-size($font-size-rg, $font-weight-medium, $text-white);
+    margin-top: 12px;
+    width: 137px;
+    height: 56px;
+  }
+
+  .review-nologin {
+    @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+    margin-top: 10px;
+
+    span {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green);
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .addreview {
+    @include flex-column;
+    padding: 24px;
+    border: 1px solid $border-grey;
+    border-radius: 16px;
+  
+    .maintext {
+      @include font-size($font-size-md, $font-weight-regular, $text-dark-black);
+    }
+  
+    .add-rating {
+      @include flex-column;
+      margin-top: 24px;
+  
+      .add-rating-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      .rating {
+        margin-top: 5px;
+      }
+    }
+  
+    .write-name {
+      @include flex-column;
+      margin-top: 16px;
+  
+      .your-name-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      input {
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+        margin-top: 8px;
+        padding: 8px 16px;
+        width: auto;
+        border: 1px solid $border-grey;
+        border-radius: 8px;
+        outline: none;
+        resize: vertical;
+        overflow: hidden;
+  
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-light, $text-grey);
+        }
+      }
+    }
+  
+    .write-review {
+      @include flex-column;
+      margin-top: 20px;
+  
+      .your-review-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      textarea {
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+        margin-top: 8px;
+        min-height: 100px;
+        max-height: 200px;
+        padding: 16px;
+        border: 1px solid $border-grey;
+        border-radius: 8px;
+        outline: none;
+        resize: vertical;
+        overflow: hidden;
+  
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-light, $text-grey);
+        }
+      }
+    }
+  
+    .review-status {
+      margin-top: 10px;
+  
+      .reviewadded {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+      }
+  
+      .reviewerror {
+        @include font-size($font-size-sm, $font-weight-regular, $text-red);
+      }
+    }
+  
+    .submit-btn {
+      @include buttonbase;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      margin-top: 12px;
+      width: 137px;
+      height: 56px;
+    }
+  
+    .review-nologin {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 10px;
+  
+      span {
+        @include font-size($font-size-rg, $font-weight-medium, $text-green);
+        cursor: pointer;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .addreview {
+    @include flex-column;
+    padding: 24px;
+    border: 1px solid $border-grey;
+    border-radius: 16px;
+  
+    .maintext {
+      @include font-size($font-size-md, $font-weight-regular, $text-dark-black);
+    }
+  
+    .add-rating {
+      @include flex-column;
+      margin-top: 24px;
+  
+      .add-rating-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      .rating {
+        margin-top: 5px;
+      }
+    }
+  
+    .write-name {
+      @include flex-column;
+      margin-top: 16px;
+  
+      .your-name-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      input {
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+        margin-top: 8px;
+        padding: 8px 16px;
+        width: 400px;
+        border: 1px solid $border-grey;
+        border-radius: 8px;
+        outline: none;
+        resize: vertical;
+        overflow: hidden;
+  
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-light, $text-grey);
+        }
+      }
+    }
+  
+    .write-review {
+      @include flex-column;
+      margin-top: 20px;
+  
+      .your-review-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+  
+        span {
+          color: $text-red;
+        }
+      }
+  
+      textarea {
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+        margin-top: 8px;
+        min-height: 100px;
+        max-height: 200px;
+        padding: 16px;
+        border: 1px solid $border-grey;
+        border-radius: 8px;
+        outline: none;
+        resize: vertical;
+        overflow: hidden;
+  
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-light, $text-grey);
+        }
+      }
+    }
+  
+    .review-status {
+      margin-top: 10px;
+  
+      .reviewadded {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+      }
+  
+      .reviewerror {
+        @include font-size($font-size-sm, $font-weight-regular, $text-red);
+      }
+    }
+  
+    .submit-btn {
+      @include buttonbase;
+      @include font-size($font-size-rg, $font-weight-medium, $text-white);
+      margin-top: 12px;
+      width: 137px;
+      height: 56px;
+    }
+  
+    .review-nologin {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 10px;
+  
+      span {
+        @include font-size($font-size-rg, $font-weight-medium, $text-green);
+        cursor: pointer;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

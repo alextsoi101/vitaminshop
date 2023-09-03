@@ -1,0 +1,78 @@
+.advantagecard {
+  box-sizing: border-box;
+  margin-top: 40px;
+  padding: 32px;
+  width: 360px;
+  background: $white;
+  border: 1px solid $border-grey-light;
+  border-radius: 12px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  h3 {
+    margin-top: 32px;
+    color: $text-dark;
+  }
+
+  .advantage-description {
+    @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .advantagecard {
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding: 32px;
+    width: auto;
+    background: $white;
+    border: 1px solid $border-grey-light;
+    border-radius: 12px;
+  
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    h3 {
+      margin-top: 16px;
+      color: $text-dark;
+    }
+  
+    .advantage-description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .advantagecard {
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding: 32px;
+    width: 360px;
+    background: $white;
+    border: 1px solid $border-grey-light;
+    border-radius: 12px;
+  
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    h3 {
+      margin-top: 32px;
+      color: $text-dark;
+    }
+  
+    .advantage-description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      margin-top: 16px;
+    }
+  }
+}

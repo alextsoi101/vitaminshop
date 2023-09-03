@@ -1,0 +1,158 @@
+.shopbenefits {
+  @include flex-center;
+  gap: 95px;
+  height: 90px;
+  background: $grey-light;
+
+  .vertical-divider {
+    width: 1px;
+    height: 40px;
+    background: $hr-grey-dark; 
+  }
+
+  .benefit {
+    @include flex-center-y;
+
+    .benefit-img {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      background: $white;
+      border-radius: 100px;
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .description {
+      @include font-size($font-size-lg, $font-weight-medium, $text-dark);
+      margin-left: 15px;
+    } 
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .shopbenefits {
+    display: none;
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .shopbenefits {
+    @include flex-center;
+    gap: 6vw;
+    height: 85px;
+    background: $grey-light;
+  
+    .vertical-divider {
+      width: 1px;
+      height: 50px;
+      background: $hr-grey-dark; 
+    }
+  
+    .benefit {
+      @include flex-column-center-x;
+  
+      .benefit-img {
+        @include flex-center;
+        width: 36px;
+        height: 36px;
+        background: $white;
+        border-radius: 100px;
+  
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+  
+      .description {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        display: flex;
+        width: 90px;
+        margin-left: 0px;
+        text-align: center;
+      } 
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .shopbenefits {
+    @include flex-center;
+    gap: 2vw;
+    height: 90px;
+    background: $grey-light;
+  
+    .vertical-divider {
+      width: 1px;
+      height: 40px;
+      background: $hr-grey-dark; 
+    }
+  
+    .benefit {
+      @include flex-center-y;
+      flex-direction: row;
+  
+      .benefit-img {
+        @include flex-center;
+        width: 48px;
+        height: 48px;
+        background: $white;
+        border-radius: 100px;
+  
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+  
+      .description {
+        @include font-size($font-size-rg, $font-weight-medium, $text-dark);
+        margin-left: 10px;
+        width: auto;
+        text-align: center;
+      } 
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .shopbenefits {
+    @include flex-center;
+    gap: 5vw;
+    height: 90px;
+    background: $grey-light;
+  
+    .vertical-divider {
+      width: 1px;
+      height: 40px;
+      background: $hr-grey-dark; 
+    }
+  
+    .benefit {
+      @include flex-center-y;
+      flex-direction: row;
+  
+      .benefit-img {
+        @include flex-center;
+        width: 48px;
+        height: 48px;
+        background: $white;
+        border-radius: 100px;
+  
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+  
+      .description {
+        @include font-size($font-size-lg, $font-weight-medium, $text-dark);
+        margin-left: 15px;
+      } 
+    }
+  }
+}

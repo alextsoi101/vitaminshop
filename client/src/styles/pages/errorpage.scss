@@ -1,0 +1,107 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .errorpage {
+    @include flex-column-center-x;
+    width: 100vw;
+    height: 400px;
+
+    h1 {
+      @include font-size($font-size-xxxl, $font-weight-semibold, $text-dark-black);
+      margin-top: 50px;
+    }
+
+    h2 {
+      @include font-size($font-size-xl, $font-weight-semibold, $text-dark);
+    }
+
+    .errorinfo {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 10px;
+      text-align: center;
+      max-width: 90vw;
+    }
+
+    .text-continueshopping {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green);
+      margin-top: 10px;
+      text-decoration: underline;
+
+      &:active {
+        color: $text-green-light;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .errorpage {
+    @include flex-column-center-x;
+    width: 100vw;
+    height: 500px;
+
+    h1 {
+      @include font-size(88px, $font-weight-semibold, $text-dark-black);
+      margin-top: 50px;
+    }
+
+    h2 {
+      @include font-size($font-size-xxl, $font-weight-semibold, $text-dark);
+    }
+
+    .errorinfo {
+      @include font-size($font-size-lg, $font-weight-regular, $text-dark);
+      margin-top: 10px;
+      text-align: center;
+      max-width: 90vw;
+    }
+
+    .text-continueshopping {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green);
+      margin-top: 10px;
+      text-decoration: underline;
+
+      &:active {
+        color: $text-green-light;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .errorpage {
+    @include flex-column-center-x;
+    width: 100vw;
+    height: 500px;
+
+    h1 {
+      @include font-size(88px, $font-weight-semibold, $text-dark-black);
+      margin-top: 50px;
+    }
+
+    h2 {
+      @include font-size($font-size-xxl, $font-weight-semibold, $text-dark);
+    }
+
+    .errorinfo {
+      @include font-size($font-size-lg, $font-weight-regular, $text-dark);
+      margin-top: 10px;
+      text-align: center;
+      max-width: 90vw;
+    }
+
+    .text-continueshopping {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green);
+      margin-top: 10px;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $text-green-light;
+      }
+    }
+  }
+}

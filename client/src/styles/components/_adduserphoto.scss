@@ -1,0 +1,155 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .adduserphoto {
+    margin-top: 10px;
+  
+    .profilephototext {
+      @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+    }
+  
+    .image-input {
+      @include flex-center-y;
+      margin-top: 5px;
+      padding: 5px 10px;
+      border: 1px solid $border-grey-semilight;
+      border-radius: 5px;
+  
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+        border: 1px solid $border-grey-light;
+      }
+  
+      .label-info {
+        margin-left: 15px;
+  
+        .file-label {
+          @include flex-center;
+          @include font-size($font-size-xs, $font-weight-regular, $text-white);
+          width: 110px;
+          height: 25px;
+          border: none;
+          border-radius: 3px;
+          background: #3bb54a;
+          padding: 0px 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: #009245;
+          }
+        }
+  
+        .remove-button {
+          @include flex-center;
+          @include font-size($font-size-xs, $font-weight-regular, $text-white);
+          margin-top: 8px;
+          width: 70px;
+          height: 25px;
+          border: none;
+          border-radius: 3px;
+          background: #f75a41;
+          padding: 0px 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: #a72e2a;
+          }
+        }
+  
+        .filename {
+          @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+          margin-top: 4px;
+        }
+  
+        .file-error {
+          @include font-size($font-size-sm, $font-weight-light, $text-red);
+          margin-top: 4px;
+        }
+  
+        .file-input {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .adduserphoto {
+    margin-top: 15px;
+  
+    .profilephototext {
+      @include font-size($font-size-sm, $font-weight-semibold, $text-dark-black);
+    }
+  
+    .image-input {
+      @include flex-center-y;
+      margin-top: 5px;
+      padding: 10px 15px;
+      border: 1px solid $border-grey-semilight;
+      border-radius: 5px;
+  
+      img {
+        width: 130px;
+        height: 130px;
+        border-radius: 100px;
+        border: 1px solid $border-grey-light;
+      }
+  
+      .label-info {
+        margin-left: 15px;
+  
+        .file-label {
+          @include flex-center;
+          @include font-size($font-size-sm, $font-weight-regular, $text-white);
+          width: 130px;
+          height: 30px;
+          border: none;
+          border-radius: 3px;
+          background: #3bb54a;
+          padding: 0px 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: #009245;
+          }
+        }
+  
+        .cancel-button {
+          @include flex-center;
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin-top: 8px;
+          width: 75px;
+          height: 25px;
+          border: none;
+          border-radius: 3px;
+          background: #f75a41;
+          padding: 0px 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+  
+          &:hover {
+            background: #a72e2a;
+          }
+        }
+  
+        .filename {
+          @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+          margin-top: 4px;
+        }
+  
+        .file-error {
+          @include font-size($font-size-sm, $font-weight-light, $text-red);
+          margin-top: 4px;
+        }
+  
+        .file-input {
+          display: none;
+        }
+      }
+    }
+  }
+}

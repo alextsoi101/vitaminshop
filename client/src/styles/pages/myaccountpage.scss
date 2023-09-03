@@ -1,0 +1,139 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Modal
+@import '../modal/_myaccountmenumodal';
+
+// Components
+@import '../components/_accountmenu';
+@import '../components/_myaccountheader';
+@import '../components/_accountdetails';
+@import '../components/_accountform';
+@import '../components/_changepasswordform';
+@import '../components/_adduserphoto';
+@import '../components/_myaccountinput';
+@import '../components/_myaccountpasswordinput';
+@import '../components/_accountorders';
+@import '../components/_accountaddresses';
+@import '../components/_addshippingaddress';
+@import '../components/_accountordercard';
+@import '../components/_orderedproductcard';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .myaccountpage {
+    padding: 0px 0px 50px;
+  
+    .main-content {
+      display: flex;
+      margin-top: 20px;
+      padding: 0px 20px;
+  
+      .accountmenu-wrapper {
+        display: none;
+      }
+  
+      .content {
+        margin-left: 0px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .myaccountpage {
+    padding: 0px 0px 50px;
+
+    .myaccount-h2 {
+      @include flex-center-y;
+      padding: 10px 20px;
+      border-bottom: 1px solid $border-grey;
+    
+      h2 {
+        color: $dark;
+        font-size: $font-size-md;
+      }
+    }
+  
+    .main-content {
+      display: flex;
+      margin-top: 20px;
+      padding: 0px 25px;
+  
+      .accountmenu-wrapper {
+        display: none;
+      }
+  
+      .content {
+        margin-left: 0px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .myaccountpage {
+    padding: 0px 0px 100px;
+
+    .myaccount-h2 {
+      @include flex-center-y;
+      padding: 10px 30px;
+      border-bottom: 1px solid $border-grey;
+    
+      h2 {
+        color: $dark;
+        font-size: $font-size-md;
+      }
+    }
+  
+    .main-content {
+      display: flex;
+      margin-top: 20px;
+      padding: 0px 25px;
+  
+      .accountmenu-wrapper {
+        display: none;
+      }
+  
+      .content {
+        margin-left: 0px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .myaccountpage {
+    padding: 50px 100px 100px;
+  
+    .myaccount-h2 {
+      @include flex-center-y;
+      padding: 0px;
+      border-bottom: none;
+    
+      h2 {
+        color: $dark;
+        font-size: 46px;
+      }
+    }
+  
+    .main-content {
+      display: flex;
+      margin-top: 30px;
+      padding: 0px;
+  
+      .accountmenu-wrapper {
+        display: block;
+        width: 220px;
+      }
+  
+      .content {
+        margin-left: 70px;
+        width: calc(100% - 290px);
+      }
+    }
+  }
+}

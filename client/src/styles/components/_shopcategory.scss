@@ -1,0 +1,29 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .shopcategory {
+
+    h2 {
+      color: $dark;
+      font-size: $font-size-lg;
+    }
+    
+    .description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .shopcategory {
+
+    h2 {
+      color: $dark;
+      font-size: $font-size-xxl;
+    }
+    
+    .description {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey);
+      margin-top: 8px;
+    }
+  }
+}

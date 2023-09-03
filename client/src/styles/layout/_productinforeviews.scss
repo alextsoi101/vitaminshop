@@ -1,0 +1,150 @@
+.productinforeviews {
+  width: 100%;
+  
+  .buttons {
+    @include flex-center;
+    gap: 50px;
+
+    button {
+      @include flex-center;
+      box-sizing: border-box;
+      width: 294px;
+      height: 48px;
+      border-radius: 100px;
+    }
+
+    .btn-default {
+      @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+      background-color: $white;
+      border: 1px solid $border-grey;
+      transition: border 0.2s;
+
+      &:hover {
+        background: $grey-lightest;
+        border: 1px solid $border-grey;
+      }
+
+      span {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        margin-left: 8px;
+      }
+    } 
+
+    .btn-active {
+      @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+      background: $grey-light;
+      border: 1px solid $border-green-dark;
+
+      span {
+        @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .description-reviews-container {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productinforeviews {
+    width: 100%;
+    
+    .buttons {
+      @include flex-center;
+      gap: 20px;
+  
+      button {
+        @include flex-center;
+        box-sizing: border-box;
+        width: 120px;
+        height: 32px;
+        border-radius: 100px;
+      }
+  
+      .btn-default {
+        @include font-size($font-size-xs, $font-weight-regular, $text-grey-dark);
+        background-color: $white;
+        border: 1px solid $border-grey;
+        transition: border 0.2s;
+  
+        &:hover {
+          background: $grey-lightest;
+          border: 1px solid $border-grey;
+        }
+  
+        span {
+          @include font-size($font-size-xs, $font-weight-regular, $text-grey-light);
+          margin-left: 8px;
+        }
+      } 
+  
+      .btn-active {
+        @include font-size($font-size-xs, $font-weight-medium, $text-green-dark);
+        background: $grey-light;
+        border: 1px solid $border-green-dark;
+  
+        span {
+          @include font-size($font-size-xs, $font-weight-regular, $text-green-dark);
+          margin-left: 8px;
+        }
+      }
+    }
+  
+    .description-reviews-container {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .productinforeviews {
+    width: 100%;
+    
+    .buttons {
+      @include flex-center;
+      gap: 50px;
+  
+      button {
+        @include flex-center;
+        box-sizing: border-box;
+        width: 294px;
+        height: 48px;
+        border-radius: 100px;
+      }
+  
+      .btn-default {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+        background-color: $white;
+        border: 1px solid $border-grey;
+        transition: border 0.2s;
+  
+        &:hover {
+          background: $grey-lightest;
+          border: 1px solid $border-grey;
+        }
+  
+        span {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+          margin-left: 8px;
+        }
+      } 
+  
+      .btn-active {
+        @include font-size($font-size-rg, $font-weight-medium, $text-green-dark);
+        background: $grey-light;
+        border: 1px solid $border-green-dark;
+  
+        span {
+          @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+          margin-left: 8px;
+        }
+      }
+    }
+  
+    .description-reviews-container {
+      margin-top: 30px;
+    }
+  }
+}

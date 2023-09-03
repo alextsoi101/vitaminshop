@@ -1,0 +1,77 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .searchform {
+    @include flex-center-x;
+    padding: 10px 0px;
+  
+    input {
+      @include font-size($font-size-rg, $font-weight-light, $text-dark);
+      box-sizing: border-box;
+      width: calc(100vw - 70px);
+      padding-left: 20px;
+      outline: none;
+      border: none;
+      border-radius: 100px;
+      background: $grey-light;
+    }
+  
+    button {
+      @include buttonbase;
+      margin-left: 5px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .searchform {
+    @include flex-center-x;
+    padding: 12px 0px;
+  
+    input {
+      @include font-size($font-size-rg, $font-weight-light, $text-dark);
+      box-sizing: border-box;
+      width: calc(100vw - 100px);
+      padding-left: 20px;
+      outline: none;
+      border: none;
+      border-radius: 100px;
+      background: $grey-light;
+    }
+  
+    button {
+      @include buttonbase;
+      margin-left: 5px;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .searchform {
+    @include flex-center-x;
+    padding: 0px;
+  
+    input {
+      @include font-size($font-size-rg, $font-weight-light, $text-dark);
+      box-sizing: border-box;
+      width: 400px;
+      padding-left: 20px;
+      outline: none;
+      border: none;
+      border-radius: 100px;
+      background: $grey-light;
+    }
+  
+    button {
+      @include buttonbase;
+      margin-left: 5px;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+    }
+  }
+}

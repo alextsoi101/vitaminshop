@@ -1,0 +1,44 @@
+.productreviewcard {
+  @include flex-column;
+  padding: 24px;
+  gap: 16px;
+  border: 1px solid $border-grey-light;
+  border-radius: 16px;
+
+  .user-info {
+    @include flex-center-y;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .user-name {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-left: 16px;
+    }
+
+    .divider {
+      @include font-size($font-size-rg, $font-weight-light, $text-grey-light);
+      margin: 0px 16px;
+    }
+
+    .review-date {
+      @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+    }
+  }
+
+  .horizontal-divider {
+    height: 1px;
+    background: $grey-light;
+  }
+
+  .review-info {
+    //------
+
+    .review-text {
+      @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+      margin-top: 16px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.producteffects {
+  @include flex-column;
+  gap: 20px;
+  padding: 19px 22px;
+  border: 1px solid $border-grey-light;
+  border-radius: 12px;
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .producteffects {
+    @include flex-column;
+    gap: 20px;
+    padding: 19px 20px;
+    border: 1px solid $border-grey-light;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .producteffects {
+    @include flex-column;
+    gap: 20px;
+    padding: 19px 22px;
+    border: 1px solid $border-grey-light;
+    border-radius: 12px;
+  }
+}
+

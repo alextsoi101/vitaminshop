@@ -1,0 +1,10 @@
+.navlinkmobile {
+  @include flex-center-y;
+  @include font-size($font-size-rg, $font-weight-light, $text-dark-black);
+  height: 36px;
+  transition: 0.2s;
+
+  &:active {
+    @include font-size($font-size-rg, $font-weight-light, $text-green-light);
+  }
+}

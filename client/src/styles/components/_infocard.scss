@@ -1,0 +1,187 @@
+.infocard {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  width: 275px;
+  height: 556px;
+  background: $green-dark;
+  border-radius: 16px;
+
+  img {
+    width: 122px;
+    height: 122px;
+  }
+
+  .infocard-text {
+    @include flex-column-center-x;
+  }
+
+  .info-maintext {
+    @include font-size($font-size-lg, $font-weight-medium, $text-white);
+    margin-top: 24px;
+  }
+
+  .info-description {
+    @include font-size($font-size-sm, $font-weight-regular, $text-white);
+    margin-top: 8px;
+    width: 230px;
+    text-align: center;
+  }
+
+  .info-link {
+    @include font-size($font-size-rg, $font-weight-regular, $text-green);
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .infocard {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 50px);
+    max-width: 334px;
+    height: auto;
+    background: $green-dark;
+    border-radius: 16px;
+    padding: 30px 0px;
+  
+    img {
+      width: 122px;
+      height: 122px;
+    }
+  
+    .info-maintext {
+      @include font-size($font-size-lg, $font-weight-medium, $text-white);
+      margin-top: 24px;
+    }
+  
+    .info-description {
+      @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      margin-top: 8px;
+      width: 230px;
+      text-align: center;
+    }
+  
+    .info-link {
+      @include font-size($font-size-rg, $font-weight-regular, $text-green);
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .infocard {
+    @include flex-center-y;
+    flex-direction: row;
+    gap: 50px;
+    width: calc(100vw - 50px);
+    max-width: 800px;
+    height: auto;
+    background: $green-dark;
+    border-radius: 16px;
+    padding: 30px 0px;
+  
+    img {
+      width: 122px;
+      height: 122px;
+    }
+  
+    .info-maintext {
+      @include font-size($font-size-lg, $font-weight-medium, $text-white);
+      margin-top: 24px;
+    }
+  
+    .info-description {
+      @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      margin-top: 8px;
+      width: 230px;
+      text-align: center;
+    }
+  
+    .info-link {
+      @include font-size($font-size-rg, $font-weight-regular, $text-green);
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .infocard {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    max-width: 220px;
+    height: 400px;
+    background: $green-dark;
+    border-radius: 16px;
+    padding: 30px 0px;
+  
+    img {
+      width: 122px;
+      height: 122px;
+    }
+  
+    .info-maintext {
+      @include font-size($font-size-lg, $font-weight-medium, $text-white);
+      margin-top: 24px;
+    }
+  
+    .info-description {
+      @include font-size($font-size-sm, $font-weight-light, $text-grey-light);
+      margin-top: 8px;
+      width: 210px;
+      text-align: center;
+    }
+  
+    .info-link {
+      @include font-size($font-size-rg, $font-weight-regular, $text-green);
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .infocard {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    width: 255px;
+    height: 550px;
+    padding: 0px;
+    background: $green-dark;
+    border-radius: 16px;
+  
+    img {
+      width: 122px;
+      height: 122px;
+    }
+  
+    .infocard-text {
+      @include flex-column-center-x;
+    }
+  
+    .info-maintext {
+      @include font-size($font-size-lg, $font-weight-medium, $text-white);
+      margin-top: 24px;
+    }
+  
+    .info-description {
+      @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      margin-top: 8px;
+      width: 230px;
+      text-align: center;
+    }
+  
+    .info-link {
+      @include font-size($font-size-rg, $font-weight-regular, $text-green);
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+  }
+}

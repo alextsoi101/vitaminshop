@@ -1,0 +1,65 @@
+.filterbyprice {
+ display: block;
+
+  .maintext {
+    @include font-size($font-size-rg, $font-weight-light, $text-grey);
+    letter-spacing: 1px;
+  }
+
+  .slider {
+    margin-top: 20px;
+
+    .slider-values {
+      display: flex;
+      justify-content: space-between;
+
+      .input-container {
+        box-sizing: border-box;
+        padding: 2px 0px;
+        width: 80px;
+        background: $grey-semilight;
+        border-radius: 100px;
+
+        span {
+          margin-left: 10px;
+        }
+      }
+
+      input {
+        @include font-size($font-size-rg, $font-weight-regular, $text-dark-black);
+        box-sizing: border-box;
+        width: 60px;
+        padding: 0px 10px 0px 1px;
+        background: transparent;
+        border-radius: 0px 100px 100px 0px;
+        border: none;
+        outline: none;
+        pointer-events: none;
+
+        &::placeholder {
+          color: $text-dark-black;
+          opacity: 1;
+        }
+        
+        &:-ms-input-placeholder {
+          color: $text-dark-black;
+        }
+        
+        &::-ms-input-placeholder {
+          color: $text-dark-black;
+        }
+      }
+    }
+
+    .priceslider {
+      @include flex-center-x;
+    }
+  }
+
+  button {
+    @include buttonbase;
+    margin: 15px 0 0 0;
+    width: 100px;
+    height: 40px;
+  }
+}

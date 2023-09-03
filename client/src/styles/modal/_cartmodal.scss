@@ -1,0 +1,290 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .cartmodal {
+    @include flex-column;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 80vh;
+    padding: 28px 24px;
+    background: $white;
+    border-radius: 24px 24px 0px 0px;
+  
+    .cartmodal-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-grey-med;
+  
+      .maintext {
+        @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+      }
+  
+      .close-modal-btn {
+        @include flex-center;
+        padding: 2px;
+        background: none;
+        border: 1px solid transparent;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        &:hover {
+          background: $grey-semilight;
+        }
+  
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .cartmodal-cards {
+      min-height: 40vh;
+      max-height: 45vh;
+      overflow: auto;
+    }
+  
+    .cartmodal-total {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .total-text {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      }
+      .total-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+    }
+  
+    .button-section {
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .link-to {
+        display: inline-block;
+        border-radius: 100px;
+    
+        .checkout-btn {
+          @include buttonbase;
+          @include font-size($font-size-rg, $font-weight-regular, $text-white);
+          padding: 10px 20px;
+      
+          span {
+            @include font-size($font-size-sm, $font-weight-light, $text-white);
+            margin: 0px 16px;
+            opacity: 50%
+          }
+        }
+      }
+    }
+  
+    .payment-info {
+      margin-top: 10px;
+      padding-bottom: 10px;
+  
+      .payment-info-text {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey);
+        letter-spacing: 1px;
+      }
+  
+      .payment-info-methods {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .cartmodal {
+    @include flex-column;
+    box-sizing: border-box;
+    width: 85vw;
+    height: auto;
+    padding: 32px 24px;
+    background: $white;
+    border-radius: 0px;
+  
+    .cartmodal-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-grey-med;
+  
+      .maintext {
+        @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+      }
+  
+      .close-modal-btn {
+        @include flex-center;
+        padding: 2px;
+        background: none;
+        border: 1px solid transparent;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        &:hover {
+          background: $grey-semilight;
+        }
+  
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .cartmodal-cards {
+      min-height: 50vh;
+      max-height: 50vh;
+      overflow: auto;
+    }
+  
+    .cartmodal-total {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .total-text {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+      }
+      .total-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+    }
+  
+    .button-section {
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .link-to {
+        display: inline-block;
+        border-radius: 100px;
+    
+        .checkout-btn {
+          @include buttonbase;
+          @include font-size($font-size-rg, $font-weight-regular, $text-white);
+          padding: 10px 20px;
+      
+          span {
+            @include font-size($font-size-sm, $font-weight-light, $text-white);
+            margin: 0px 16px;
+            opacity: 50%
+          }
+        }
+      }
+    }
+  
+    .payment-info {
+      margin-top: 10px;
+      padding-bottom: 10px;
+  
+      .payment-info-text {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey);
+        letter-spacing: 1px;
+      }
+  
+      .payment-info-methods {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .cartmodal {
+    @include flex-column;
+    box-sizing: border-box;
+    width: 560px;
+    height: auto;
+    padding: 32px 24px;
+    background: $white;
+    border-radius: 0px;
+  
+    .cartmodal-header {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-grey-med;
+  
+      .maintext {
+        @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+      }
+  
+      .close-modal-btn {
+        @include flex-center;
+        padding: 2px;
+        background: none;
+        border: 1px solid transparent;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        &:hover {
+          background: $grey-semilight;
+        }
+  
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .cartmodal-cards {
+      min-height: 50vh;
+      max-height: 50vh;
+      overflow: auto;
+    }
+  
+    .cartmodal-total {
+      @include flex-center-y;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .total-text {
+        @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+      }
+      .total-price {
+        @include font-size($font-size-lg, $font-weight-medium, $text-red);
+      }
+    }
+  
+    .button-section {
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey-light;
+  
+      .link-to {
+        display: inline-block;
+        border-radius: 100px;
+    
+        .checkout-btn {
+          @include buttonbase;
+          @include font-size($font-size-rg, $font-weight-regular, $text-white);
+          padding: 15px 40px;
+      
+          span {
+            @include font-size($font-size-sm, $font-weight-light, $text-white);
+            margin: 0px 16px;
+            opacity: 50%
+          }
+        }
+      }
+    }
+  
+    .payment-info {
+      margin-top: 10px;
+      padding-bottom: 0px;
+  
+      .payment-info-text {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey);
+        letter-spacing: 1px;
+      }
+  
+      .payment-info-methods {
+        margin-top: 16px;
+      }
+    }
+  }
+}

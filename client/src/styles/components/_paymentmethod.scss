@@ -1,0 +1,12 @@
+.paymentmethod {
+  @include flex-center;
+  width: 55px;
+  height: 30px;
+  border: 1px solid $border-grey-light;
+  border-radius: 6px;
+
+  img {
+    max-width: 40px;
+    max-height: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .shopfiltermodal {
+    box-sizing: border-box;
+    width: 80vw;
+    max-width: 300px;
+    padding: 20px;
+
+    .close-btn {
+      @include flex-center;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 0px;
+      color: $text-dark;
+      background: none;
+      border: none;
+      border-radius: 100px;
+      transition: all 0.2s;
+  
+      &:active {
+        color: $text-red;
+      }
+    }
+  }
+}

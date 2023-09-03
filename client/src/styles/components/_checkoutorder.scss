@@ -1,0 +1,247 @@
+.checkoutcard {
+  @include flex-column;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid $grey-light;
+  border-radius: 16px;
+
+  hr {
+    border-top: 1px solid $hr-grey-light;
+  }
+
+  .checkoutcard-items {
+    @include flex-column;
+    gap: 12px;
+
+    .checkoutcard-item {
+      display: flex;
+      justify-content: space-between;
+
+      .item-name {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+      }
+      .item-value {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      }
+
+      .oldtotalprice {
+        @include font-size($font-size-sm, $font-weight-regular, $text-red);
+        margin-right: 10px;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .link-to {
+    display: inline-block;
+    border-radius: 100px;
+
+    .checkout-btn {
+      @include buttonbase;
+      @include font-size($font-size-rg, $font-weight-regular, $text-white);
+      height: 54px;
+      width: 100%;
+  
+      span {
+        @include font-size($font-size-sm, $font-weight-light, $text-white);
+        margin: 0px 16px;
+        opacity: 50%
+      }
+    }
+  }
+
+  .btn-disabled {
+    @include font-size($font-size-rg, $font-weight-regular, $text-white);
+    background: $btn-disabled-grey;
+    border: none;
+    border-radius: 100px;
+    height: 54px;
+    width: 100%;
+    cursor: default;
+
+    span {
+      @include font-size($font-size-sm, $font-weight-light, $text-white);
+      margin: 0px 16px;
+      opacity: 50%
+    }
+  }
+
+  .payment-info {
+
+    .payment-info-text {
+      @include font-size($font-size-xs, $font-weight-light, $text-grey);
+      letter-spacing: 1px;
+    }
+
+    .payment-info-methods {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .checkoutcard {
+    @include flex-column;
+    gap: 20px;
+    padding: 22px;
+    border: 1px solid $grey-light;
+    border-radius: 16px;
+  
+    hr {
+      border-top: 1px solid $hr-grey-light;
+    }
+  
+    .checkoutcard-items {
+      @include flex-column;
+      gap: 12px;
+  
+      .checkoutcard-item {
+        display: flex;
+        justify-content: space-between;
+  
+        .item-name {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        }
+        .item-value {
+          @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        }
+  
+        .oldtotalprice {
+          @include font-size($font-size-sm, $font-weight-regular, $text-red);
+          margin-right: 10px;
+          text-decoration: line-through;
+        }
+      }
+    }
+  
+    .link-to {
+      display: inline-block;
+      border-radius: 100px;
+  
+      .checkout-btn {
+        @include buttonbase;
+        @include font-size($font-size-rg, $font-weight-regular, $text-white);
+        height: 48px;
+        width: 100%;
+    
+        span {
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin: 0px 16px;
+          opacity: 50%
+        }
+      }
+    }
+  
+    .btn-disabled {
+      @include font-size($font-size-rg, $font-weight-regular, $text-white);
+      background: $btn-disabled-grey;
+      border: none;
+      border-radius: 100px;
+      height: 48px;
+      width: 100%;
+      cursor: default;
+  
+      span {
+        @include font-size($font-size-sm, $font-weight-light, $text-white);
+        margin: 0px 16px;
+        opacity: 50%
+      }
+    }
+  
+    .payment-info {
+  
+      .payment-info-text {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey);
+        letter-spacing: 1px;
+      }
+  
+      .payment-info-methods {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .checkoutcard {
+    @include flex-column;
+    gap: 20px;
+    padding: 22px;
+    border: 1px solid $grey-light;
+    border-radius: 16px;
+  
+    hr {
+      border-top: 1px solid $hr-grey-light;
+    }
+  
+    .checkoutcard-items {
+      @include flex-column;
+      gap: 12px;
+  
+      .checkoutcard-item {
+        display: flex;
+        justify-content: space-between;
+  
+        .item-name {
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
+        }
+        .item-value {
+          @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        }
+  
+        .oldtotalprice {
+          @include font-size($font-size-sm, $font-weight-regular, $text-red);
+          margin-right: 10px;
+          text-decoration: line-through;
+        }
+      }
+    }
+  
+    .link-to {
+      @include flex-center-x;
+      display: inline-block;
+      border-radius: 100px;
+  
+      .checkout-btn {
+        @include buttonbase;
+        @include font-size($font-size-rg, $font-weight-regular, $text-white);
+        height: 54px;
+        width: 100%;
+    
+        span {
+          @include font-size($font-size-sm, $font-weight-light, $text-white);
+          margin: 0px 16px;
+          opacity: 50%
+        }
+      }
+    }
+  
+    .btn-disabled {
+      @include font-size($font-size-rg, $font-weight-regular, $text-white);
+      background: $btn-disabled-grey;
+      border: none;
+      border-radius: 100px;
+      height: 54px;
+      width: 100%;
+      cursor: default;
+  
+      span {
+        @include font-size($font-size-sm, $font-weight-light, $text-white);
+        margin: 0px 16px;
+        opacity: 50%
+      }
+    }
+  
+    .payment-info {
+  
+      .payment-info-text {
+        @include font-size($font-size-xs, $font-weight-light, $text-grey);
+        letter-spacing: 1px;
+      }
+  
+      .payment-info-methods {
+        margin-top: 16px;
+      }
+    }
+  }
+}

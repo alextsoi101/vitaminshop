@@ -1,0 +1,144 @@
+@media (min-width: $layout-breakpoint-xs) {
+  header {
+    position: sticky;
+    top: 0;
+    background: $white;
+    z-index: 20;
+
+    .header-content {
+      @include flex-center-y;
+      justify-content: space-between;
+      height: 50px;
+      padding: 0px 0px 0px 10px;
+
+      .logo-wrapper {
+        @include flex-center;
+        gap: 8px;
+  
+        .navmobile-btn {
+          @include flex-center;
+          @include font-size($font-size-lg, $font-weight-regular, $text-grey-dark);
+          border: none;
+          padding: 0px;
+          background: none;
+        }
+
+        .header-logo {
+          width: 120px;
+          height: auto;
+        }
+      }
+  
+      .search-wrapper {
+        display: none;
+      }
+
+      .logintoggle-cart {
+        @include flex-center;
+      }
+    }
+  
+    .search-section-mobile {
+      @include flex-center-x;
+      width: 100vw;
+      border-top: $border-grey-light 1px solid;
+      border-bottom: $border-grey-light 1px solid;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  header {
+    position: sticky;
+    top: 0;
+    background: $white;
+    z-index: 20;
+
+    .header-content {
+      @include flex-center-y;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0px 14px 0px 24px;
+  
+      .logo-wrapper {
+        @include flex-center;
+        gap: 8px;
+  
+        .navmobile-btn {
+          @include flex-center;
+          @include font-size($font-size-xxxl, $font-weight-regular, $text-dark);
+          border: none;
+          padding: 0px;
+          background: none;
+        }
+
+        .header-logo {
+          width: 180px;
+          height: auto;
+        }
+      }
+  
+      .search-wrapper {
+        display: none;
+      }
+
+      .logintoggle-cart {
+        @include flex-center;
+      }
+    }
+
+    .search-section-mobile {
+      @include flex-center-x;
+      width: 100vw;
+      border-top: $border-grey-light 1px solid;
+      border-bottom: $border-grey-light 1px solid;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  header {
+    position: static;
+
+    .header-content {
+      @include flex-center-y;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0px 64px;
+  
+      .logo-wrapper {
+        @include flex-center;
+        gap: 8px;
+  
+        .navmobile-btn {
+          display: none;
+        }
+
+        .header-logo {
+          width: 180px;
+          height: auto;
+          cursor: pointer;
+        }
+      }
+  
+      .search-wrapper {
+        @include flex-center-y;
+        height: 100%;
+        align-self: flex-start;
+        margin-top: 13px;
+      }
+
+      .logintoggle-cart {
+        @include flex-center;
+      }
+
+      .cartbtn-wrapper {
+        display: none;
+      }
+    }
+
+    .search-section-mobile {
+      display: none;
+    }
+  }
+}

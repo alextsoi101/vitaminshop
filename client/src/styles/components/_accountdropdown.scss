@@ -1,0 +1,387 @@
+// .account-dropdown {
+//   @include flex-column;
+//   position: relative;
+//   height: 100%;
+//   z-index: 100;
+//   padding: 0px;
+//   cursor: pointer;
+
+//   &:hover .account-menu {
+//     visibility: visible;
+//     transform: scale(1);
+//     transition: transform 0.2s;
+//     transform-origin: right top;
+//   }
+
+//   &:hover .myacc-text{
+//     color: $text-green !important;
+//   }
+
+//   &:hover .image-wrapper {
+//     border: 1px solid $green !important;
+//   }
+
+//   .dropdown-toggle {
+//     @include flex-center;
+//     padding: 0px;
+//     background: none;
+//     border: none;
+//     border-radius: 10px;
+//     cursor: pointer;
+//     height: 100%;
+
+//     .myacc-text {
+//       @include font-size($font-size-rg, $font-weight-regular, $text-dark);
+//       margin-right: 10px;
+//       transition: all 0.2s;
+//     }
+
+//     .image-wrapper {
+//       @include flex-center;
+//       padding: 2px;
+//       border: 1px solid $white;
+//       border-radius: 100px;
+//       transition: all 0.2s;
+
+//       img {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 100px;
+//       }
+//     }
+//   }
+
+//   .account-menu {
+//     @include flex-column;
+//     position: absolute;
+//     min-width: 180px;
+//     right: 0px;
+//     box-sizing: border-box;
+//     padding: 5px 15px 10px;
+//     visibility: hidden;
+//     background: $white;
+//     border: 1px solid $border-grey-light;
+//     border-top: none;
+//     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.09);
+//     cursor: default;
+//     transform: scale(0.94);
+//     transition: transform 0.2s;
+    
+//     .link {
+//       @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+//       @include flex-center-y;
+//       padding: 8px 0px;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       transition: color 0.2s;
+        
+//       &:hover {
+//         color: $text-green-light;
+//       }
+
+//       .logout {
+
+//         &:hover  {
+//           color: $text-red;
+//         }
+//       } 
+
+//       span {
+//         margin-left: 5px;
+//       }
+//     }
+
+//     .logout {
+//       @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+//       @include flex-center-y;
+//       padding: 8px 0px;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       transition: color 0.2s;
+        
+//       &:hover {
+//         color: $text-red;
+//       }
+
+//       span {
+//         margin-left: 5px;
+//       }
+//     }
+
+//     .name {
+//       @include font-size($font-size-md, $font-weight-regular, $text-dark);
+//       padding: 0px 0px;
+//       cursor: pointer;
+//       transition: color 0.2s;
+
+//       &:hover {
+//         @include font-size($font-size-md, $font-weight-regular, $text-green);
+//       }
+//     }
+//     .email {
+//       @include font-size($font-size-sm, $font-weight-light, $text-grey);
+//       margin-bottom: 10px;
+//       padding: 0px 0px 10px;
+//       border-bottom: 1px solid $border-grey;
+//       cursor: pointer;
+//       transition: color 0.2s;
+
+//       &:hover {
+//         @include font-size($font-size-sm, $font-weight-light, $text-green-light);
+//       }
+//     }
+//   }
+// }
+
+@media (min-width: $layout-breakpoint-xs) {
+  .account-dropdown {
+    @include flex-column;
+    position: relative;
+    height: 100%;
+    z-index: 100;
+    padding: 0px;
+    cursor: pointer;
+  
+    &:hover .account-menu {
+      visibility: hidden;
+    }
+  
+    &:active .myacc-text{
+      color: $text-green !important;
+    }
+  
+    &:active .image-wrapper {
+      border: 1px solid $green !important;
+    }
+  
+    .dropdown-toggle {
+      @include flex-center;
+      padding: 0px;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      height: 100%;
+  
+      .myacc-text {
+        display: none;
+      }
+  
+      .image-wrapper {
+        @include flex-center;
+        padding: 2px;
+        border: 1px solid $white;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        img {
+          width: 34px;
+          height: 34px;
+          border-radius: 100px;
+        }
+      }
+    }
+  
+    .account-menu {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .account-dropdown {
+    @include flex-column;
+    position: relative;
+    height: 100%;
+    z-index: 100;
+    padding: 0px;
+    cursor: pointer;
+  
+    &:active .account-menu {
+      visibility: hidden;
+    }
+  
+    &:active .myacc-text{
+      color: $text-green !important;
+    }
+  
+    &:active .image-wrapper {
+      border: 1px solid $green !important;
+    }
+  
+    .dropdown-toggle {
+      @include flex-center;
+      padding: 0px;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      height: 100%;
+  
+      .myacc-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+        display: flex;
+        margin-right: 10px;
+        transition: all 0.2s;
+      }
+  
+      .image-wrapper {
+        @include flex-center;
+        padding: 2px;
+        border: 1px solid $white;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 100px;
+        }
+      }
+    }
+  
+    .account-menu {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+
+  .account-dropdown {
+    @include flex-column;
+    position: relative;
+    height: 100%;
+    z-index: 100;
+    padding: 0px;
+    cursor: pointer;
+  
+    &:hover .account-menu {
+      visibility: visible;
+      transform: scale(1);
+      transition: transform 0.2s;
+      transform-origin: right top;
+    }
+  
+    &:hover .myacc-text{
+      color: $text-green !important;
+    }
+  
+    &:hover .image-wrapper {
+      border: 1px solid $green !important;
+    }
+  
+    .dropdown-toggle {
+      @include flex-center;
+      padding: 0px;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      height: 100%;
+  
+      .myacc-text {
+        @include font-size($font-size-rg, $font-weight-regular, $text-grey-dark);
+        display: flex;
+        margin-right: 10px;
+        transition: all 0.2s;
+      }
+  
+      .image-wrapper {
+        @include flex-center;
+        padding: 2px;
+        border: 1px solid $white;
+        border-radius: 100px;
+        transition: all 0.2s;
+  
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 100px;
+        }
+      }
+    }
+  
+    .account-menu {
+      @include flex-column;
+      position: absolute;
+      min-width: 180px;
+      right: 0px;
+      box-sizing: border-box;
+      padding: 5px 15px 10px;
+      visibility: hidden;
+      background: $white;
+      border: 1px solid $border-grey-light;
+      border-top: none;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.09);
+      cursor: default;
+      transform: scale(0.94);
+      transition: transform 0.2s;
+      
+      .link {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        @include flex-center-y;
+        padding: 8px 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: color 0.2s;
+          
+        &:hover {
+          color: $text-green-light;
+        }
+  
+        .logout {
+  
+          &:hover  {
+            color: $text-red;
+          }
+        } 
+  
+        span {
+          margin-left: 5px;
+        }
+      }
+  
+      .logout {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        @include flex-center-y;
+        padding: 8px 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: color 0.2s;
+          
+        &:hover {
+          color: $text-red;
+        }
+  
+        span {
+          margin-left: 5px;
+        }
+      }
+  
+      .name {
+        @include font-size($font-size-md, $font-weight-regular, $text-dark);
+        padding: 0px 0px;
+        min-height: 10px;
+        cursor: pointer;
+        transition: color 0.2s;
+  
+        &:hover {
+          @include font-size($font-size-md, $font-weight-regular, $text-green);
+        }
+      }
+      .email {
+        @include font-size($font-size-sm, $font-weight-light, $text-grey);
+        margin-bottom: 10px;
+        padding: 0px 0px 10px;
+        border-bottom: 1px solid $border-grey;
+        cursor: pointer;
+        transition: color 0.2s;
+  
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-light, $text-green-light);
+        }
+      }
+    }
+  }
+}

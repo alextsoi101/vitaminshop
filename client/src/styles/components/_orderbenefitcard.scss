@@ -1,0 +1,24 @@
+.orderbenefitcard {
+  @include flex-column;
+	gap: 15px;
+	width: 200px;
+	padding: 16px;
+	border: 1px solid $border-grey-light;
+	border-radius: 16px;
+
+	.image-wrapper {
+		@include flex-center;
+		width: 46px;
+		height: 46px;
+		background: $grey-med;
+		border-radius: 100px;
+	}
+
+	.maintext {
+		@include font-size($font-size-rg, $font-weight-medium, $text-dark);
+	}
+
+	.description {
+		@include font-size($font-size-rg, $font-weight-regular, $text-grey);
+	}
+}

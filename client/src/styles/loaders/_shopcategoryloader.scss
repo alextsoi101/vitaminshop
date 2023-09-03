@@ -1,0 +1,31 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .shopcategoryloader {
+
+    .loader-categoryname {
+      width: 180px;
+      height: 20px;
+    }
+    
+    .loader-categorydescription {
+      margin-top: 8px;
+      width: 90%;
+      height: 30px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+  .shopcategoryloader {
+
+    .loader-categoryname {
+      width: 200px;
+      height: 30px;
+    }
+    
+    .loader-categorydescription {
+      margin-top: 8px;
+      width: 90%;
+      height: 40px;
+    }
+  }
+}
