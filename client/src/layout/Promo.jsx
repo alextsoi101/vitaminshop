@@ -14,7 +14,7 @@ const Promo = () => {
   const expirationDate = promo ? promo.expirationDate : null;
 
   useEffect(() => {
-    dispatch(loadPromo('VITAMIN20'))
+    dispatch(loadPromo('VITAMIN30'))
   }, [])
 
   if (isLoading) return
