@@ -35,7 +35,6 @@ const CartProduct = sequelize.define('cart_product', {
   selectedSize: {type: DataTypes.STRING, allowNull: false},
   price: {type: DataTypes.INTEGER, allowNull: false},
   totalPrice: {type: DataTypes.INTEGER, allowNull: false},
-  updatedAt: false,
 })
 
 const Product = sequelize.define('product', {
