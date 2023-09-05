@@ -54,6 +54,11 @@ class promoController {
     if (!promocode) {
       return next(ApiError.internal('Promocode cannot be null'))
     }
+    if (typeof promocode !== 'string') {
+      return next(ApiError.internal('Promocode is not a string'))
+    }
+
+    promocode = promocode.toLowerCase();
 
     try {
       const promo = await PromoService.getOne(promocode)
