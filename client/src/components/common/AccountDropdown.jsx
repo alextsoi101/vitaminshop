@@ -31,7 +31,7 @@ const AccountDropdown = () => {
       >
         <div className="myacc-text">My account</div>
         <div className="image-wrapper">
-          <img src={userImage ? process.env.REACT_APP_API_URL + userImage : defaultphoto} alt="userphoto" />
+          <img src={userImage ? userImage : defaultphoto} alt="userphoto" />
         </div>
       </button>
       <div className="dropdown-container">

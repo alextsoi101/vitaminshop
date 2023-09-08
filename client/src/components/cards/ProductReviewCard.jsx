@@ -11,7 +11,7 @@ const ProductReviewCard = (props) => {
   return (
     <div className="productreviewcard">
       <div className="user-info">
-        <img src={process.env.REACT_APP_API_URL + props.image} alt="userphoto" />
+        <img src={props.image} alt="userphoto" />
         <span className="user-name">{capitalise(props.name)}</span>
         <span className="divider">|</span>
         <span className="review-date">{reviewDate}</span>

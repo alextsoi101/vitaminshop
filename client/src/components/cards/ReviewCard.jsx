@@ -10,7 +10,7 @@ const ReviewCard = (props) => {
   return (
     <div className="reviewcard">
       <div className="user-info">
-        <img src={process.env.REACT_APP_API_URL + props.image} alt="userphoto" />
+        <img src={props.image} alt="userphoto" />
         <div className="user-name">{capitalise(props.name)}</div>
       </div>
       <hr />

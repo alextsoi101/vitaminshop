@@ -8,7 +8,7 @@ const AddUserPhoto = ({setImageFile, setRemoveImage}) => {
 
   useEffect(() => {
     if (userImage) {
-      setImageUrl(process.env.REACT_APP_API_URL + userImage)
+      setImageUrl(userImage)
     } else {
       setImageUrl(null)
     }
