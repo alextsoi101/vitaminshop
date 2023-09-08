@@ -73,9 +73,9 @@ class UserService {
     return updatedUser
   }
 
-  async updateUserImage(userId, filename) {
+  async updateUserImage(userId, imageurl) {
     await User.update(
-      {image: filename}, 
+      {image: imageurl}, 
       {where: {id: userId}} 
     )
     return filename

@@ -140,12 +140,29 @@ class UserController {
       return next(ApiError.internal('Allowed extensions: JPG, JPEG, PNG'))
     }
 
-    let filename = uuid.v4() + '.' + fileExt;
-    img.mv(path.resolve(__dirname, '..', 'static', filename))
+    const imgBuffer = req.files.userImage.data;
+    const imgBase64 = imgBuffer.toString('base64');
+
+    const formData = new FormData();
+    formData.append("key", process.env.IMAGE_HOSTING_API_KEY);
+    formData.append("source", imgBase64);
+    formData.append("format", "json");
+
+    const {data} = await axios.post(process.env.IMAGE_API_UPLOAD_URL, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      }
+    })
+
+    if (data.status_code !== 200) {
+      return next(ApiError.internal(data.error.message))
+    }
+
+    let imageurl = data.image.url;
 
     try {
-      const newFilename = await UserService.updateUserImage(userId, filename)
-      return res.json(newFilename)
+      const newImageUrl = await UserService.updateUserImage(userId, imageurl)
+      return res.json(newImageUrl)
     } catch (error) {
       return next(error)
     }
