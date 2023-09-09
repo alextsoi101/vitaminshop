@@ -7,7 +7,7 @@ const OrderedProductCard = (props) => {
     <div className="orderedproductcard">
 
       <div className="product-image">
-        <img src={process.env.REACT_APP_API_URL + props.image} alt='productimage' />
+        <img src={props.image} alt='productimage' />
       </div>
 
       <div className="product-info">

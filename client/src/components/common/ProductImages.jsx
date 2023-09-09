@@ -10,9 +10,9 @@ export default function ProductImages() {
   const imageGallery = [];
 
   productImages.forEach(image => {
-    imageGallery.push(process.env.REACT_APP_API_URL + image)
+    imageGallery.push(image)
     indicators.push(
-      <img width="48px" src={process.env.REACT_APP_API_URL + image} />
+      <img width="48px" src={image} />
     )
   })
 

@@ -62,7 +62,7 @@ const ProductCard = (props) => {
         className="productcard-img"
         onClick={goToProductPage}
       >
-        <img src={process.env.REACT_APP_API_URL + props.productimage} alt="productimage" />
+        <img src={props.productimage} alt="productimage" />
       </div>
 
       <div className="productcard-info">

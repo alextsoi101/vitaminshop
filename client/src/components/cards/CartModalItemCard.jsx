@@ -22,7 +22,7 @@ const CartModalItemCard = (props) => {
     <div className="cartmodalitemcard">
 
       <div className="cartmodalitem-image">
-        <img src={process.env.REACT_APP_API_URL + props.image} alt='productimage' />
+        <img src={props.image} alt='productimage' />
       </div>
 
       <div className="cartmodalitem-info">
