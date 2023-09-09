@@ -1,6 +1,4 @@
 const ApiError = require('../error/ApiError');
-const uuid = require('uuid');
-const path = require('path');
 const UserService = require('../services/user-service');
 const { validateEmail } = require('../helpers/validateEmail');
 
