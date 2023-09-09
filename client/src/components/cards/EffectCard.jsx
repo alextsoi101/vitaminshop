@@ -1,6 +1,15 @@
 import React from 'react';
 
 const EffectCard = (props) => {
+  let effects;
+  let effectsText;
+  if (typeof props.text === 'object') {
+    effects = Object.values(props.text);
+    effectsText = effects.join(', ');
+  } else {
+    effectsText = props.text;
+  }
+
   return (
     <div className="effectcard">
       <div className="card-image">
@@ -8,7 +17,7 @@ const EffectCard = (props) => {
       </div>
       <div className="card-info">
         <div className="info-maintext">{props.maintext}</div>
-        <div className="info-text">{props.text}</div>
+        <div className="info-text">{effectsText}</div>
       </div>
     </div>
   )
