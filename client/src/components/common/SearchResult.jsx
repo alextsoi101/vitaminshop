@@ -16,7 +16,7 @@ const SearchResult = (props) => {
       onClick={clickSearchResult}
     >
       <div className="img-wrapper">
-        <img src={process.env.REACT_APP_API_URL + props.image} alt="productimg" className="resultimg" />
+        <img src={props.image} alt="productimg" className="resultimg" />
       </div>
       <div className="result-text">
         <div className="result-name">
