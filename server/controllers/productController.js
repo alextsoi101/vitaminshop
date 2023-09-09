@@ -1,7 +1,5 @@
 const ApiError = require('../error/ApiError');
 const {Product} = require('../db/models/models');
-const uuid = require('uuid');
-const path = require('path');
 const ProductService = require('../services/product-service');
 
 class ProductController {
@@ -60,7 +58,9 @@ class ProductController {
     let images = []
     let allowedExtensions = ['jpg', 'png', 'jpeg'];
 
-    imagesArray.forEach((img) => {
+    for (let i = 0; i < imagesArray.length; i++) {
+      let img = imagesArray[i];
+
       let fileNameParts = img.name.split('.');
       let fileExt = fileNameParts[fileNameParts.length - 1];
 
@@ -68,10 +68,27 @@ class ProductController {
         return next(ApiError.internal('Allowed extensions: JPG, JPEG, PNG'))
       }
 
-      let fileName = uuid.v4() + '.' + fileExt;
-      images.push(fileName)
-      img.mv(path.resolve(__dirname, '..', 'static', fileName))
-    })
+      let imgBuffer = img.data;
+      let imgBase64 = imgBuffer.toString('base64');
+
+      let formData = new FormData();
+      formData.append("key", "6d207e02198a847aa98d0a2a901485a5");
+      formData.append("source", imgBase64);
+      formData.append("format", "json");
+
+      let {data} = await axios.post('https://freeimage.host/api/1/upload', formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      })
+
+      if (data.status_code !== 200) {
+        return next(ApiError.internal(data.error.message))
+      }
+
+      let imageurl = data.image.url;
+      images.push(imageurl)
+    }
 
     sizes = sizes.split(',')
     effects = effects.split(',')
