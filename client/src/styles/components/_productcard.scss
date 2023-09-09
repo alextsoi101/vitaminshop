@@ -6,13 +6,13 @@
     .productcard-img {
       @include flex-center;
       height: 160px;
-      background: $product-image-bg-grey;
+      background: $white;
       border-radius: 8px;
       cursor: pointer;
   
       img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         transition: 0.2s;
       }
   
@@ -121,13 +121,13 @@
     .productcard-img {
       @include flex-center;
       height: 230px;
-      background: $product-image-bg-grey;
+      background: $white;
       border-radius: 8px;
       cursor: pointer;
   
       img {
-        width: 165px;
-        height: 165px;
+        width: 200px;
+        height: 200px;
         transition: 0.2s;
       }
   
@@ -236,13 +236,13 @@
     .productcard-img {
       @include flex-center;
       height: 230px;
-      background: $product-image-bg-grey;
+      background: $white;
       border-radius: 8px;
       cursor: pointer;
   
       img {
-        width: 165px;
-        height: 165px;
+        width: 200px;
+        height: 200px;
         transition: 0.2s;
       }
   
