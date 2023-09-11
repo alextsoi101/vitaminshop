@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import OutOfStock from '../UI/OutOfStock';
 import star from '../../assets/icons/star.svg';
 import ButtonLoader from '../loaders/ButtonLoader';
 import { capitalise } from '../../utils/capitaliseFirstLetter';
@@ -24,6 +25,7 @@ const ProductCard = (props) => {
 
   const handleAddProduct = () => {
     if (isLoading) return
+    if (!props.instock) return
     if (!selectedSize) {
       setSelectSizeError('error')
       dispatch(openErrorSnackbar('Select product size'))
@@ -50,6 +52,7 @@ const ProductCard = (props) => {
     setSelectSizeError(null)
 
     if (size === selectedSize) {
+      if (!props.instock) return
       setSelectedSize(null)
     } else {
       setSelectedSize(size)
@@ -59,9 +62,10 @@ const ProductCard = (props) => {
   return (
     <div className="productcard">
       <div 
-        className="productcard-img"
+        className={props.instock ? "productcard-img" : "outofstock-productcard-img"}
         onClick={goToProductPage}
       >
+        {props.instock ? "" : <OutOfStock />}
         <img src={props.productimage} alt="productimage" />
       </div>
 
@@ -102,7 +106,7 @@ const ProductCard = (props) => {
           {props.sizes.map((size, index) =>
             <button 
               key={index}
-              className="product-size"
+              className={props.instock ? "product-size" : "disabled-product-size"}
               onClick={() => selectSize(size)}
               style={ selectSizeError 
                 ? {borderColor: '#EB2606'}
@@ -115,7 +119,7 @@ const ProductCard = (props) => {
         </div>
 
         <button 
-          className="product-btn"
+          className={props.instock ? "product-btn" : "disabled-product-btn"}
           onClick={handleAddProduct}
         >
           {isLoading ? <ButtonLoader /> : <div>Add to Cart</div>}
