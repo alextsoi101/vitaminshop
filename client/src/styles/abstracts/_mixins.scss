@@ -77,3 +77,12 @@
   }
 }
 
+@mixin disabled-buttonbase {
+  color: $white;
+  background: $btn-disabled-grey;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+  cursor: default;
+}
+
