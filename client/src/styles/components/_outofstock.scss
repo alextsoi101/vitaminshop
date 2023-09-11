@@ -1,0 +1,27 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .outofstock {
+    @include flex-center;
+    @include font-size($font-size-sm, $font-weight-regular, $text-white);
+    position: absolute;
+    padding: 0px 24px;
+    height: 48px;
+    background: rgba(26, 30, 38, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    z-index: 5;
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .outofstock {
+    @include flex-center;
+    @include font-size($font-size-sm, $font-weight-regular, $text-white);
+    position: absolute;
+    padding: 0px 32px;
+    height: 64px;
+    background: rgba(26, 30, 38, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    z-index: 5;
+  }
+}
