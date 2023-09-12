@@ -261,7 +261,7 @@
           @include font-size($font-size-xs, $font-weight-regular, $text-dark);
           padding: 5px 10px 5px 10px;
           margin: 0px 4px 0px 4px;
-          background: none;
+          background: $grey-light;
           border: $border-grey 1px solid;
           border-radius: 4px;
           cursor: default;
@@ -405,7 +405,7 @@
           @include font-size($font-size-xs, $font-weight-regular, $text-dark);
           padding: 5px 10px 5px 10px;
           margin: 0px 4px 0px 4px;
-          background: none;
+          background: $grey-light;
           border: $border-grey 1px solid;
           border-radius: 4px;
           cursor: default;
