@@ -31,6 +31,7 @@ const BestSellers = (props) => {
                   categories={product.categories}
                   price={product.price}
                   sizes={product.sizes}
+                  instock={product.instock}
                 />
               )
             }
