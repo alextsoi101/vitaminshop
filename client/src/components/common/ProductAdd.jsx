@@ -5,7 +5,7 @@ import ButtonLoader from '../loaders/ButtonLoader';
 import checkicon from '../../assets/icons/check.svg';
 import { setProductCount, setTotalPrice } from '../../store/productSlice';
 import { addProductToCart, localAddProductToCart } from '../../store/cartSlice';
-import { openSuccessSnackbar, openErrorSnackbar } from '../../store/modalSlice';
+import { openSuccessSnackbar } from '../../store/modalSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const ProductAdd = () => {
@@ -19,7 +19,7 @@ const ProductAdd = () => {
   const selectedSize = useSelector(state => state.product.selectedSize);
   const productCount = useSelector(state => state.product.productCount);
   const productName = useSelector(state => state.product.productName);
-  const inStock = useSelector(state => state.product.inStock);
+  const instock = useSelector(state => state.product.instock);
   const isLoading = useSelector(state => state.user.isAddToCartLoading);
   const {id} = useParams();
 
@@ -38,6 +38,7 @@ const ProductAdd = () => {
   }
 
   const addToCart = () => {
+    if (!instock) return
     if (isLogin) {
       dispatch(addProductToCart({userId, productId: id, selectedSize, count: productCount}))
         .then(data => {
@@ -73,10 +74,12 @@ const ProductAdd = () => {
             decreaseCount={decreaseCount}
           />
           <div className="divider"></div>
-          <div className="instock">{inStock ? 'In Stock' : 'Out of Stock'}</div>
+          <div className={instock ? "instock" : "instock-false"}>
+            {instock ? 'In Stock' : 'Out of Stock'}
+          </div>
         </div>
         <button 
-          className="button-add" 
+          className={instock ? "button-add" : "button-add-disabled"}
           onClick={addToCart}
         >
           { isLoading ? <ButtonLoader /> : 
@@ -106,7 +109,6 @@ const ProductAdd = () => {
         </div>
       </div>
 
-      
     </div>
   )
 }

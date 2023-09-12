@@ -21,7 +21,7 @@ const initialState = {
   selectedRating: 0,
   reviews: [],
   reviewsCount: 0,
-  inStock: true,
+  instock: true,
   reviewAddedText: null,
   reviewError: null,
   featuredProducts: [],
@@ -116,7 +116,7 @@ const productSlice = createSlice({
         state.selectedSize = action.payload.sizes[0]
         state.description = action.payload.description;
         state.shortDescription = action.payload.shortDescription;
-        state.inStock = action.payload.inStock;
+        state.instock = action.payload.instock;
         state.isLoading = false;
       })
       .addCase(loadOneProduct.rejected, (state, action) => {
