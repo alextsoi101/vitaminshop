@@ -1,0 +1,88 @@
+@mixin center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin center-x {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-y {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-center-x {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-column-center-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin font-size ($font-size, $font-weight, $color, $line-height: 150%) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+}
+
+@mixin buttonbase {
+  color: $white;
+  background: $btn-green;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $btn-green-hover;
+  }
+}
+
+@mixin disabled-buttonbase {
+  color: $white;
+  background: $btn-disabled-grey;
+  border: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+  cursor: default;
+}
+
