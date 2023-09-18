@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BallotIcon from '@mui/icons-material/Ballot';
 import InventoryIcon from '@mui/icons-material/Inventory';
@@ -11,36 +11,37 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 const AdminNavBar = () => {
 
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState('dashboard');
+  const {pathname} = useLocation();
+  const [currentLocation, setCurrentLocation] = useState(pathname);
 
   const goToDashboard = () => {
-    setCurrentPage('dashboard')
+    setCurrentLocation('/admin')
     navigate('dashboard')
   }
 
   const goToOrders = () => {
-    setCurrentPage('orders')
+    setCurrentLocation('/admin/orders')
     navigate('orders')
   }
 
   const goToProducts = () => {
-    setCurrentPage('products')
+    setCurrentLocation('/admin/products')
     navigate('products')
   }
 
   const goToAddProduct = () => {
-    setCurrentPage('addproduct')
-    navigate('addproduct')
+    setCurrentLocation('/admin/products/new')
+    navigate('products/new')
   }
 
   const goToUserList = () => {
-    setCurrentPage('users')
+    setCurrentLocation('/admin/users')
     navigate('users')
   }
 
   const handleLogout = () => {
-    setCurrentPage('signout')
-    navigate('users')
+    setCurrentLocation('signout')
+    navigate('/')
   }
 
   return (
@@ -51,10 +52,10 @@ const AdminNavBar = () => {
           onClick={goToDashboard}
         >
           <div 
-            className={currentPage === 'dashboard' ? "left-mark" : ""}
+            className={currentLocation === '/admin' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'dashboard' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === '/admin' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <DashboardIcon fontSize='24' />
             </div> 
@@ -66,10 +67,10 @@ const AdminNavBar = () => {
           onClick={goToOrders}
         >
           <div 
-            className={currentPage === 'orders' ? "left-mark" : ""}
+            className={currentLocation === '/admin/orders' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'orders' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === '/admin/orders' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <BallotIcon fontSize='24' />
             </div> 
@@ -81,10 +82,10 @@ const AdminNavBar = () => {
           onClick={goToProducts}
         >
           <div 
-            className={currentPage === 'products' ? "left-mark" : ""}
+            className={currentLocation === '/admin/products' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'products' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === '/admin/products' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <InventoryIcon fontSize='24' />
             </div> 
@@ -96,10 +97,10 @@ const AdminNavBar = () => {
           onClick={goToAddProduct}
         >
           <div 
-            className={currentPage === 'addproduct' ? "left-mark" : ""}
+            className={currentLocation === '/admin/products/new' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'addproduct' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === '/admin/products/new' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <AddBoxIcon fontSize='24' />
             </div> 
@@ -111,10 +112,10 @@ const AdminNavBar = () => {
           onClick={goToUserList}
         >
           <div 
-            className={currentPage === 'users' ? "left-mark" : ""}
+            className={currentLocation === '/admin/users' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'users' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === '/admin/users' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <PeopleAltIcon fontSize='24' />
             </div> 
@@ -126,10 +127,10 @@ const AdminNavBar = () => {
           onClick={handleLogout}
         >
           <div 
-            className={currentPage === 'logout' ? "left-mark" : ""}
+            className={currentLocation === 'logout' ? "left-mark" : ""}
           >
           </div>
-          <div className={currentPage === 'logout' ? "item-content-active" : "item-content"}>
+          <div className={currentLocation === 'logout' ? "item-content-active" : "item-content"}>
             <div className="icon-wrapper">
               <ExitToAppIcon fontSize='24' />
             </div> 
