@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from './utils/ScrollToTop';
 import AppRouter from './routes/AppRouter';
-import AdminRouter from './routes/AdminRouter';
 import AppLoader from './components/loaders/AppLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { userCheck, loadUserInfo, loadUserAddress } from './store/userSlice';
@@ -42,7 +41,6 @@ function App() {
         <BrowserRouter>
           <ScrollToTop />
           <AppRouter />
-          <AdminRouter />
         </BrowserRouter>
     </div>
   );
