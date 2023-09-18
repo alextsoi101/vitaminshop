@@ -1,0 +1,251 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .admindropdown {
+    @include flex-column;
+    align-items: flex-end;
+    position: relative;
+    height: 60px;
+
+    &:hover {
+      .admindropdown-menu {
+        visibility: visible;
+        transform: scale(1);
+        transition: transform 0.2s;
+        transform-origin: right top;
+      }
+    }
+    
+    .admindropdown-toggle {
+      @include flex-center-y;
+      height: 100%;
+      cursor: pointer;
+
+      .text-admin {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        margin-right: 10px;
+      }
+
+      .admin-logo {
+        @include flex-center;
+        color: $text-green-dark;
+        width: 32px;
+        height: 32px;
+        background: $grey-semilight;
+        border: 1px solid $dark;
+        border-radius: 100px;
+      }
+    }
+
+    .admindropdown-menu {
+      position: absolute;
+      min-width: 240px;
+      top: 60px;
+      box-sizing: border-box;
+      padding: 5px 15px 10px;
+      visibility: hidden;
+      background: $white;
+      border: 1px solid $border-grey-light;
+      border-top: none;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.09);
+      cursor: default;
+      transform: scale(0.94);
+      transition: transform 0.2s;
+
+      .hello-text {
+        @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+      }
+
+      .main-text {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        margin-top: 10px;
+
+        .span-test-admin {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+
+        .span-only-view {
+          margin-top: 10px;
+        }
+      }
+
+      .logout-btn {
+        @include font-size($font-size-rg, $font-weight-regular, $text-red);
+        margin-top: 5px;
+        padding: 0px;
+        border: none;
+        background: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+  
+@media (min-width: $layout-breakpoint-rg) {
+  .admindropdown {
+    @include flex-column;
+    align-items: flex-end;
+    position: relative;
+    height: 60px;
+
+    &:hover {
+      .admindropdown-menu {
+        visibility: visible;
+        transform: scale(1);
+        transition: transform 0.2s;
+        transform-origin: right top;
+      }
+    }
+    
+    .admindropdown-toggle {
+      @include flex-center-y;
+      height: 100%;
+      cursor: pointer;
+
+      .text-admin {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        margin-right: 10px;
+      }
+
+      .admin-logo {
+        @include flex-center;
+        color: $text-green-dark;
+        width: 40px;
+        height: 40px;
+        background: $grey-semilight;
+        border: 1px solid $dark;
+        border-radius: 100px;
+      }
+    }
+
+    .admindropdown-menu {
+      position: absolute;
+      min-width: 240px;
+      top: 60px;
+      box-sizing: border-box;
+      padding: 5px 15px 10px;
+      visibility: hidden;
+      background: $white;
+      border: 1px solid $border-grey-light;
+      border-top: none;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.09);
+      cursor: default;
+      transform: scale(0.94);
+      transition: transform 0.2s;
+
+      .hello-text {
+        @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+      }
+
+      .main-text {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        margin-top: 10px;
+
+        .span-test-admin {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+
+        .span-only-view {
+          margin-top: 10px;
+        }
+      }
+
+      .logout-btn {
+        @include font-size($font-size-rg, $font-weight-regular, $text-red);
+        margin-top: 5px;
+        padding: 0px;
+        border: none;
+        background: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+  
+@media (min-width: $layout-breakpoint-md) {
+  .admindropdown {
+    @include flex-column;
+    align-items: flex-end;
+    position: relative;
+    height: 60px;
+
+    &:hover {
+      .admindropdown-menu {
+        visibility: visible;
+        transform: scale(1);
+        transition: transform 0.2s;
+        transform-origin: right top;
+      }
+    }
+    
+    .admindropdown-toggle {
+      @include flex-center-y;
+      height: 100%;
+      cursor: pointer;
+
+      .text-admin {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+        margin-right: 10px;
+      }
+
+      .admin-logo {
+        @include flex-center;
+        color: $text-green-dark;
+        width: 40px;
+        height: 40px;
+        background: $grey-semilight;
+        border: 1px solid $dark;
+        border-radius: 100px;
+      }
+    }
+
+    .admindropdown-menu {
+      position: absolute;
+      min-width: 240px;
+      top: 60px;
+      box-sizing: border-box;
+      padding: 5px 15px 10px;
+      visibility: hidden;
+      background: $white;
+      border: 1px solid $border-grey-light;
+      border-top: none;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.09);
+      cursor: default;
+      transform: scale(0.94);
+      transition: transform 0.2s;
+
+      .hello-text {
+        @include font-size($font-size-rg, $font-weight-medium, $text-dark-black);
+      }
+
+      .main-text {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        margin-top: 10px;
+
+        .span-test-admin {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        }
+
+        .span-only-view {
+          margin-top: 10px;
+        }
+      }
+
+      .logout-btn {
+        @include font-size($font-size-rg, $font-weight-regular, $text-red);
+        margin-top: 5px;
+        padding: 0px;
+        border: none;
+        background: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
