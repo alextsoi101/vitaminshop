@@ -1,0 +1,194 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .adminnavbar {
+    margin-top: 10px;
+    width: 100%;
+
+    .list-item {
+      @include flex-center-y;
+      height: 45px;
+      cursor: pointer;
+
+      .left-mark {
+        height: 39px;
+        width: 4px;
+        background: $green-dark;
+        border-radius: 0px 5px 5px 0px;
+      }
+
+      .item-content {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+        margin-left: 10px;
+        width: 210px;
+        height: 39px;
+        border-radius: 5px;
+        transition: color 0.2s;
+        transition: background-color 0.2s;
+
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+          background: $grey-semilight;
+          transition: background-color 0.2s;
+        }
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+
+      .item-content-active {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
+        margin-left: 6px;
+        width: 210px;
+        height: 39px;
+        background: $grey-light;
+        border-radius: 5px;
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .adminnavbar {
+    margin-top: 10px;
+    width: 100%;
+
+    .list-item {
+      @include flex-center-y;
+      height: 45px;
+      cursor: pointer;
+
+      .left-mark {
+        height: 39px;
+        width: 4px;
+        background: $green-dark;
+        border-radius: 0px 5px 5px 0px;
+      }
+
+      .item-content {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+        margin-left: 10px;
+        width: 210px;
+        height: 39px;
+        border-radius: 5px;
+        transition: color 0.2s;
+        transition: background-color 0.2s;
+
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+          background: $grey-light;
+          transition: background-color 0.2s;
+        }
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+
+      .item-content-active {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
+        margin-left: 6px;
+        width: 210px;
+        height: 39px;
+        background: $grey-semilight;
+        border-radius: 5px;
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .adminnavbar {
+    margin-top: 10px;
+    width: 230px;
+
+    .list-item {
+      @include flex-center-y;
+      height: 45px;
+      cursor: pointer;
+
+      .left-mark {
+        height: 39px;
+        width: 4px;
+        background: $green-dark;
+        border-radius: 0px 5px 5px 0px;
+      }
+
+      .item-content {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+        margin-left: 10px;
+        width: 210px;
+        height: 39px;
+        border-radius: 5px;
+        transition: color 0.2s;
+        transition: background-color 0.2s;
+
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+          background: $grey-semilight;
+          transition: background-color 0.2s;
+        }
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+
+      .item-content-active {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
+        margin-left: 6px;
+        width: 210px;
+        height: 39px;
+        background: $grey-semilight;
+        border-radius: 5px;
+
+        .icon-wrapper {
+          @include flex-center;
+          margin-left: 12px;
+        }
+        
+        span {
+          margin-left: 11px;
+        }
+      }
+    }
+  }
+}
