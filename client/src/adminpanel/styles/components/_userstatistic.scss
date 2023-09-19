@@ -1,0 +1,110 @@
+@media (min-width: $layout-breakpoint-xs) {
+    .userstatistic {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      background: $white;
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+  
+      .userstatistic-header {
+        @include flex-center-y;
+        justify-content: space-between;
+  
+        .userstatistic-header-text {
+          @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
+        }
+  
+        .userstatistic-header-buttons {
+          display: flex;
+          gap: 7px;
+  
+          .range-btn {
+            @include font-size($font-size-xs, $font-weight-light, $text-green);
+            background: none;
+            border: none;
+            padding: 0px;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: $layout-breakpoint-rg) {
+    .userstatistic {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      background: $white;
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+  
+      .userstatistic-header {
+        @include flex-center-y;
+        justify-content: space-between;
+  
+        .userstatistic-header-text {
+          @include font-size(17px, $font-weight-regular, $text-green-dark);
+        }
+  
+        .userstatistic-header-buttons {
+          display: flex;
+          gap: 10px;
+  
+          .range-btn {
+            @include font-size($font-size-sm, $font-weight-light, $text-green);
+            background: none;
+            border: none;
+            padding: 0px;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: $layout-breakpoint-md) {
+    .userstatistic {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      background: $white;
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+  
+      .userstatistic-header {
+        @include flex-center-y;
+        justify-content: space-between;
+  
+        .userstatistic-header-text {
+          @include font-size(17px, $font-weight-regular, $text-green-dark);
+        }
+  
+        .userstatistic-header-buttons {
+          display: flex;
+          gap: 10px;
+  
+          .range-btn {
+            @include font-size($font-size-sm, $font-weight-light, $text-green);
+            background: none;
+            border: none;
+            padding: 0px;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+            
+          }
+        }
+      }
+    }
+  }

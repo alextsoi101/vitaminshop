@@ -1,0 +1,153 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .lifetimestatistic {
+    @include flex-column;
+    justify-content: space-between;
+    width: 100%;
+    background: $white;
+    border: 1px solid $border-grey;
+    border-radius: 10px;
+
+    .lifetime-info {
+      padding: 20px;
+      border-bottom: 1px solid $border-grey;
+
+      .lifetime-sales-text {
+        @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+      }
+
+      .info-list {
+        @include flex-column;
+        margin-top: 20px;
+        gap: 10px;
+
+        .info-list-item {
+          @include flex-center-y;
+
+          .icon-wrapper {
+            color: $text-green;
+          }
+
+          .icon-wrapper-chart-login {
+            color: #84d18c;
+          }
+          .icon-wrapper-chart-anonim {
+            color: $text-green-dark;
+          }
+
+          span {
+            @include font-size($font-size-xs, $font-weight-light, $text-dark);
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    .lifetime-orders-chart {
+      @include flex-center;
+      padding: 20px;
+    }
+  }
+  }
+  
+  @media (min-width: 1100px) {
+    .lifetimestatistic {
+      @include flex-center-y;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      background: $white;
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+
+      .lifetime-info {
+        padding: 20px;
+        border-bottom: 1px solid $border-grey;
+
+        .lifetime-sales-text {
+          @include font-size(17px, $font-weight-regular, $text-green-dark);
+        }
+
+        .info-list {
+          @include flex-column;
+          margin-top: 20px;
+          gap: 10px;
+
+          .info-list-item {
+            @include flex-center-y;
+
+            .icon-wrapper {
+              color: $text-green;
+            }
+
+            .icon-wrapper-chart-login {
+              color: #84d18c;
+            }
+            .icon-wrapper-chart-anonim {
+              color: $text-green-dark;
+            }
+
+            span {
+              @include font-size($font-size-sm, $font-weight-light, $text-dark);
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      .lifetime-orders-chart {
+        @include flex-center;
+        padding: 20px;
+      }
+    }
+  }
+  
+  @media (min-width: $layout-breakpoint-md) {
+    .lifetimestatistic {
+      @include flex-column;
+      width: 100%;
+      background: $white;
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+
+      .lifetime-info {
+        padding: 20px;
+        border-bottom: 1px solid $border-grey;
+
+        .lifetime-sales-text {
+          @include font-size(17px, $font-weight-regular, $text-green-dark);
+        }
+
+        .info-list {
+          @include flex-column;
+          margin-top: 20px;
+          gap: 10px;
+
+          .info-list-item {
+            @include flex-center-y;
+
+            .icon-wrapper {
+              color: $text-green;
+            }
+
+            .icon-wrapper-chart-login {
+              color: #84d18c;
+            }
+            .icon-wrapper-chart-anonim {
+              color: $text-green-dark;
+            }
+
+            span {
+              @include font-size($font-size-sm, $font-weight-light, $text-dark);
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      .lifetime-orders-chart {
+        @include flex-center;
+        height: 50%;
+        padding: 20px;
+      }
+    }
+  }
