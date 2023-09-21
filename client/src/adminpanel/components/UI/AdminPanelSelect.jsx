@@ -14,8 +14,8 @@ const AdminPanelSelect = (props) => {
           onChange={props.onChange}
         >
           {
-            props.options.map(option =>
-              <option>
+            props.options.map((option, index) =>
+              <option key={index}>
                 {option}
               </option>
             )
