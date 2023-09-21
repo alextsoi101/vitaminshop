@@ -21,6 +21,7 @@
     
       .pagecontent-wrapper {
         width: 100%;
+        min-height: 100vh;
       }
     }
   }
@@ -38,6 +39,7 @@
     
       .pagecontent-wrapper {
         width: 100%;
+        min-height: 100vh;
       }
     }
   }
@@ -63,6 +65,7 @@
       .pagecontent-wrapper {
         margin-left: 230px;
         width: calc(100vw - 230px);
+        min-height: 100vh;
       }
     }
   }
