@@ -37,6 +37,7 @@
         @include flex-center-y;
         @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
         padding: 0 10px;
+        white-space: nowrap;
       }
     }
   }
