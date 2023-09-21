@@ -1,0 +1,39 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .categorylistcard {
+      
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .categorylistcard {
+      
+  }
+}
+  
+@media (min-width: $layout-breakpoint-md) {
+  .categorylistcard {
+
+    td {
+      height: 30px;
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey;
+    }
+
+    .td-id {
+      @include font-size($font-size-sm, $font-weight-medium, $text-grey-light);
+    }
+
+    .td-categoryname {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+
+      .td-fullname-text {
+        cursor: pointer;
+        width: auto;
+
+        &:hover {
+        text-decoration: underline;
+        }
+      }
+    }
+  }
+}

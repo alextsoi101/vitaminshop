@@ -1,0 +1,85 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_orderlist';
+@import '../components/_orderlistcard';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .orderlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 40px);
+
+      h2 {
+        @include font-size($font-size-lg, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .orderlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 100px);
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .orderlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      width: calc(100% - 160px);
+      margin-top: 20px;
+
+      .order-list-wrapper {
+        @include flex-center-x;
+        width: 100%;
+        max-width: 1000px;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@media (min-width: $layout-breakpoint-md) {
+  .orderlist {
+    width: 100%;
+    padding: 20px;
+    background: $white;
+    border: 1px solid $border-grey;
+    border-radius: 10px;
+
+    .orderlist-table {
+      border-spacing: 0px;
+
+      .table-header {
+
+        .table-header-tr {
+
+          .th-id {
+            width: 250px;
+          }
+          .th-email {
+            width: 300px;
+          }
+          .th-created-at {
+            width: 300px;
+          }
+          .th-total {
+            width: 50px;
+          }
+
+          .table-header-th {
+            padding-bottom: 20px;
+            border-bottom: 1px solid $border-grey;
+            
+            .th-content {
+              @include flex-column;
+              align-items: flex-start;
+  
+              .th-text {
+                @include font-size($font-size-sm, $font-weight-bold, $text-dark);
+              }
+  
+              .th-input {
+                @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+                box-sizing: border-box;
+                margin-top: 6px;
+                padding: 2px 10px;
+                height: 34px;
+                border: 1px solid $border-grey;
+                border-radius: 5px;
+
+                &::placeholder {
+                  @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+                }
+              }
+              
+              .input-id {
+                width: 100px;
+              }
+              .input-email {
+                width: 150px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .orderlist-pagination {
+      @include flex-center-y;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      .pagination-results-per-page {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+
+        .select-per-page {
+          @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+          box-sizing: border-box;
+          padding: 2px 2px;
+          height: 34px;
+          border: 1px solid $border-grey;
+          border-radius: 5px;
+          outline: none;
+          width: 50px;
+          margin-left: 10px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

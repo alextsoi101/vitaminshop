@@ -1,0 +1,38 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_categorylist';
+@import '../components/_categorylistcard';
+
+@media (min-width: $layout-breakpoint-md) {
+  .categorylistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-lg, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      box-sizing: border-box;
+      width: calc(100% - 160px);
+      margin-top: 10px;
+
+      .category-list-wrapper {
+        @include flex-center-x;
+        width: 100%;
+        max-width: 1000px;
+      }
+    }
+  }
+}

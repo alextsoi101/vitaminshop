@@ -1,0 +1,31 @@
+@media (min-width: $layout-breakpoint-md) {
+  .orderlistcard {
+
+    td {
+      height: 40px;
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey;
+    }
+
+    .td-id {
+      @include font-size($font-size-sm, $font-weight-medium, $text-grey-light);
+    }
+
+    .td-email {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .td-created-at {
+      @include font-size($font-size-sm, $font-weight-light, $text-dark);
+    }
+
+    .td-total {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+    }
+  }
+}
