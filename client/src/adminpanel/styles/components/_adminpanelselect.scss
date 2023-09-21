@@ -1,0 +1,42 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+    
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .adminpanelselect {
+    @include flex-column;
+    gap: 4px;
+    width: 100%;
+
+    .adminpanelselect-label {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+    }
+
+    .select-container {
+      display: flex;
+      padding-right: 10px;
+      border: 1px solid $border-grey;
+      border-radius: 4px;
+
+      .select-field {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+        padding: 0 12px;
+        width: 100%;
+        height: 35px;
+        background: none;
+        border: none;
+        outline: none;
+      }
+  
+      .suffix-field {
+        @include flex-center-y;
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+        padding: 0 10px;
+      }
+    }
+  }
+}
