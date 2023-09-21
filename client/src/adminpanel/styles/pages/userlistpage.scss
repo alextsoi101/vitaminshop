@@ -1,0 +1,86 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_userlist';
+@import '../components/_userlistcard';
+
+
+@media (min-width: $layout-breakpoint-xs) {
+  .userlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+
+      h2 {
+        @include font-size($font-size-lg, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .userlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 100px);
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userlistpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      width: calc(100% - 160px);
+      margin-top: 20px;
+
+      .user-list-wrapper {
+        @include flex-center-x;
+        width: 100%;
+        max-width: 1000px;
+      }
+    }
+  }
+}

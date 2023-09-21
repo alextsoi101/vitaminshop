@@ -1,0 +1,77 @@
+@media (min-width: $layout-breakpoint-xs) {
+  .userlistcard {
+    
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .userlistcard {
+    
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userlistcard {
+
+    td {
+      height: 60px;
+      padding: 10px 0px;
+      border-bottom: 1px solid $border-grey;
+    }
+
+    .td-id {
+      @include font-size($font-size-sm, $font-weight-medium, $text-grey-light);
+    }
+
+    .td-image {
+      .image-wrapper {
+        @include flex-center;
+        width: 60px;
+        height: 60px;
+        border: 1px solid $border-grey;
+        border-radius: 100px;
+
+        img {
+          width: 50px;
+          border-radius: 100px;
+        }
+      }
+    }
+
+    .td-fullname {
+      @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+
+      .td-fullname-text {
+        cursor: pointer;
+        width: auto;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .td-email {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+    }
+
+    .td-created-at {
+      @include font-size($font-size-sm, $font-weight-light, $text-dark);
+    }
+
+    .td-edit {
+
+      .delete-product-btn {
+        @include flex-center;
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        background: none;
+        padding: 5px;
+        border: none;
+
+        &:hover {
+          @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+        }
+      }
+    }
+  }
+}
