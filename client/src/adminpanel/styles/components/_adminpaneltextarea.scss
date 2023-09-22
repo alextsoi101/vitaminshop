@@ -1,0 +1,41 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+    
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .adminpaneltextarea {
+    @include flex-column;
+    gap: 4px;
+    width: 100%;
+
+    .adminpaneltextarea-label {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+    }
+
+    .input-container {
+      box-sizing: border-box;
+      display: flex;
+
+      .textarea-field {
+        padding: 15px;
+        width: 100%;
+        min-height: 50px;
+        max-height: 200px;
+        background: none;
+        border: 1px solid $border-grey;
+        border-radius: 4px;
+        resize: vertical;
+        overflow: hidden;
+        outline: none;
+
+        &::placeholder {
+          @include font-size($font-size-sm, $font-weight-light, $text-grey-dark);
+        }
+      }
+    }
+  }
+}
