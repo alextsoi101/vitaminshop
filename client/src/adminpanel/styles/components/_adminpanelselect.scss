@@ -18,24 +18,21 @@
 
     .select-container {
       display: flex;
+      box-sizing: border-box;
+      height: 35px;
       padding-right: 10px;
       border: 1px solid $border-grey;
       border-radius: 4px;
 
       .select-field {
         @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+        box-sizing: border-box;
         padding: 0 12px;
         width: 100%;
         height: 35px;
         background: none;
         border: none;
         outline: none;
-      }
-  
-      .suffix-field {
-        @include flex-center-y;
-        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
-        padding: 0 10px;
       }
     }
   }
