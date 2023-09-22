@@ -1,0 +1,115 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_newproduct';
+@import '../components/_newproductimages';
+@import '../components/_adminpanelinput';
+@import '../components/_adminpanelselect';
+@import '../components/_adminpanelselectmany';
+@import '../components/_adminpanelchipsinput';
+@import '../components/_adminpaneltextarea';
+
+@media (min-width: $layout-breakpoint-xs) {
+  .productnewpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 40px);
+      max-width: 1220px;
+
+      h2 {
+        @include font-size($font-size-lg, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-column-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  .productnewpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 100px);
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-column-center-x;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .productnewpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-column-center-x;
+      width: calc(100% - 160px);
+      margin-top: 20px;
+
+      .newproduct-wrapper {
+        @include flex-center-x;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .newproductimages-wrapper {
+        @include flex-center-x;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .newproductcreate-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1000px;
+
+        .create-product-button {
+          @include font-size($font-size-rg, $font-weight-medium, $text-white);
+          background: $btn-green;
+          width: 150px;
+          padding: 8px 0px;
+          border: 1px solid $border-grey-light;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
