@@ -4,6 +4,7 @@ import AdminHeader from '../adminpanel/layout/AdminHeader';
 import AdminNavBar from '../adminpanel/layout/AdminNavBar';
 import DashboardPage from '../adminpanel/pages/DashboardPage';
 import ProductListPage from '../adminpanel/pages/ProductListPage';
+import ProductNewPage from '../adminpanel/pages/ProductNewPage';
 import UserListPage from '../adminpanel/pages/UserListPage';
 import PromoListPage from '../adminpanel/pages/PromoListPage';
 import OrderListPage from '../adminpanel/pages/OrderListPage';
@@ -31,6 +32,7 @@ const AdminRouter = () => {
       >
         <Route path='/' element={<DashboardPage/>} />
         <Route path='products' element={<ProductListPage/>} />
+        <Route path='products/new' element={<ProductNewPage/>} />
         <Route path='users' element={<UserListPage/>} />
         <Route path='promocodes' element={<PromoListPage/>} />
         <Route path='orders' element={<OrderListPage/>} />
