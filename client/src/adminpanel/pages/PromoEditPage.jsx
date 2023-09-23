@@ -12,7 +12,7 @@ const PromoEditPage = () => {
         <div className="editpromo-wrapper">
           <EditPromo />
         </div>
-        <div className="editpromo-wrapper">
+        <div className="edit-promo-wrapper">
           <button className="edit-promo-button">
             Edit promocode
           </button>

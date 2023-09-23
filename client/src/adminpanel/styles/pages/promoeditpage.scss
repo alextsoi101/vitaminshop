@@ -38,11 +38,12 @@
 
       .editpromo-wrapper {
         @include flex-center-x;
+        margin-top: 20px;
         width: 100%;
         max-width: 1000px;
       }
 
-      .editpromo-wrapper {
+      .edit-promo-wrapper {
         display: flex;
         justify-content: flex-end;
         margin-top: 20px;
