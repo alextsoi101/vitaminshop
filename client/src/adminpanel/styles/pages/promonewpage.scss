@@ -1,0 +1,63 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_newpromo';
+@import '../components/_adminpanelinput';
+@import '../components/_adminpaneldateinput';
+
+@media (min-width: $layout-breakpoint-xs) {
+  
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .promonewpage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 160px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-column-center-x;
+      width: calc(100% - 160px);
+      margin-top: 20px;
+
+      .newpromo-wrapper {
+        @include flex-center-x;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .newpromocreate-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1000px;
+
+        .create-promo-button {
+          @include font-size($font-size-rg, $font-weight-medium, $text-white);
+          background: $btn-green;
+          width: 170px;
+          padding: 8px 0px;
+          border: 1px solid $border-grey-light;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
