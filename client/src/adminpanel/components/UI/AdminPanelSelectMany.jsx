@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from "react";
 
 const AdminPanelSelectMany = (props) => {
 
   const [chips, setChips] = useState([]);
+
+  useEffect(() => {
+    if (props.selectedOptions) {
+      setChips(props.selectedOptions)
+    }
+  }, [])
 
   const addChip = (e) => {
     if (chips.includes(e.target.value)) return

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from "react";
 
 const AdminPanelChipsInput = (props) => {
 
   const [addValue, setAddValue] = useState(null);
   const [chips, setChips] = useState([]);
+
+  useEffect(() => {
+    if (props.defaultChips) {
+      setChips(props.defaultChips)
+    }
+  }, [])
 
   const handleChange = (e) => {
     setAddValue(e.target.value)

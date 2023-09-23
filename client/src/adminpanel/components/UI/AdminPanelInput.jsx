@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const AdminPanelInput = (props) => {
+
+  const [inputValue, setInputValue] = useState(props.defaultValue);
+
+  useEffect(() => {
+    if (props.defaultValue) {
+      setInputValue(props.defaultValue)
+    }
+  }, [])
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value)
+  }
+
   return (
     <div className="adminpanelinput">
       <div className="adminpanelinput-label">
@@ -9,9 +22,10 @@ const AdminPanelInput = (props) => {
       <div className="input-container">
         <input 
           className="input-field"
-          type='text' 
+          type='text'
           placeholder={props.placeholder}
-          onChange={props.onChange}
+          value={inputValue}
+          onChange={(event) => handleChange(event)}
         />
         { props.suffix &&
           <div className="suffix-field">
