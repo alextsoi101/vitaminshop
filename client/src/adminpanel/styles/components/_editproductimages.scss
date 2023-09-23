@@ -1,0 +1,115 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .editproductimages {
+    @include flex-column;
+    gap: 20px;
+    width: 100%;
+    background: $white;
+    padding: 20px;
+    border: 1px solid $border-grey;
+    border-radius: 10px;
+
+    .editproductimages-header {
+      @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+    }
+
+    .image-gallery {
+      display: flex;
+      gap: 30px;
+
+      .add-image {
+        @include flex-center;
+        width: 285px;
+        height: 285px;
+        border: 2px dashed $border-grey;
+        border-radius: 10px;
+
+        input {
+         display: none;
+        }
+
+        label {
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          cursor: pointer;
+          opacity: 0%;
+        }
+
+        .icon-wrapper {
+          position: absolute;
+          color: $text-grey-light;
+        }
+      }
+
+      .image-list {
+        @include flex-column;
+        width: calc(100% - 315px);
+        gap: 8px;
+
+        .image-list-item {
+          @include flex-center-y;
+          gap: 10px;
+
+          .image-list-item-image {
+            @include flex-center;
+            box-sizing: border-box;
+            width: 80px;
+            min-width: 80px;
+            height: 80px;
+            border: 1px solid $border-grey;
+            border-radius: 5px;
+
+            img {
+              width: 70px;
+              height: 70px;
+              border-radius: 5px;
+            }
+          }
+
+          .item-image-info {
+            
+            .item-main-image {
+              @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+              margin-bottom: 2px;
+            }
+
+            .info-text {
+              @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+              line-break: anywhere;
+            }
+
+            .info-buttons {
+              display: flex;
+              gap: 10px;
+              margin-top: 5px;
+
+              .select-main-button {
+                @include font-size($font-size-sm, $font-weight-light, $text-white);
+                padding: 2px 10px;
+                background: $btn-green;
+                border: 1px solid $border-grey-light;
+                border-radius: 5px;
+              }
+
+              .remove-button {
+                @include font-size($font-size-sm, $font-weight-light, $text-red);
+                padding: 2px 10px;
+                border: 1px solid $border-grey;
+                background: none;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
