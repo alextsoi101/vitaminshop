@@ -52,6 +52,7 @@
       .image-list {
         @include flex-column;
         gap: 8px;
+        width: calc(100% - 315px);
 
         .image-list-item {
           @include flex-center-y;
@@ -80,6 +81,7 @@
 
             .info-text {
               @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+              line-break: anywhere;
             }
 
             .info-buttons {
