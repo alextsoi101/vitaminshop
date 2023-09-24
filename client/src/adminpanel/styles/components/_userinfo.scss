@@ -1,0 +1,41 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userinfo {
+    @include flex-column;
+    box-sizing: border-box;
+    width: 100%;
+    background: $white;
+    border: 1px solid $border-grey;
+    border-radius: 10px;
+
+    .userinfo-header {
+      @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+    }
+
+    .userinfo-item {
+      padding: 15px 20px;
+      border-bottom: 1px solid $border-grey;
+
+      &:last-child {
+        border: none;
+      }
+
+      .item-header {
+        @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      }
+
+      .item-value {
+        @include font-size($font-size-sm, $font-weight-light, $text-dark-black);
+        margin-top: 8px;
+      }
+    }
+
+  }
+}

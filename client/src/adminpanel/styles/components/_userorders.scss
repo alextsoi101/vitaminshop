@@ -1,0 +1,23 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userorders {
+    @include flex-column;
+    box-sizing: border-box;
+    width: 100%;
+    background: $white;
+    border: 1px solid $border-grey;
+    border-radius: 10px;
+
+    .userorders-header {
+      @include font-size(17px, $font-weight-medium, $text-dark-black);
+      padding: 20px 20px 8px;
+    }
+  }
+}

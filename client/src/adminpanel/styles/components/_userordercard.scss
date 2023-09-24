@@ -1,0 +1,55 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userordercard {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-grey;
+    padding: 20px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .userorder-id {
+      width: 40%;
+      @include font-size($font-size-sm, $font-weight-regular, $text-green-dark);
+
+      span {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .userorder-created-at {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+      width: 32%;
+    }
+
+    .userorder-total {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+      display: flex;
+      justify-content: flex-end;
+      width: 20%;
+    }
+
+    .userorder-info-icon {
+      padding-left: 10px;
+      color: $text-grey-light;
+      cursor: pointer;
+
+      &:hover {
+        color: $text-grey;
+      }
+    }
+  }
+}

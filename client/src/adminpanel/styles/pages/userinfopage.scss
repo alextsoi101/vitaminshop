@@ -1,0 +1,58 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_userorders';
+@import '../components/_userinfo';
+@import '../components/_userordercard';
+
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .userinfopage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 100px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-column-center-x;
+      width: calc(100% - 100px);
+      margin-top: 0px;
+
+      .usercontent-wrapper {
+        @include flex-center-x;
+        gap: 20px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1000px;
+
+        .userorders-wrapper {
+          box-sizing: border-box;
+          width: 100%;
+        }
+
+        .userinfo-wrapper {
+          box-sizing: border-box;
+          min-width: 300px;
+        }
+      }
+    }
+  }
+}
