@@ -7,6 +7,7 @@ import ProductListPage from '../adminpanel/pages/ProductListPage';
 import ProductNewPage from '../adminpanel/pages/ProductNewPage';
 import ProductEditPage from '../adminpanel/pages/ProductEditPage';
 import UserListPage from '../adminpanel/pages/UserListPage';
+import UserInfoPage from '../adminpanel/pages/UserInfoPage';
 import PromoListPage from '../adminpanel/pages/PromoListPage';
 import PromoNewPage from '../adminpanel/pages/PromoNewPage';
 import PromoEditPage from '../adminpanel/pages/PromoEditPage';
@@ -38,6 +39,7 @@ const AdminRouter = () => {
         <Route path='products/new' element={<ProductNewPage/>} />
         <Route path='products/edit/:id' element={<ProductEditPage/>} />
         <Route path='users' element={<UserListPage/>} />
+        <Route path='users/:id' element={<UserInfoPage/>} />
         <Route path='promocodes' element={<PromoListPage/>} />
         <Route path='promocodes/new' element={<PromoNewPage/>} />
         <Route path='promocodes/edit/:id' element={<PromoEditPage/>} />
