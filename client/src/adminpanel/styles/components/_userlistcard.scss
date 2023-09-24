@@ -59,17 +59,17 @@
       @include font-size($font-size-sm, $font-weight-light, $text-dark);
     }
 
-    .td-edit {
+    .td-info {
 
-      .delete-product-btn {
+      .info-btn {
         @include flex-center;
-        @include font-size($font-size-sm, $font-weight-regular, $text-grey);
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-light);
         background: none;
         padding: 5px;
         border: none;
 
         &:hover {
-          @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+          @include font-size($font-size-sm, $font-weight-regular, $text-grey);
         }
       }
     }

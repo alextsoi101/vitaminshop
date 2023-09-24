@@ -1,5 +1,5 @@
 import React from "react";
-import EditIcon from '@mui/icons-material/Edit';
+import InfoIcon from '@mui/icons-material/Info';
 import defaultphoto from '../../../assets/images/user.png'
 
 const UserListCard = (props) => {
@@ -35,12 +35,12 @@ const UserListCard = (props) => {
         </div>
       </td>
       <td>
-        <div className="td-content td-edit">
+        <div className="td-content td-info">
           <button 
-            className="delete-product-btn"
+            className="info-btn"
             // onClick={}
           >
-            <EditIcon 
+            <InfoIcon 
               sx={{fontSize: "20px"}}
             />
           </button>
