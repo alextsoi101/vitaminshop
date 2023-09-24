@@ -7,7 +7,9 @@ const UserListCard = (props) => {
     <tr className="userlistcard">
       <td>
         <div className="td-content td-id">
-          #232
+          <button className="link-button">
+            #232
+          </button>
         </div>
       </td>
       <td>
@@ -19,9 +21,9 @@ const UserListCard = (props) => {
       </td>
       <td>
         <div className="td-content td-fullname">
-          <div className="td-fullname-text">
+          <button className="link-button">
             Alex Tsoi
-          </div>
+          </button>
         </div>
       </td>
       <td>

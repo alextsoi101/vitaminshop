@@ -5,12 +5,16 @@ const CategoryListCard = (props) => {
     <tr className="categorylistcard">
       <td>
         <div className="td-content td-id">
-          #232
+          <button className="link-button">
+            #232
+          </button>
         </div>
       </td>
       <td>
         <div className="td-content td-categoryname">
-          For men
+          <button className="link-button">
+            For men
+          </button>
         </div>
       </td>
     </tr>

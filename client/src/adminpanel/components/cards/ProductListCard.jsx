@@ -6,21 +6,23 @@ const ProductListCard = (props) => {
     <tr className="productlistcard">
       <td>
         <div className="td-content td-id">
-          #232
+          <button className="link-button">
+            #232
+          </button>
         </div>
       </td>
       <td>
         <div className="td-content td-image">
           <div className="image-wrapper">
-            <img src="https://demo.evershop.io/assets/catalog/2887/1596/plv2996-Purple-thumb.png" alt="" />
+            <img src="" alt="" />
           </div>
         </div>
       </td>
       <td>
         <div className="td-content td-productname">
-          <div className="td-productname-text">
+          <button className="link-button">
             Test vitamin name 23
-          </div>
+          </button>
         </div>
       </td>
       <td>

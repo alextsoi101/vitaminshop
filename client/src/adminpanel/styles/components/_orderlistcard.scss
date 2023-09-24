@@ -8,16 +8,11 @@
     }
 
     .td-id {
-      @include font-size($font-size-sm, $font-weight-medium, $text-grey-light);
+      @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
     }
 
     .td-email {
-      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark);
     }
 
     .td-created-at {
@@ -26,6 +21,18 @@
 
     .td-total {
       @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+    }
+
+    .link-button {
+      @include font-size($font-size-sm, $font-weight-medium, inherit);
+      background: none;
+      padding: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

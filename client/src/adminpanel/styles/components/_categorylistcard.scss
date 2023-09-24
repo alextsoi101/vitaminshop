@@ -1,13 +1,7 @@
 @media (min-width: $layout-breakpoint-xs) {
-  .categorylistcard {
-      
-  }
 }
 
 @media (min-width: $layout-breakpoint-rg) {
-  .categorylistcard {
-      
-  }
 }
   
 @media (min-width: $layout-breakpoint-md) {
@@ -20,19 +14,22 @@
     }
 
     .td-id {
-      @include font-size($font-size-sm, $font-weight-medium, $text-grey-light);
+      @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
     }
 
     .td-categoryname {
       @include font-size($font-size-sm, $font-weight-medium, $text-dark);
+    }
 
-      .td-fullname-text {
-        cursor: pointer;
-        width: auto;
+    .link-button {
+      @include font-size($font-size-sm, $font-weight-medium, inherit);
+      background: none;
+      padding: none;
+      border: none;
+      cursor: pointer;
 
-        &:hover {
+      &:hover {
         text-decoration: underline;
-        }
       }
     }
   }

@@ -7,14 +7,16 @@ const PromoListCard = (props) => {
     <tr className="promolistcard">
       <td>
         <div className="td-content td-id">
-          #232
+          <button className="link-button">
+            #232
+          </button>
         </div>
       </td>
       <td>
         <div className="td-content td-promocode">
-          <div className="td-promocode-text">
-            promocode323
-          </div>
+          <button className="link-button">
+            testpromocode
+          </button>
         </div>
       </td>
       <td>
