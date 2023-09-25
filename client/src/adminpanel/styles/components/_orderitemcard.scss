@@ -1,0 +1,77 @@
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .orderitemcard {
+    @include flex-center-y;
+    justify-content: space-between;
+    padding: 20px 0px;
+    border-bottom: 1px solid $border-grey;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .orderitem-img-name {
+      @include flex-center-y;
+      width: 60%;
+
+      .image-count-wrapper {
+        position: relative;
+
+        .image-wrapper {
+          @include flex-center;
+          width: 40px;
+          height: 40px;
+          border: 1px solid $border-grey;
+          border-radius: 4px;
+
+          img {
+            width: 38px;
+            height: 38px;
+            border-radius: 4px;
+          }
+        }
+
+        .count {
+          @include flex-center;
+          @include font-size($font-size-xs, $font-weight-regular, $text-dark-black);
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 20px;
+          height: 20px;
+          background: $border-grey;
+          border-radius: 100px;
+        }
+      }
+
+      .name-wrapper {
+        @include font-size($font-size-sm, $font-weight-medium, $text-dark-black);
+        margin-left: 20px;
+        max-width: 350px;
+      }
+    }
+
+    .orderitem-price {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      width: 17%; 
+
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    .orderitem-total {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      display: flex;
+      justify-content: flex-end;
+      width: 17%;
+    }
+  }
+}
