@@ -1,0 +1,59 @@
+// Base & Abstracts
+@import '../abstracts/_global';
+@import '../base/_global';
+
+// Components
+@import '../components/_orderitems';
+@import '../components/_orderitemcard';
+@import '../components/_ordertotal';
+@import '../components/_orderuserinfo';
+
+@media (min-width: $layout-breakpoint-xs) {
+
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .orderinfopage {
+    @include flex-column-center-x;
+    box-sizing: border-box;
+    padding: 40px 0px;
+    width: 100%;
+    
+    .page-header {
+      width: calc(100% - 100px);
+      max-width: 1000px;
+
+      h2 {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+    }
+
+    .page-main-content {
+      @include flex-center-x;
+      width: calc(100% - 100px);
+      margin-top: 20px;
+
+      .order-content-wrapper {
+        @include flex-center-x;
+        gap: 20px;
+        width: 100%;
+        max-width: 1000px;
+
+        .content-leftside-wrapper {
+          @include flex-column;
+          gap: 20px;
+          width: calc(100% - 270px);
+        }
+
+        .content-rightside-wrapper {
+          min-width: 250px;
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
