@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import AdminHeader from '../adminpanel/layout/AdminHeader';
 import AdminNavBar from '../adminpanel/layout/AdminNavBar';
+import LoginPage from '../adminpanel/pages/LoginPage';
 import DashboardPage from '../adminpanel/pages/DashboardPage';
 import ProductListPage from '../adminpanel/pages/ProductListPage';
 import ProductNewPage from '../adminpanel/pages/ProductNewPage';
@@ -17,25 +18,33 @@ import CategoryListPage from '../adminpanel/pages/CategoryListPage';
 import '../adminpanel/styles/globalstyles/adminpanel.scss';
 
 const AdminRouter = () => {
+
+  const isAdminLogin = false;
   
   return (
     <Routes>
       <Route
         element={
-          <div className="adminpanel">
-            <AdminHeader />
-            <div className="adminpanel-maincontent">
-              <div className="adminnavbar-wrapper">
-                <AdminNavBar />
-              </div>
-              <div className="pagecontent-wrapper">
-                <Outlet />
+          isAdminLogin ?
+            <div className="adminpanel">
+              <AdminHeader />
+              <div className="adminpanel-maincontent">
+                <div className="adminnavbar-wrapper">
+                  <AdminNavBar />
+                </div>
+                <div className="pagecontent-wrapper">
+                  <Outlet />
+                </div>
               </div>
             </div>
-          </div>
+            :
+            <div>
+              <Outlet />
+            </div>
         }
       >
         <Route path='/' element={<DashboardPage/>} />
+        <Route path='login' element={<LoginPage/>} />
         <Route path='products' element={<ProductListPage/>} />
         <Route path='products/new' element={<ProductNewPage/>} />
         <Route path='products/edit/:id' element={<ProductEditPage/>} />
