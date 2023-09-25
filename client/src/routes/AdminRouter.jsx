@@ -12,6 +12,7 @@ import PromoListPage from '../adminpanel/pages/PromoListPage';
 import PromoNewPage from '../adminpanel/pages/PromoNewPage';
 import PromoEditPage from '../adminpanel/pages/PromoEditPage';
 import OrderListPage from '../adminpanel/pages/OrderListPage';
+import OrderInfoPage from '../adminpanel/pages/OrderInfoPage';
 import CategoryListPage from '../adminpanel/pages/CategoryListPage';
 import '../adminpanel/styles/globalstyles/adminpanel.scss';
 
@@ -44,6 +45,7 @@ const AdminRouter = () => {
         <Route path='promocodes/new' element={<PromoNewPage/>} />
         <Route path='promocodes/edit/:id' element={<PromoEditPage/>} />
         <Route path='orders' element={<OrderListPage/>} />
+        <Route path='orders/:id' element={<OrderInfoPage/>} />
         <Route path='categories' element={<CategoryListPage/>} />
         <Route
           path="*"
