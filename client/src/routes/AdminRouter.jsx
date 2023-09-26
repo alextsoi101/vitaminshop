@@ -2,6 +2,9 @@ import React from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import AdminHeader from '../adminpanel/layout/AdminHeader';
 import AdminNavBar from '../adminpanel/layout/AdminNavBar';
+import ConfirmModal from '../adminpanel/components/modal/ConfirmModal';
+import AdminSuccessSnackbar from '../adminpanel/components/modal/AdminSuccessSnackbar';
+import AdminErrorSnackbar from '../adminpanel/components/modal/AdminErrorSnackbar';
 import LoginPage from '../adminpanel/pages/LoginPage';
 import DashboardPage from '../adminpanel/pages/DashboardPage';
 import ProductListPage from '../adminpanel/pages/ProductListPage';
@@ -19,7 +22,7 @@ import '../adminpanel/styles/globalstyles/adminpanel.scss';
 
 const AdminRouter = () => {
 
-  const isAdminLogin = false;
+  const isAdminLogin = true;
   
   return (
     <Routes>
@@ -27,6 +30,9 @@ const AdminRouter = () => {
         element={
           isAdminLogin ?
             <div className="adminpanel">
+              <ConfirmModal />
+              <AdminSuccessSnackbar />
+              <AdminErrorSnackbar />
               <AdminHeader />
               <div className="adminpanel-maincontent">
                 <div className="adminnavbar-wrapper">
