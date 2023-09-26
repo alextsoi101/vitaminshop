@@ -8,7 +8,10 @@ const modalSlice = createSlice({
     isSuccessSnackbarOpen: false,
     isErrorSnackbarOpen: false,
     successSnackbarMessage: null,
-    errorSnackbarMessage: null
+    errorSnackbarMessage: null,
+    isAdminModalOpen: false,
+    adminModalText: null,
+    adminModalCallback: null,
   },
   reducers: {
     openModal: state => {
@@ -49,6 +52,15 @@ const modalSlice = createSlice({
       state.isErrorSnackbarOpen = false;
       state.errorSnackbarMessage = null;
     },
+    openAdminModal: (state, action) => {
+      state.isAdminModalOpen = true;
+      state.adminModalText = action.payload.text;
+      state.adminModalCallback = action.payload.callback;
+    },
+    closeAdminModal: (state, action) => {
+      state.isAdminModalOpen = false;
+      state.adminModalText = null;
+    },
   }
 })
 
@@ -62,6 +74,8 @@ export const {
   openSuccessSnackbar,
   openErrorSnackbar,
   closeSuccessSnackbar,
-  closeErrorSnackbar } = modalSlice.actions
+  closeErrorSnackbar,
+  openAdminModal,
+  closeAdminModal } = modalSlice.actions
 
 export default modalSlice.reducer;
