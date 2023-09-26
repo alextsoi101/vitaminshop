@@ -1,0 +1,72 @@
+@media (min-width: $layout-breakpoint-xs) {
+  
+}
+
+@media (min-width: $layout-breakpoint-rg) {
+  
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .confirmmodal {
+    padding: 20px;
+    width: 500px;
+    background: $white;
+    border-radius: 5px;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+
+      .header-text {
+        @include font-size($font-size-md, $font-weight-medium, $text-dark-black);
+      }
+
+      .close-btn {
+        @include font-size($font-size-sm, $font-weight-regular, $text-grey-dark);
+        padding: 0px;
+        background: none;
+        border: none;
+      }
+    }
+
+    .modal-text {
+      @include font-size($font-size-sm, $font-weight-regular, $text-dark-black);
+      margin-top: 20px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid $border-grey;
+
+      .cancel-btn {
+        @include font-size($font-size-sm, $font-weight-medium, $text-white);
+        padding: 8px 14px;
+        background: #9d9ea0;
+        border: none;
+        border-radius: 3px;
+        opacity: 0.9;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .confirm-btn {
+        @include font-size($font-size-sm, $font-weight-medium, $text-white);
+        padding: 8px 14px;
+        background: $green;
+        border: none;
+        border-radius: 3px;
+        opacity: 0.9;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
