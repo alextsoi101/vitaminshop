@@ -41,7 +41,7 @@ class PromoService {
   }
 
   async getAll(limit, offset) {
-    const promocodes = await PromoCode.findAndCountAll({limit, offset})
+    const promocodes = await PromoCode.findAndCountAll({order: [['id', 'DESC']], limit, offset})
     return promocodes
   }
 
