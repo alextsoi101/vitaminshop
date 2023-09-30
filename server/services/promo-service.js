@@ -9,6 +9,20 @@ class PromoService {
     return promo
   }
 
+  async update(id, promocode, percentDiscount, expirationDate) {
+    const promo = await PromoCode.findByPk(id)
+    if (!promo) {
+      throw ApiError.badRequest(`Promocode doesn't exist`)
+    }
+
+    await promo.update(
+    {
+      promocode, percentDiscount, expirationDate
+    }, 
+    { where: {id} })
+    return promo
+  }
+
   async check(userId, promocode) {
     const promo = await PromoCode.findOne({where: {promocode}})
     if (!promo) {
@@ -24,6 +38,11 @@ class PromoService {
     }
     // await UsedPromo.create({userId, promocodeId: promo.id})
     return promo
+  }
+
+  async getAll(limit, offset) {
+    const promocodes = await PromoCode.findAndCountAll({limit, offset})
+    return promocodes
   }
 
   async getOne(promocode) {
