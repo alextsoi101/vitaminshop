@@ -1,5 +1,6 @@
 const ApiError = require('../error/ApiError');
 const {Product} = require('../db/models/models');
+const axios = require('axios');
 const ProductService = require('../services/product-service');
 
 class ProductController {
@@ -14,7 +15,8 @@ class ProductController {
       relieve, 
       ingridients, 
       description, 
-      shortDescription } = req.body
+      shortDescription,
+      instock } = req.body
 
     if (!categoriesId) {
       return next(ApiError.internal('Categories Id cannot be null'))
@@ -53,6 +55,10 @@ class ProductController {
       imagesArray = imageGallery;
     } else {
       return next(ApiError.internal('Images cannot be null'))
+    }
+
+    if (!Array.isArray(imagesArray)) {
+      imagesArray = [imagesArray]
     }
 
     let images = []
@@ -97,6 +103,7 @@ class ProductController {
     categoriesId = categoriesId.split(',')
     categoriesId = categoriesId.map(id => parseInt(id))
     price = parseInt(price)
+    instock = instock || true;
 
     try {
       const product = await ProductService.create(
@@ -108,7 +115,134 @@ class ProductController {
         relieve, ingridients, 
         description, 
         shortDescription, 
-        images 
+        images,
+        instock
+      )
+      return res.json(product)
+    } catch (e) {
+      next(ApiError.badRequest(e.message))
+    }
+  }
+
+  async update(req, res, next) {
+    let {
+      id,
+      categoriesId, 
+      name, 
+      price, 
+      rating, 
+      sizes, 
+      effects, 
+      relieve, 
+      ingridients, 
+      description, 
+      shortDescription,
+      instock } = req.body
+
+
+    if (!id) {
+      return next(ApiError.internal('Id cannot be null'))
+    }  
+    if (!categoriesId) {
+      return next(ApiError.internal('Categories Id cannot be null'))
+    }
+    if (!name) {
+      return next(ApiError.internal('Name cannot be null'))
+    }
+    if (!price) {
+      return next(ApiError.internal('Price cannot be null'))
+    }
+    if (!rating) {
+      return next(ApiError.internal('Rating cannot be null'))
+    }
+    if (!sizes) {
+      return next(ApiError.internal('Sizes cannot be null'))
+    }
+    if (!effects) {
+      return next(ApiError.internal('Effects cannot be null'))
+    }
+    if (!relieve) {
+      return next(ApiError.internal('Relieve cannot be null'))
+    }
+    if (!ingridients) {
+      return next(ApiError.internal('Ingridients cannot be null'))
+    }
+    if (!description) {
+      return next(ApiError.internal('Description cannot be null'))
+    }
+    if (!shortDescription) {
+      return next(ApiError.internal('Short description cannot be null'))
+    }
+
+    let imagesArray;
+    if (req.files) {
+      let {imageGallery} = req.files
+      imagesArray = imageGallery;
+    } else {
+      return next(ApiError.internal('Images cannot be null'))
+    }
+
+    if (!Array.isArray(imagesArray)) {
+      imagesArray = [imagesArray]
+    }
+
+    let images = []
+    let allowedExtensions = ['jpg', 'png', 'jpeg'];
+
+    for (let i = 0; i < imagesArray.length; i++) {
+      let img = imagesArray[i];
+
+      let fileNameParts = img.name.split('.');
+      let fileExt = fileNameParts[fileNameParts.length - 1];
+
+      if (!allowedExtensions.includes(fileExt)) {
+        return next(ApiError.internal('Allowed extensions: JPG, JPEG, PNG'))
+      }
+
+      let imgBuffer = img.data;
+      let imgBase64 = imgBuffer.toString('base64');
+
+      let formData = new FormData();
+      formData.append("key", "6d207e02198a847aa98d0a2a901485a5");
+      formData.append("source", imgBase64);
+      formData.append("format", "json");
+
+      let {data} = await axios.post('https://freeimage.host/api/1/upload', formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      })
+
+      if (data.status_code !== 200) {
+        return next(ApiError.internal(data.error.message))
+      }
+
+      let imageurl = data.image.url;
+      images.push(imageurl)
+    }
+
+    sizes = sizes.split(',')
+    effects = effects.split(',')
+    relieve = relieve.split(',')
+    ingridients = ingridients.split(',')
+    categoriesId = categoriesId.split(',')
+    categoriesId = categoriesId.map(id => parseInt(id))
+    price = parseInt(price)
+    instock = instock || true;
+
+    try {
+      const product = await ProductService.update(
+        id,
+        categoriesId, 
+        name, 
+        price, 
+        rating, 
+        sizes, effects, 
+        relieve, ingridients, 
+        description, 
+        shortDescription, 
+        images,
+        instock
       )
       return res.json(product)
     } catch (e) {
@@ -117,7 +251,7 @@ class ProductController {
   }
 
   async getAll(req, res, next) {
-    let {categoryId, page, limit, minPrice, maxPrice, rate, sortBy} = req.query
+    let {categoryId, page, limit, minPrice, maxPrice, rate, sortBy, inStock} = req.query
 
     page = parseInt(page) || 1
     limit = parseInt(limit) || 12
@@ -125,12 +259,16 @@ class ProductController {
     maxPrice = parseInt(maxPrice) || 1000
     rate = rate || [1, 2, 3, 4, 5]
     sortBy = sortBy || 'default'
+    inStock = inStock !== null && inStock !== undefined ? inStock : 'all'
     let offset = page * limit - limit
 
     try {
-      const products = await ProductService.getAll(categoryId, limit, offset, minPrice, maxPrice, rate, sortBy)
+      const products = await ProductService.getAll(
+        categoryId, limit, offset, minPrice, maxPrice, rate, sortBy, inStock
+      )
       return res.json(products)
     } catch (error) {
+      console.error(error)
       return next(error)
     }
   }

@@ -3,9 +3,21 @@ const {Product, Category, ProductCategory, Review} = require('../db/models/model
 const { Op } = require("sequelize");
 
 class ProductService {
-  async create(categoriesId, name, price, rating, sizes, effects, relieve, ingridients, description, shortDescription, images) {
+  async create(
+    categoriesId, 
+    name, 
+    price, 
+    rating, 
+    sizes, 
+    effects, 
+    relieve, 
+    ingridients, 
+    description, 
+    shortDescription, 
+    images,
+    instock ) {
     const product = await Product.create({
-      name, price, rating, sizes, effects, relieve, ingridients, description, shortDescription, images
+      name, price, rating, sizes, effects, relieve, ingridients, description, shortDescription, images, instock
     })
 
     categoriesId.forEach(categoryId => {
@@ -15,7 +27,38 @@ class ProductService {
     return product
   }
 
-  async getAll(categoryId, limit, offset, minPrice, maxPrice, rate, sortBy) {
+  async update(
+    id,
+    categoriesId, 
+    name, 
+    price, 
+    rating, 
+    sizes, 
+    effects, 
+    relieve, 
+    ingridients, 
+    description, 
+    shortDescription, 
+    images,
+    instock ) {
+
+    const product = await Product.findByPk(id);
+
+    if (!product) {
+      throw ApiError.internal('Product not found')
+    }
+    
+    await product.update(
+      {
+        name, price, rating, sizes, effects, relieve, ingridients, description, shortDescription, images, instock
+      }, 
+      { where: {id} }
+    );
+
+    return product.setCategories(categoriesId);
+  }
+
+  async getAll(categoryId, limit, offset, minPrice, maxPrice, rate, sortBy, inStock) {
     let products;
 
     if (categoryId) {
@@ -23,45 +66,44 @@ class ProductService {
       let productsIdArray;
 
       switch (sortBy) {
-        case 'test-case':
-          productsIdArray = []
-          productCategoryArray.map(item => productsIdArray.push(item.productId))
-          products = await Product.findAndCountAll(
-            {
-              include: [
-                {model: Category, as: 'categories'},
-                {model: Review, as: 'reviews'}
-              ],
-              distinct: true,
-              where: { 
-                [Op.and]: [
-                  {id: productsIdArray},
-                  {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
-                  {rating: {[Op.or]: rate}},
-                ]
-              }, limit, offset
-            });
-
-          return products;
-
         case 'default':
           productsIdArray = [];
           productCategoryArray.map(item => productsIdArray.push(item.productId))
-          products = await Product.findAndCountAll(
-            {
-              include: [
-                {model: Category, as: 'categories'},
-                {model: Review, as: 'reviews'}
-              ],
-              distinct: true,
-              where: { 
-                [Op.and]: [
-                  {id: productsIdArray},
-                  {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
-                  {rating: {[Op.or]: rate}}
-                ]          
-              }, limit, offset
-            })
+
+          if (inStock === 'all') {
+            products = await Product.findAndCountAll(
+              {
+                include: [
+                  {model: Category, as: 'categories'},
+                  {model: Review, as: 'reviews'}
+                ],
+                distinct: true,
+                where: { 
+                  [Op.and]: [
+                    {id: productsIdArray},
+                    {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
+                    {rating: {[Op.or]: rate}},
+                  ]          
+                }, limit, offset
+              })
+          } else {
+            products = await Product.findAndCountAll(
+              {
+                include: [
+                  {model: Category, as: 'categories'},
+                  {model: Review, as: 'reviews'}
+                ],
+                distinct: true,
+                where: { 
+                  [Op.and]: [
+                    {id: productsIdArray},
+                    {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
+                    {rating: {[Op.or]: rate}},
+                    {instock: inStock}
+                  ]          
+                }, limit, offset
+              })
+          }
 
           break;
 
@@ -162,20 +204,38 @@ class ProductService {
     if (!categoryId) { 
       switch (sortBy) {
         case 'default':
-          products = await Product.findAndCountAll(
-            {
-              include: [
-                {model: Category, as: 'categories'},
-                {model: Review, as: 'reviews'}
-              ],
-              distinct: true,
-              where: { 
-                [Op.and]: [
-                  {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
-                  {rating: {[Op.or]: rate}}
-                ]          
-              }, limit, offset
-            })
+          if (inStock === 'all') {
+            products = await Product.findAndCountAll(
+              {
+                include: [
+                  {model: Category, as: 'categories'},
+                  {model: Review, as: 'reviews'}
+                ],
+                distinct: true,
+                where: { 
+                  [Op.and]: [
+                    {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
+                    {rating: {[Op.or]: rate}},
+                  ]          
+                }, limit, offset
+              })
+          } else {
+            products = await Product.findAndCountAll(
+              {
+                include: [
+                  {model: Category, as: 'categories'},
+                  {model: Review, as: 'reviews'}
+                ],
+                distinct: true,
+                where: { 
+                  [Op.and]: [
+                    {price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}},
+                    {rating: {[Op.or]: rate}},
+                    {instock: inStock}
+                  ]          
+                }, limit, offset
+              })
+          }
 
           break;
 
