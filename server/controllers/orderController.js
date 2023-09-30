@@ -69,8 +69,9 @@ class OrderController {
   async getAll(req, res, next) {
     let {id, email, limit, page} = req.query
 
+    limit = limit || 10;
     page = page || 1;
-    let offset = page * limit - limit
+    let offset = page * limit - limit;
 
     try {
       const ordersWithProducts = await OrderService.getAll(id, email, limit, offset);

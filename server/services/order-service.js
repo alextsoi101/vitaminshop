@@ -124,34 +124,23 @@ class OrderService {
       return orderWithProducts;
     }
 
-    if (id && !email) {
-      const orderWithProducts = await Order.findAndCountAll({
-        where: {id},
-        order: [['id', 'DESC']], limit, offset
-      })
-      return orderWithProducts;
+    let parametersArray = [];
+
+    if (id) {
+      parametersArray.push({id: id})
     }
 
-    if (!id && email) {
-      const orderWithProducts = await Order.findAndCountAll({
-        where: {email},
-        order: [['id', 'DESC']], limit, offset
-      })
-      return orderWithProducts;
+    if (email) {
+      parametersArray.push({email: email})
     }
 
-    if (id && email) {
-      const orderWithProducts = await Order.findAndCountAll({
-        where: {
-          [Op.or]: [
-            {id: id},
-            {email: email},
-          ]
-        },
-        order: [['id', 'DESC']], limit, offset
-      })
-      return orderWithProducts;
-    }
+    const orderWithProducts = await Order.findAndCountAll({
+      where: {
+        [Op.or]: parametersArray
+      },
+      order: [['id', 'DESC']], limit, offset
+    })
+    return orderWithProducts;    
   }
 
   async getOne(id) {
