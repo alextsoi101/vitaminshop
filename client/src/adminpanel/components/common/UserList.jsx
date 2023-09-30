@@ -16,6 +16,11 @@ const UserList = () => {
                 <div className="th-text">
                   Id
                 </div>
+                <input 
+                  className="th-input input-id"
+                  type='text'
+                  placeholder='Id'
+                />
               </div>
             </th>
             <th className="table-header-th th-image">
