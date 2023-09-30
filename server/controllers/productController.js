@@ -78,11 +78,11 @@ class ProductController {
       let imgBase64 = imgBuffer.toString('base64');
 
       let formData = new FormData();
-      formData.append("key", "6d207e02198a847aa98d0a2a901485a5");
+      formData.append("key", process.env.IMAGE_HOSTING_API_KEY);
       formData.append("source", imgBase64);
       formData.append("format", "json");
 
-      let {data} = await axios.post('https://freeimage.host/api/1/upload', formData, {
+      let {data} = await axios.post(process.env.IMAGE_API_UPLOAD_URL, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -203,11 +203,11 @@ class ProductController {
       let imgBase64 = imgBuffer.toString('base64');
 
       let formData = new FormData();
-      formData.append("key", "6d207e02198a847aa98d0a2a901485a5");
+      formData.append("key", process.env.IMAGE_HOSTING_API_KEY);
       formData.append("source", imgBase64);
       formData.append("format", "json");
 
-      let {data} = await axios.post('https://freeimage.host/api/1/upload', formData, {
+      let {data} = await axios.post(process.env.IMAGE_API_UPLOAD_URL, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
