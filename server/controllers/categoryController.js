@@ -3,7 +3,7 @@ const {Category, Product} = require('../db/models/models');
 
 class CategoryController {
   async create(req, res, next) {
-    const {name, description} = req.body
+    let {name, description} = req.body
 
     if (!name) {
       return next(ApiError.internal('Name cannot be null'))
@@ -27,6 +27,21 @@ class CategoryController {
         order: [['id', 'ASC']],
         include: [{model: Product, as: 'products'}]
       })
+      return res.json(categories)
+    } catch (error) {
+      return next(error)
+    }
+  }
+
+  async getAllAdmin(req, res, next) {
+    let {limit, page} = req.query
+
+    limit = limit || 10;
+    page = page || 1;
+    let offset = page * limit - limit;
+
+    try {
+      const categories = await Category.findAndCountAll({order: [['id', 'DESC']], limit, offset})
       return res.json(categories)
     } catch (error) {
       return next(error)
