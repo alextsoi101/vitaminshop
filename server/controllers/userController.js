@@ -80,6 +80,21 @@ class UserController {
     }
   }
 
+  async getAll(req, res, next) {
+    let {userId, name, email, limit, page} = req.query
+
+    limit = limit || 10;
+    page = page || 1;
+    let offset = page * limit - limit;
+
+    try {
+      const users = await UserService.getAll(userId, name, email, limit, offset);
+      return res.json(users)
+    } catch (error) {
+      return next(error)
+    }
+  }
+
   async getUserInfo(req, res, next) {
     const {userId} = req.params
 

@@ -2,6 +2,7 @@ const ApiError = require('../error/ApiError');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {User, Cart, Address} = require('../db/models/models');
+const { Op } = require("sequelize");
 
 const SECRET_KEY = 'mysecretkey';
 
@@ -42,6 +43,35 @@ class UserService {
   async check(userId, userEmail, userRole) {
     const token = generateJwt(userId, userEmail, userRole)
     return token
+  }
+
+  async getAll(userId, name, email, limit, offset) {
+
+    if (!userId && !name && !email) {
+      const users = await User.findAndCountAll({ order: [['id', 'DESC']], limit, offset })
+      return users
+    }
+
+    let parametersArray = [];
+
+    if (userId) {
+      parametersArray.push({id: userId})
+    }
+    if (name) {
+      parametersArray.push({firstname: name})
+      parametersArray.push({lastname: name})
+    }
+    if (email) {
+      parametersArray.push({email: email})
+    }
+
+    const users = await User.findAndCountAll({
+      order: [['id', 'DESC']], 
+      where: { 
+        [Op.or]: parametersArray          
+      }, limit, offset
+    })
+    return users
   }
 
   async getUserInfo(userId) {
