@@ -4,6 +4,8 @@ const promoController = require('../controllers/promoController');
 
 router.post('/', promoController.create)
 router.post('/check', promoController.check)
-router.get('/:promocode', promoController.getOne)
+router.put('/', promoController.update)
+router.get('/all', promoController.getAll)
+router.get('/one/:promocode', promoController.getOne)
 
 module.exports = router;
