@@ -182,6 +182,55 @@ class UserService {
     return address
   }
 
+  async getUserStatistic(startDate, lastDate) {
+    try {
+      const userStatistic = await User.findAll({
+        where: {
+          createdAt: { [Op.between]: [new Date(startDate), new Date(lastDate)] },
+        },
+        attributes: [
+          'createdAt', 
+          [fn('date_trunc', 'day', col('createdAt')), 'registrationDay'],
+          [fn('COUNT', col('id')), 'userCount']
+        ],
+        group: 'createdAt',
+        raw: true,
+        right: false,
+        order: [['createdAt', 'ASC']],
+      })
+
+      const userCountMap = new Map();
+      userStatistic.forEach((row) => {
+        userCountMap.set(row.registrationDay.toISOString().split('T')[0], row.userCount);
+      });
+
+      const generateDateArray = (startDay, lastDay) => {
+        const dates = [];
+        const startDate = new Date(startDay);
+        const lastDate = new Date(lastDay);
+      
+        while (startDate <= lastDate) {
+          dates.push(new Date(startDate));
+          startDate.setDate(startDate.getDate() + 1);
+        }
+      
+        return dates;
+      }
+
+      const dates = generateDateArray(startDate, lastDate)
+
+      const newUsersByDay = dates.map((date) => ({
+        date: date.toISOString().split('T')[0],
+        total: userCountMap.get(date.toISOString().split('T')[0]) || 0,
+      }));
+    
+      return newUsersByDay;
+    }
+    catch (e) {
+      console.error(e)
+    }
+  }
+
   async deleteUser(req, res) {
     const {id} = req.params
     const user = await User.findOne({where: {id}})

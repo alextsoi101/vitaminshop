@@ -271,6 +271,25 @@ class UserController {
       return next(error.message)
     }
   }
+
+  async getUserStatistic(req, res, next) {
+    let {startDate, lastDate} = req.query
+
+    if (!startDate) {
+      return next(ApiError.internal('Start day cannot be empty'))
+    }
+
+    if (!lastDate) {
+      return next(ApiError.internal('Last day cannot be empty'))
+    }
+
+    try {
+      const userStatistic = await UserService.getUserStatistic(startDate, lastDate);
+      return res.json(userStatistic)
+    } catch (error) {
+      return next(error)
+    }
+  }
 }
 
 module.exports = new UserController();
