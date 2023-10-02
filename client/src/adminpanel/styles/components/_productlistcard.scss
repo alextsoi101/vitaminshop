@@ -3,6 +3,7 @@
 }
 
 @media (min-width: $layout-breakpoint-rg) {
+
 }
 
 @media (min-width: $layout-breakpoint-md) {
@@ -42,10 +43,20 @@
 
     .td-category {
       @include font-size($font-size-sm, $font-weight-regular, $text-dark);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .td-status {
-      @include font-size($font-size-sm, $font-weight-medium, $text-green);
+
+      .instock-true {
+        @include font-size($font-size-sm, $font-weight-medium, $text-green);
+      }
+
+      .instock-false {
+        @include font-size($font-size-sm, $font-weight-medium, $text-red);
+      }
     }
 
     .td-remove {
@@ -65,6 +76,7 @@
 
     .link-button {
       @include font-size($font-size-sm, $font-weight-medium, inherit);
+      text-align: start;
       background: none;
       padding: none;
       border: none;
