@@ -322,6 +322,44 @@ class ProductService {
     }
   }
 
+  async getAllAdmin(categoryId, name, limit, offset, minPrice, maxPrice, inStock) {
+
+    let parametersArray = [];
+
+    if (categoryId) {
+      const productCategoryArray = await ProductCategory.findAll({where: {categoryId}})
+      let productsIdArray = [];
+      productCategoryArray.map(item => productsIdArray.push(item.productId))
+      parametersArray.push({id: productsIdArray})
+    }
+
+    if (name) {
+      parametersArray.push({name: {[Op.like]: `%${name}%`}})
+    }
+
+    if (maxPrice & minPrice) {
+      parametersArray.push({price: {[Op.lt]: maxPrice, [Op.gt]: minPrice}})
+    }
+
+    if (inStock !== 'all') {
+      parametersArray.push({instock: inStock})
+    }
+
+    const products = await Product.findAndCountAll(
+      {
+        order: [['id', 'DESC']],
+        include: [
+          {model: Category, as: 'categories'},
+        ],
+        distinct: true,
+        where: { 
+          [Op.and]: parametersArray
+        }, limit, offset
+      }
+    );
+    return products
+  }
+
   async getOne(id) {
     const product = await Product.findOne({
       where: {id},

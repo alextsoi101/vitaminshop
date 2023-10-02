@@ -273,6 +273,27 @@ class ProductController {
     }
   }
 
+  async getAllAdmin(req, res, next) {
+    let {categoryId, name, page, limit, minPrice, maxPrice, inStock} = req.query
+
+    page = parseInt(page) || 1
+    limit = parseInt(limit) || 10
+    minPrice = parseInt(minPrice) || 0
+    maxPrice = parseInt(maxPrice) || 1000
+    inStock = inStock !== null && inStock !== undefined ? inStock : 'all'
+    let offset = page * limit - limit
+
+    try {
+      const products = await ProductService.getAllAdmin(
+        categoryId, name, limit, offset, minPrice, maxPrice, inStock
+      )
+      return res.json(products)
+    } catch (error) {
+      console.error(error)
+      return next(error)
+    }
+  }
+
   async getOne(req, res, next) {
     const {id} = req.params
 
