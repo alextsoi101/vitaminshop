@@ -62,11 +62,32 @@
     width: 100%;
     
     .page-header {
+      display: flex;
+      justify-content: space-between;
       width: calc(100% - 160px);
       max-width: 1000px;
 
       h2 {
         @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
+      }
+
+      .header-button-section {
+        display: flex;
+        gap: 20px;
+
+        .apply-button {
+          @include font-size($font-size-sm, $font-weight-medium, $text-white);
+          padding: 0px 16px;
+          height: 34px;
+          background: $green;
+          border: none;
+          border-radius: 5px;
+          opacity: 0.9;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
 

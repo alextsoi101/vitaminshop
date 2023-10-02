@@ -7,6 +7,11 @@ const UserListPage = () => {
     <div className="userlistpage">
       <div className="page-header">
         <h2>Users</h2>
+        <div className="header-button-section">
+          <button className="apply-button">
+            Apply
+          </button>
+        </div>
       </div>
       <div className="page-main-content">
         <div className="user-list-wrapper">

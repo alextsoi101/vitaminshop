@@ -7,6 +7,11 @@ const PromoListPage = () => {
     <div className="promolistpage">
       <div className="page-header">
         <h2>Promocodes</h2>
+        <div className="header-button-section">
+          <button className="newpromo-button">
+            New Promocode
+          </button>
+        </div>
       </div>
       <div className="page-main-content">
         <div className="promo-list-wrapper">

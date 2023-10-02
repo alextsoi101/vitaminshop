@@ -7,6 +7,11 @@ const OrderListPage = () => {
     <div className="orderlistpage">
       <div className="page-header">
         <h2>Orders</h2>
+        <div className="header-button-section">
+          <button className="apply-button">
+            Apply
+          </button>
+        </div>
       </div>
       <div className="page-main-content">
         <div className="order-list-wrapper">
