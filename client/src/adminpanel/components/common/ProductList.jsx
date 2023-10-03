@@ -2,9 +2,45 @@ import React from "react";
 import ProductListCard from "../cards/ProductListCard";
 import Pagination from '@mui/material/Pagination';
 
-const ProductList = () => {
+const ProductList = (props) => {
 
-  
+  const handleNameInput = (e) => {
+    props.setName(e.target.value)
+  }
+
+  const handleMinPriceInput = (e) => {
+    props.setMinPrice(e.target.value)
+  }
+
+  const handleMaxPriceInput = (e) => {
+    props.setMaxPrice(e.target.value)
+  }
+
+  const handleCategorySelect = (e) => {
+    if (e.target.value === 'all') {
+      props.setCategoryId(null)
+    } else {
+      props.setCategoryId(e.target.value)
+    }
+  }
+
+  const handleInstockSelect = (e) => {
+    if (e.target.value === 'all') {
+      props.setInStock(null)
+    } else {
+      props.setInStock(e.target.value)
+    }
+  }
+
+  const handleLimitSelect = (e) => {
+    props.setLimit(e.target.value)
+    props.changeLimit(e.target.value)
+  }
+
+  const handlePageChange = (event, value) => {
+    props.setPage(value)
+    props.changePage(value)
+  }
 
   return (
     <div className="productlist">
@@ -31,6 +67,7 @@ const ProductList = () => {
                   className="th-input input-product-name"
                   type='text'
                   placeholder='Product Name'
+                  onChange={(e) => handleNameInput(e)}
                 />
               </div>
             </th>
@@ -44,11 +81,13 @@ const ProductList = () => {
                     className="th-input input-price"
                     type="text"
                     placeholder="Min"
+                    onChange={(e) => handleMinPriceInput(e)}
                   />
                   <input 
                     className="th-input input-price"
                     type="text"
                     placeholder="Max"
+                    onChange={(e) => handleMaxPriceInput(e)}
                   />
                 </div>
               </div>
@@ -58,32 +97,38 @@ const ProductList = () => {
                 <div className="th-text">
                   Category
                 </div>
-                <select className="th-select">
-                  <option>
+                <select 
+                  className="th-select"
+                  onChange={(e) => handleCategorySelect(e)}
+                >
+                  <option value={'all'}>
                     All
                   </option>
-                  <option>
+                  <option value={1}>
                     For men
                   </option>
-                  <option>
+                  <option value={2}>
+                    For women
+                  </option>
+                  <option value={3}>
                     For kids
                   </option>
-                  <option>
+                  <option value={4}>
                     Multivitamin
                   </option>
-                  <option>
+                  <option value={5}>
                     Vitamin A
                   </option>
-                  <option>
+                  <option value={6}>
                     Vitamin B
                   </option>
-                  <option>
+                  <option value={7}>
                     Vitamin C
                   </option>
-                  <option>
+                  <option value={8}>
                     Vitamin D
                   </option>
-                  <option>
+                  <option value={9}>
                     Omega
                   </option>
                 </select>
@@ -94,14 +139,17 @@ const ProductList = () => {
                 <div className="th-text">
                   Status
                 </div>
-                <select className="th-select">
-                  <option>
+                <select 
+                  className="th-select"
+                  onChange={(e) => handleInstockSelect(e)}
+                >
+                  <option value='all'>
                     All
                   </option>
-                  <option>
+                  <option value={true}>
                     In stock
                   </option>
-                  <option>
+                  <option value={false}>
                     Out of stock
                   </option>
                 </select>
@@ -110,38 +158,41 @@ const ProductList = () => {
             <th className="table-header-th th-remove">
               <div className="th-content th-content-remove">
                 <div className="th-text th-text-remove">
-                  
                 </div>
               </div>
             </th>
           </tr>
         </thead>
         <tbody>
-          <ProductListCard 
-
-          />
-          <ProductListCard 
-
-          />
-          <ProductListCard 
-
-          />
-          <ProductListCard 
-
-          />
+          {
+            props.products.rows.map(product => 
+              <ProductListCard 
+                key={product.id}
+                id={product.id}
+                image={product.images[0]}
+                name={product.name}
+                price={product.price}
+                categories={product.categories}
+                inStock={product.instock}
+              />
+            )
+          }
         </tbody>
       </table>
       <div className="productlist-pagination">
         <div className="pagination-results-per-page">
           Show
-          <select className="select-per-page">
-            <option>
+          <select 
+            className="select-per-page"
+            onChange={(e) => handleLimitSelect(e)}
+          >
+            <option value={10}>
               10
             </option>
-            <option>
+            <option value={15}>
               15
             </option>
-            <option>
+            <option value={20}>
               20
             </option>
           </select>
@@ -150,9 +201,10 @@ const ProductList = () => {
         <div>
           <Pagination 
             size="medium"
-            count={10} 
+            count={props.pageCount}
             shape="rounded"
             variant="outlined"
+            onChange={handlePageChange}
           />
         </div>
       </div>
