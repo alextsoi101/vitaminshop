@@ -1,10 +1,30 @@
 import React from "react";
 import UserListCard from "../cards/UserListCard";
-import Pagination from '@mui/material/Pagination';
+import AdminPagination from "./AdminPagination";
 
-const UserList = () => {
+const UserList = (props) => {
 
-  
+  const handleIdInput = (e) => {
+    props.setUserId(e.target.value)
+  }
+
+  const handleNameInput = (e) => {
+    props.setName(e.target.value)
+  }
+
+  const handleEmailInput = (e) => {
+    props.setEmail(e.target.value)
+  }
+
+  const handleLimitSelect = (e) => {
+    props.setLimit(e.target.value)
+    props.changeLimit(e.target.value)
+  }
+
+  const handlePageChange = (value) => {
+    props.setPage(value)
+    props.changePage(value)
+  }
 
   return (
     <div className="userlist">
@@ -20,6 +40,7 @@ const UserList = () => {
                   className="th-input input-id"
                   type='text'
                   placeholder='Id'
+                  onChange={(e) => handleIdInput(e)}
                 />
               </div>
             </th>
@@ -36,6 +57,7 @@ const UserList = () => {
                   className="th-input input-fullname"
                   type='text'
                   placeholder='Full Name'
+                  onChange={(e) => handleNameInput(e)}
                 />
               </div>
             </th>
@@ -48,6 +70,7 @@ const UserList = () => {
                     className="th-input input-email"
                     type="text"
                     placeholder="Email"
+                    onChange={(e) => handleEmailInput(e)}
                   />
               </div>
             </th>
@@ -65,42 +88,44 @@ const UserList = () => {
           </tr>
         </thead>
         <tbody>
-          <UserListCard 
-
-          />
-          <UserListCard 
-
-          />
-          <UserListCard 
-
-          />
-          <UserListCard 
-
-          />
+          {
+            props.users.rows.map(user => 
+              <UserListCard 
+                key={user.id}
+                id={user.id}
+                image={user.image}
+                firstname={user.firstname}
+                lastname={user.lastname}
+                email={user.email}
+                createdAt={user.createdAt}
+              />
+            )
+          }
         </tbody>
       </table>
       <div className="userlist-pagination">
         <div className="pagination-results-per-page">
           Show
-          <select className="select-per-page">
-            <option>
+          <select 
+            className="select-per-page"
+            onChange={(e) => handleLimitSelect(e)}
+          >
+            <option value={10}>
               10
             </option>
-            <option>
+            <option value={15}>
               15
             </option>
-            <option>
+            <option value={20}>
               20
             </option>
           </select>
           per page
         </div>
         <div>
-          <Pagination 
-            size="medium"
-            count={10} 
-            shape="rounded"
-            variant="outlined"
+          <AdminPagination 
+            pageCount={props.pageCount}
+            onChange={handlePageChange}
           />
         </div>
       </div>

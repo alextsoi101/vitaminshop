@@ -1,46 +1,54 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import defaultphoto from '../../../assets/images/user.png'
 
 const UserListCard = (props) => {
+
+  const navigate = useNavigate();
+
+  const goToUserInfo = () => {
+    navigate(`${props.id}`)
+  }
+
   return (
     <tr className="userlistcard">
       <td>
         <div className="td-content td-id">
           <button className="link-button">
-            #232
+            #{props.id}
           </button>
         </div>
       </td>
       <td>
         <div className="td-content td-image">
           <div className="image-wrapper">
-            <img src={defaultphoto} alt="" />
+            <img src={props.image ? props.image : defaultphoto} alt="userphoto" />
           </div>
         </div>
       </td>
       <td>
         <div className="td-content td-fullname">
           <button className="link-button">
-            Alex Tsoi
+            {props.firstname || props.lastname ? `${props.firstname} ${props.lastname}` : 'No name' }
           </button>
         </div>
       </td>
       <td>
         <div className="td-content td-email">
-          alextestpro@gmail.com
+          {props.email}
         </div>
       </td>
       <td>
         <div className="td-content td-created-at">
-          Sep 19, 2023
+        {props.createdAt}
         </div>
       </td>
       <td>
         <div className="td-content td-info">
           <button 
             className="info-btn"
-            // onClick={}
+            onClick={goToUserInfo}
           >
             <InfoIcon 
               sx={{fontSize: "20px"}}
