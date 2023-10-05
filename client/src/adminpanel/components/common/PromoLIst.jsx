@@ -1,10 +1,18 @@
 import React from "react";
 import PromoListCard from "../cards/PromoListCard";
-import Pagination from '@mui/material/Pagination';
+import AdminPagination from "./AdminPagination";
 
-const PromoList = () => {
+const PromoList = (props) => {
 
-  
+  const handleLimitSelect = (e) => {
+    props.setLimit(e.target.value)
+    props.changeLimit(e.target.value)
+  }
+
+  const handlePageChange = (value) => {
+    props.setPage(value)
+    props.changePage(value)
+  }
 
   return (
     <div className="promolist">
@@ -46,42 +54,42 @@ const PromoList = () => {
           </tr>
         </thead>
         <tbody>
-          <PromoListCard 
-
-          />
-          <PromoListCard 
-
-          />
-          <PromoListCard 
-
-          />
-          <PromoListCard 
-
-          />
+          {
+            props.promocodes.rows.map(promocode => 
+              <PromoListCard 
+                key={promocode.id}
+                id={promocode.id}
+                promocode={promocode.promocode}
+                percentDiscount={promocode.percentDiscount}
+                createdAt={promocode.createdAt}
+              />
+            )
+          }
         </tbody>
       </table>
       <div className="promolist-pagination">
         <div className="pagination-results-per-page">
           Show
-          <select className="select-per-page">
-            <option>
+          <select 
+            className="select-per-page"
+            onChange={(e) => handleLimitSelect(e)}
+          >
+            <option value={10}>
               10
             </option>
-            <option>
+            <option value={15}>
               15
             </option>
-            <option>
+            <option value={20}>
               20
             </option>
           </select>
           per page
         </div>
         <div>
-          <Pagination 
-            size="medium"
-            count={10} 
-            shape="rounded"
-            variant="outlined"
+          <AdminPagination 
+            pageCount={props.pageCount}
+            onChange={handlePageChange}
           />
         </div>
       </div>
