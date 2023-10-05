@@ -7,7 +7,7 @@ const PromoListCard = (props) => {
   const navigate = useNavigate();
 
   const goToEditPromo = () => {
-    navigate(`edit/${props.id}`)
+    navigate(`edit/${props.promocode}`)
   }
 
   return (

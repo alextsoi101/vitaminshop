@@ -58,7 +58,7 @@ const AdminRouter = () => {
         <Route path='users/:id' element={<UserInfoPage/>} />
         <Route path='promocodes' element={<PromoListPage/>} />
         <Route path='promocodes/new' element={<PromoNewPage/>} />
-        <Route path='promocodes/edit/:id' element={<PromoEditPage/>} />
+        <Route path='promocodes/edit/:promo' element={<PromoEditPage/>} />
         <Route path='orders' element={<OrderListPage/>} />
         <Route path='orders/:id' element={<OrderInfoPage/>} />
         <Route path='categories' element={<CategoryListPage/>} />
