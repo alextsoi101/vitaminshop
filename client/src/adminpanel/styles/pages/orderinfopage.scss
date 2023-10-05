@@ -24,6 +24,7 @@
     width: 100%;
     
     .page-header {
+      display: flex;
       width: calc(100% - 100px);
       max-width: 1000px;
 
@@ -33,6 +34,7 @@
 
       span {
         @include font-size($font-size-xl, $font-weight-bold, $text-green);
+        margin-left: 8px;
       }
     }
 

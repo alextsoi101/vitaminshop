@@ -1,35 +1,25 @@
 import React from "react";
 import OrderItemCard from "../cards/OrderItemCard";
 
-const OrderItems = () => {
-
+const OrderItems = (props) => {
   return (
     <div className="orderitems">
       <div className="orderitems-header">
         Items
       </div>
       <div className="orderitems-cards">
-        <OrderItemCard
-          image='https://iili.io/JJ3E4KG.jpg'
-          name='Vitamin test 001010 adwda  adwwdwwdwdw'
-          count={2}
-          price={120}
-          total={240}
-        />
-        <OrderItemCard
-          image='https://iili.io/JJ3E4KG.jpg'
-          name='Vitamin test 001010 adwda  adwwdwwdwdw'
-          count={2}
-          price={120}
-          total={240}
-        />
-        <OrderItemCard
-          image='https://iili.io/JJ3E4KG.jpg'
-          name='Vitamin test 001010 adwda  adwwdwwdwdw wdwww adwdwa awdwa'
-          count={2}
-          price={120}
-          total={240}
-        />
+        {
+          props.orderItems.map(item => 
+            <OrderItemCard
+              key={item.id}
+              image={item.product.images[0]}
+              name={item.product.name}
+              count={item.count}
+              price={item.product.price}
+              total={item.totalPrice}
+            />
+          )
+        }
       </div>
     </div>
   )

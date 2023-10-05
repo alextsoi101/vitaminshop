@@ -1,18 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const OrderUserInfo = () => {
+const OrderUserInfo = (props) => {
+
+  const navigate = useNavigate();
+
+  const goToUserInfo = () => {
+    navigate(`/admin/users/${props.userId}`)
+  }
 
   return (
     <div className="orderuserinfo">
       <div className="orderuserinfo-header">
-        User <span>#1101</span>
+        User 
+        <span onClick={goToUserInfo} style={{marginLeft: '10px'}}>
+          #{props.userId}
+        </span>
       </div>
       <div className="orderuserinfo-item">
         <div className="item-header">
           Full Name
         </div>
         <div className="item-value">
-          Alex Tsoi
+          {props.firstName} {props.lastName}
         </div>
       </div>
       <div className="orderuserinfo-item">
@@ -20,8 +30,8 @@ const OrderUserInfo = () => {
           Contact Info
         </div>
         <div className="item-value">
-          <div>alex@gmail.com</div>
-          <div>2620010101</div>
+          <div>{props.email}</div>
+          <div>{props.phone}</div>
         </div>
       </div>
       <div className="orderuserinfo-item">
@@ -30,16 +40,16 @@ const OrderUserInfo = () => {
         </div>
         <div className="item-value">
           <div>
-            New York
+            {props.city}
           </div>
           <div>
-            01001 New York
+            {props.zip} {props.city}
           </div>
           <div>
-            NY, United States
+            {props.state}, {props.country}
           </div>
           <div>
-            2620010101
+            {props.addressLineOne} {props.addressLineTwo}
           </div>
         </div>
       </div>
@@ -48,7 +58,7 @@ const OrderUserInfo = () => {
           Order notes
         </div>
         <div className="item-value">
-          aaaaa aaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaa aaa a a aaaaaaaaaa
+          {props.notes ? props.notes : '---'}
         </div>
       </div>
     </div>
