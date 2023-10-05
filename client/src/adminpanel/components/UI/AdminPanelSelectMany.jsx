@@ -6,12 +6,14 @@ const AdminPanelSelectMany = (props) => {
   const [chips, setChips] = useState([]);
   const [chipsUI, setChipsUI] = useState([]);
 
+  const optionsString = JSON.stringify(props.selectedOptions);
   useEffect(() => {
     if (props.selectedOptions) {
       setChips(props.selectedOptions.values)
       setChipsUI(props.selectedOptions.text)
+      props.onChange(props.selectedOptions.values)
     }
-  }, [])
+  }, [optionsString])
 
   const addChip = (e) => {
     const index = e.target.selectedIndex;

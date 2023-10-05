@@ -33,7 +33,7 @@ const ProductEditPage = () => {
 
   useEffect(() => {
     dispatch(loadProductInfo(id))
-  }, [])
+  }, [productInfo])
 
   const editProductInfo = () => {
     dispatch(editProduct({

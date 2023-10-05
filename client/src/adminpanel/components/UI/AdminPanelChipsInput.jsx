@@ -11,7 +11,7 @@ const AdminPanelChipsInput = (props) => {
       setChips(props.defaultChips)
       props.onChange(props.defaultChips)
     }
-  }, [props.defaultValue])
+  }, [props.defaultChips])
 
   const handleChange = (e) => {
     setAddValue(e.target.value)
