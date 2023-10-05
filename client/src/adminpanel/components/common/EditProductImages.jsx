@@ -3,16 +3,27 @@ import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
 const EditProductImages = (props) => {
 
-  const [mainImage, setMainImage] = useState(null);
-  const [imagesURL, setImagesURL] = useState([]);
-  const [imageFiles, setImageFiles] = useState([]);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     if (props.images) {
-      setImages(props.images)
+      const urlToBlob = async (url) => {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return new File([blob], url);
+      };
+  
+      const loadImageFiles = async () => {
+        const filePromises = props.images.map(url => urlToBlob(url));
+        const files = await Promise.all(filePromises);
+        setImages(files);
+        props.setImageGallery(files);
+      };
+  
+      loadImageFiles();
     }
-  }, [])
+
+  }, [props.images]);
 
   const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
 
@@ -22,28 +33,24 @@ const EditProductImages = (props) => {
     const type = e.target.files[0].type
     if (!allowedTypes.includes(type)) return
 
-    setImages([...images, e.target.files[0]])
-    setImageFiles([...imageFiles, e.target.files[0]])
+    const newImagesArray = [...images, e.target.files[0]];
+
+    setImages(newImagesArray);
+    props.setImageGallery(newImagesArray);
   }
 
   const removePhoto = (image) => {
-    setImages(images.filter(img => img !== image))
-    setImageFiles(imageFiles.filter(img => img !== image))
-    setImagesURL(imagesURL.filter(img => img !== image))
+    const filteredImages = images.filter(img => img !== image);
+    setImages(filteredImages)
+    props.setImageGallery(filteredImages)
   }
 
   const selectAsMain = (image) => {
-    setImages([image, ...images.filter(img => img !== image)])
-    
-    if (typeof image !== 'string') {
-      setImageFiles(imageFiles.filter(img => img !== image))
-      setImageFiles([image, ...imageFiles])
-    }
+    const filteredImages = images.filter(img => img !== image);
+    const newImagesArray = [image, ...filteredImages];
 
-    if (typeof image === 'string') {
-      setImagesURL(imagesURL.filter(img => img !== image))
-      setMainImage(image)
-    }
+    setImages(newImagesArray);
+    props.setImageGallery(newImagesArray);
   }
 
   return (
@@ -66,11 +73,11 @@ const EditProductImages = (props) => {
         </div>
         <ul className="image-list">
           {
-            images.map(image => 
-              <li className="image-list-item">
+            images.map((image, index) => 
+              <li className="image-list-item" key={index}>
                 <div className="image-list-item-image">
                   <img 
-                    src={typeof image === 'string' ? image : URL.createObjectURL(image)} 
+                    src={URL.createObjectURL(image)} 
                     alt="product-image" 
                   />
                 </div>
@@ -81,7 +88,7 @@ const EditProductImages = (props) => {
                     </div>
                   }
                   <div className="info-text">
-                  {typeof image === 'string' ? image : image.name}
+                    {image.name}
                   </div>
                   <div className="info-buttons">
                     { images[0] !== image &&
