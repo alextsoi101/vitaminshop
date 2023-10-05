@@ -29,6 +29,10 @@
       h2 {
         @include font-size($font-size-xl, $font-weight-bold, $text-green-dark);
       }
+
+      span {
+        @include font-size($font-size-xl, $font-weight-bold, $text-green);
+      }
     }
 
     .page-main-content {
