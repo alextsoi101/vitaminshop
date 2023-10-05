@@ -70,7 +70,7 @@ const ProductEditPage = () => {
   return (
     <div className="producteditpage">
       <div className="page-header">
-        <h2>Edit product</h2>
+        <h2>Edit product <span>#{id}</span></h2>
       </div>
       <div className="page-main-content">
         <div className="editproduct-wrapper">
