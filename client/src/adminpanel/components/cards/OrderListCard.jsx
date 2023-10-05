@@ -1,32 +1,44 @@
 import React from "react";
-import EditIcon from '@mui/icons-material/Edit';
-import defaultphoto from '../../../assets/images/user.png'
+import { useNavigate } from 'react-router-dom';
 
 const OrderListCard = (props) => {
+
+  const navigate = useNavigate();
+
+  const goToOrderInfoPage = () => {
+    navigate(`${props.id}`)
+  }
+
   return (
     <tr className="orderlistcard">
       <td>
         <div className="td-content td-id">
-          <button className="link-button">
-            #232
+          <button 
+            className="link-button"
+            onClick={goToOrderInfoPage}
+          >
+            #{props.id}
           </button>
         </div>
       </td>
       <td>
         <div className="td-content td-email">
-          <button className="link-button">
-            alextestpro@gmail.com
+          <button 
+            className="link-button"
+            onClick={goToOrderInfoPage}
+          >
+            {props.email}
           </button>
         </div>
       </td>
       <td>
         <div className="td-content td-created-at">
-          Sep 19, 2023
+          {props.createdAt}
         </div>
       </td>
       <td>
         <div className="td-content td-total">
-          $<span>342</span>.00
+          $<span>{props.total}</span>.00
         </div>
       </td>
     </tr>

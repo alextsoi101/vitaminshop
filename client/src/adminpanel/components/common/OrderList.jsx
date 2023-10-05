@@ -1,10 +1,26 @@
 import React from "react";
 import OrderListCard from "../cards/OrderListCard";
-import Pagination from '@mui/material/Pagination';
+import AdminPagination from "./AdminPagination";
 
-const OrderList = () => {
+const OrderList = (props) => {
 
-  
+  const handleIdInput = (e) => {
+    props.setId(e.target.value)
+  }
+
+  const handleEmailInput = (e) => {
+    props.setEmail(e.target.value)
+  }
+
+  const handleLimitSelect = (e) => {
+    props.setLimit(e.target.value)
+    props.changeLimit(e.target.value)
+  }
+
+  const handlePageChange = (value) => {
+    props.setPage(value)
+    props.changePage(value)
+  }
 
   return (
     <div className="orderlist">
@@ -20,6 +36,7 @@ const OrderList = () => {
                   className="th-input input-id"
                   type='text'
                   placeholder='Id'
+                  onChange={(e) => handleIdInput(e)}
                 />
               </div>
             </th>
@@ -32,6 +49,7 @@ const OrderList = () => {
                   className="th-input input-email"
                   type='text'
                   placeholder='Email'
+                  onChange={(e) => handleEmailInput(e)}
                 />
               </div>
             </th>
@@ -56,42 +74,42 @@ const OrderList = () => {
           </tr>
         </thead>
         <tbody>
-          <OrderListCard 
-
-          />
-          <OrderListCard 
-
-          />
-          <OrderListCard 
-
-          />
-          <OrderListCard 
-
-          />
+          {
+            props.orders.rows.map(order => 
+              <OrderListCard 
+                key={order.id}
+                id={order.id}
+                email={order.email}
+                createdAt={order.createdAt}
+                total={order.total}
+              />
+            )
+          }
         </tbody>
       </table>
       <div className="orderlist-pagination">
         <div className="pagination-results-per-page">
           Show
-          <select className="select-per-page">
-            <option>
+          <select 
+            className="select-per-page"
+            onChange={(e) => handleLimitSelect(e)}
+          >
+            <option value={10}>
               10
             </option>
-            <option>
+            <option value={15}>
               15
             </option>
-            <option>
+            <option value={20}>
               20
             </option>
           </select>
           per page
         </div>
         <div>
-          <Pagination 
-            size="medium"
-            count={10} 
-            shape="rounded"
-            variant="outlined"
+          <AdminPagination 
+            pageCount={props.pageCount}
+            onChange={handlePageChange}
           />
         </div>
       </div>
