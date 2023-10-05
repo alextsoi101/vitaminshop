@@ -1,8 +1,23 @@
 import React from "react";
 import AdminPanelInput from "../UI/AdminPanelInput";
 import AdminPanelDateInput from "../UI/AdminPanelDateInput";
+import { useSelector } from "react-redux";
 
 const EditPromo = (props) => {
+
+  const promocodeInfo = useSelector(state => state.admin.promocodeInfo);
+
+  const handlePromocodeInput = (value) => {
+    props.setPromocode(value)
+  }
+
+  const handlePercentDiscountInput = (value) => {
+    props.setPercentDiscount(value)
+  }
+
+  const handleExpirationDateInput = (value) => {
+    props.setExpirationDate(value)
+  }
 
   return (
     <div className="editpromo">
@@ -13,6 +28,8 @@ const EditPromo = (props) => {
         <AdminPanelInput 
           label='Promo Code'
           placeholder='Promo code...'
+          defaultValue={promocodeInfo.promocode}
+          onChange={handlePromocodeInput}
         />
       </div>
       <div className="promo-percent">
@@ -20,12 +37,15 @@ const EditPromo = (props) => {
           label='Percent Discount'
           suffix='%'
           placeholder='Percent discount...'
+          defaultValue={promocodeInfo.percentDiscount}
+          onChange={handlePercentDiscountInput}
         />
       </div>
       <div className="promo-expiration">
         <AdminPanelDateInput 
           label='Expiration Date'
-          // defaultValue={defaultValue}
+          defaultValue={promocodeInfo.expirationDate}
+          onChange={handleExpirationDateInput}
         />
       </div>
     </div>
