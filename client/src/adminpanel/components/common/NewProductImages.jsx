@@ -1,12 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
-const NewProductImages = () => {
+const NewProductImages = (props) => {
 
   const [imageFiles, setImageFiles] = useState([]);
-
+  
   const [images, setImages] = useState([]);
+
   const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
 
   const setNewImage = (e) => {
@@ -17,19 +17,23 @@ const NewProductImages = () => {
 
     setImages([...images, e.target.files[0]])
     setImageFiles([...imageFiles, e.target.files[0]])
+    props.setImageGallery([...imageFiles, e.target.files[0]])
   }
 
   const removePhoto = (image) => {
     setImages(images.filter(img => img !== image))
     setImageFiles(imageFiles.filter(img => img !== image))
+    props.setImageGallery(imageFiles.filter(img => img !== image))
   }
 
   const selectAsMain = (image) => {
-    // setImages(images.filter(img => img !== image))
     setImages([image, ...images.filter(img => img !== image)])
 
-    setImageFiles(imageFiles.filter(img => img !== image))
-    setImageFiles([image, ...imageFiles])
+    const filteredImages = imageFiles.filter(img => img !== image);
+    const newImagesArray = [image, ...filteredImages]
+
+    setImageFiles(newImagesArray)
+    props.setImageGallery(newImagesArray)
   }
 
   return (
@@ -52,10 +56,13 @@ const NewProductImages = () => {
         </div>
         <ul className="image-list">
           {
-            images.map(image =>
-              <li className="image-list-item">
+            images.map((image, index) =>
+              <li className="image-list-item" key={index}>
                 <div className="image-list-item-image">
-                  <img src={URL.createObjectURL(image)} alt="product-image" />
+                  <img 
+                    src={URL.createObjectURL(image)} 
+                    alt="product-image" 
+                  />
                 </div>
                 <div className="item-image-info">
                   { images[0] === image &&
