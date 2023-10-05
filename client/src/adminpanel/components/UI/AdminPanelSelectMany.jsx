@@ -4,20 +4,39 @@ import CloseIcon from '@mui/icons-material/Close';
 const AdminPanelSelectMany = (props) => {
 
   const [chips, setChips] = useState([]);
+  const [chipsUI, setChipsUI] = useState([]);
 
   useEffect(() => {
     if (props.selectedOptions) {
-      setChips(props.selectedOptions)
+      setChips(props.selectedOptions.values)
+      setChipsUI(props.selectedOptions.text)
     }
   }, [])
 
   const addChip = (e) => {
-    if (chips.includes(e.target.value)) return
-    setChips([...chips, e.target.value])
+    const index = e.target.selectedIndex;
+    const optionElement = e.target.childNodes[index]
+    const chipText =  optionElement.getAttribute('chipText');
+    const chipValue = e.target.value
+
+    if (chips.includes(chipText)) return
+    setChipsUI([...chipsUI, chipText])
+    setChips([...chips, chipValue])
+    props.onChange([...chips, chipValue])
   }
 
   const removeChip = (chip) => {
-    setChips(chips.filter(item => item !== chip))
+    const indexToRemove = chipsUI.findIndex(item => item === chip);
+  
+    if (indexToRemove !== -1) {
+      const newChipsUI = [...chipsUI.slice(0, indexToRemove), ...chipsUI.slice(indexToRemove + 1)];
+      const newChips = [...chips.slice(0, indexToRemove), ...chips.slice(indexToRemove + 1)];
+  
+      setChipsUI(newChipsUI);
+      setChips(newChips);
+
+      props.onChange(newChips);
+    }
   }
 
   return (
@@ -27,7 +46,7 @@ const AdminPanelSelectMany = (props) => {
       </div>
       <div className="chips-container">
         {
-          chips.map((chip, index) => 
+          chipsUI.map((chip, index) => 
             <div 
               key={index}
               className="chip"
@@ -54,7 +73,8 @@ const AdminPanelSelectMany = (props) => {
             props.options.map((option, index) =>
               <option 
                 key={index}
-                value={option.text}
+                value={option.value}
+                chipText={option.text}
               >
                 {option.text}
               </option>

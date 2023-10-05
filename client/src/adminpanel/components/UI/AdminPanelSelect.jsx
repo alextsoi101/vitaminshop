@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const AdminPanelSelect = (props) => {
 
   const [selectValue, setSelectValue] = useState(null);
 
+  useEffect(() => {
+    if (props.selectedValueNumber) {
+      setSelectValue(props.options[props.selectedValueNumber - 1].value)
+      props.onChange(props.options[props.selectedValueNumber - 1].value)
+    }
+  }, [props.selectedValueNumber])
+
   const handleSelect = (e) => {
     setSelectValue(e.target.value)
+    props.onChange(e.target.value)
   }
 
   return (
@@ -22,20 +30,20 @@ const AdminPanelSelect = (props) => {
         >
           {
             props.options.map((option, index) => { 
-              return props.selectedValueIndex === index ? 
+              return props.selectedValueNumber - 1 === index ? 
                 <option 
                   key={index} 
-                  value={option}
+                  value={option.value}
                   selected
                 >
-                  {option}
+                  {option.text}
                 </option>
               : 
                 <option 
                   key={index}
-                  value={option}
+                  value={option.value}
                 >
-                  {option}
+                  {option.text}
                 </option>
             }
               

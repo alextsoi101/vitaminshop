@@ -7,11 +7,13 @@ const AdminPanelTextArea = (props) => {
   useEffect(() => {
     if (props.defaultValue) {
       setTextAreaValue(props.defaultValue)
+      props.onChange(props.defaultValue)
     }
-  }, [])
+  }, [props.defaultValue])
 
   const handleChange = (e) => {
     setTextAreaValue(e.target.value)
+    props.onChange(e.target.value)
   }
 
   return (

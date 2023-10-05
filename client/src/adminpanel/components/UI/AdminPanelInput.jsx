@@ -7,11 +7,13 @@ const AdminPanelInput = (props) => {
   useEffect(() => {
     if (props.defaultValue) {
       setInputValue(props.defaultValue)
+      props.onChange(props.defaultValue)
     }
-  }, [])
+  }, [props.defaultValue])
 
   const handleChange = (e) => {
     setInputValue(e.target.value)
+    props.onChange(e.target.value)
   }
 
   return (
@@ -22,7 +24,7 @@ const AdminPanelInput = (props) => {
       <div className="input-container">
         <input 
           className="input-field"
-          type='text'
+          type={props.type || 'text'}
           placeholder={props.placeholder}
           value={inputValue}
           onChange={(event) => handleChange(event)}

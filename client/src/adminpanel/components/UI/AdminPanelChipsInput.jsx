@@ -9,8 +9,9 @@ const AdminPanelChipsInput = (props) => {
   useEffect(() => {
     if (props.defaultChips) {
       setChips(props.defaultChips)
+      props.onChange(props.defaultChips)
     }
-  }, [])
+  }, [props.defaultValue])
 
   const handleChange = (e) => {
     setAddValue(e.target.value)
@@ -21,10 +22,13 @@ const AdminPanelChipsInput = (props) => {
     if (addValue === null) return
     if (!addValue.trim().length) return
     setChips([...chips, addValue])
+    props.onChange([...chips, addValue])
   }
 
   const removeChip = (chip) => {
-    setChips(chips.filter(item => item !== chip))
+    const newChips = chips.filter(item => item !== chip)
+    setChips(newChips)
+    props.onChange(newChips)
   }
 
   return (
