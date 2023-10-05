@@ -9,6 +9,18 @@ const NewPromo = (props) => {
   date.setDate(futureDate);
   const defaultValue = date.toLocaleDateString('en-CA');
 
+  const handlePromocodeInput = (value) => {
+    props.setPromocode(value)
+  }
+
+  const handlePercentDiscountInput = (value) => {
+    props.setPercentDiscount(value)
+  }
+
+  const handleExpirationDateInput = (value) => {
+    props.setExpirationDate(value)
+  }
+
   return (
     <div className="newpromo">
       <div className="newpromo-header">
@@ -18,6 +30,7 @@ const NewPromo = (props) => {
         <AdminPanelInput 
           label='Promo Code'
           placeholder='Promo code...'
+          onChange={handlePromocodeInput}
         />
       </div>
       <div className="promo-percent">
@@ -25,12 +38,14 @@ const NewPromo = (props) => {
           label='Percent Discount'
           suffix='%'
           placeholder='Percent discount...'
+          onChange={handlePercentDiscountInput}
         />
       </div>
       <div className="promo-expiration">
         <AdminPanelDateInput 
           label='Expiration Date'
           defaultValue={defaultValue}
+          onChange={handleExpirationDateInput}
         />
       </div>
     </div>

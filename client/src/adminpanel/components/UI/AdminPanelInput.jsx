@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const AdminPanelInput = (props) => {
+const AdminPanelDateInput = (props) => {
 
   const [inputValue, setInputValue] = useState(props.defaultValue);
 
@@ -9,7 +9,7 @@ const AdminPanelInput = (props) => {
       setInputValue(props.defaultValue)
       props.onChange(props.defaultValue)
     }
-  }, [props.defaultValue])
+  }, [])
 
   const handleChange = (e) => {
     setInputValue(e.target.value)
@@ -17,26 +17,20 @@ const AdminPanelInput = (props) => {
   }
 
   return (
-    <div className="adminpanelinput">
-      <div className="adminpanelinput-label">
+    <div className="adminpaneldateinput">
+      <div className="adminpaneldateinput-label">
         {props.label}
       </div>
       <div className="input-container">
         <input 
           className="input-field"
-          type={props.type || 'text'}
-          placeholder={props.placeholder}
+          type='date'
           value={inputValue}
           onChange={(event) => handleChange(event)}
         />
-        { props.suffix &&
-          <div className="suffix-field">
-            {props.suffix}
-          </div>
-        }
       </div>
     </div>
   )
 }
 
-export default AdminPanelInput;
+export default AdminPanelDateInput;
