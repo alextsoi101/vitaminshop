@@ -39,7 +39,7 @@ const PromoListCard = (props) => {
       </td>
       <td>
         <div className="td-content td-expiration">
-          {props.createdAt}
+          {props.expirationDate}
         </div>
       </td>
       <td>

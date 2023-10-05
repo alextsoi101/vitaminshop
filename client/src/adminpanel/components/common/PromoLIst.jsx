@@ -61,7 +61,7 @@ const PromoList = (props) => {
                 id={promocode.id}
                 promocode={promocode.promocode}
                 percentDiscount={promocode.percentDiscount}
-                createdAt={promocode.createdAt}
+                expirationDate={promocode.expirationDate}
               />
             )
           }
