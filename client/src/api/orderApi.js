@@ -71,7 +71,6 @@ export const createOrderNoAuth = async (
 }
 
 export const fetchAllOrders = async (userId) => {
-  const {data} = await $host.get('api/order/' + userId)
+  const {data} = await $host.get('api/order/user/' + userId)
   return data
 }
-

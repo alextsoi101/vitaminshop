@@ -33,7 +33,7 @@ export const fetchUsers = async (userId, name, email, limit, page) => {
 }
 
 export const fetchUserInfo = async (userId) => {
-  const {data} = await $host.get('api/user/' + userId)
+  const {data} = await $host.get('api/user/info/' + userId)
   return data
 }
 
@@ -149,14 +149,14 @@ export const updateProduct = async (
 }
 
 export const fetchPromocodes = async (limit, page) => {
-  const {data} = await $host.get('api/promo', {params: {
+  const {data} = await $host.get('api/promo/all', {params: {
     limit, page
   }})
   return data
 }
 
 export const fetchPromocodeInfo = async (promocode) => {
-  const {data} = await $host.get('api/promo/one' + promocode)
+  const {data} = await $host.get('api/promo/one/' + promocode)
   return data
 }
 

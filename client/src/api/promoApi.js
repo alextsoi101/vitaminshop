@@ -6,7 +6,6 @@ export const checkPromo = async (userId, promocode) => {
 }
 
 export const fetchPromo = async (promocode) => {
-  const {data} = await $host.get('api/promo/' + promocode)
+  const {data} = await $host.get('api/promo/one/' + promocode)
   return data
 }
-

@@ -65,4 +65,3 @@ export const fetchAddress = async (userId) => {
   const {data} = await $host.get('api/user/address/' + userId)
   return data
 }
-

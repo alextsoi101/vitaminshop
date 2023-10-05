@@ -1,14 +1,14 @@
 import { $host } from "./api";
 
 export const fetchProducts = async (page, limit, minPrice, maxPrice, rate, sortBy) => {
-  const {data} = await $host.get('api/product', {params: {
+  const {data} = await $host.get('api/product/all', {params: {
     page, limit, minPrice, maxPrice, rate, sortBy
   }})
   return data
 }
 
 export const fetchProductsByCategory = async (categoryId, page, limit, minPrice, maxPrice, rate, sortBy) => {
-  const {data} = await $host.get('api/product', {params: {
+  const {data} = await $host.get('api/product/all', {params: {
     categoryId, page, limit, minPrice, maxPrice, rate, sortBy
   }})
   return data
@@ -38,4 +38,3 @@ export const createReview = async (userId, productId, name, rate, review) => {
   const {data} = await $host.post('api/review', {userId, productId, name, rate, review})
   return data
 }
-

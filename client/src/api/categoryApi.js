@@ -1,7 +1,7 @@
 import { $host } from "./api";
 
 export const fetchCategories = async () => {
-  const {data} = await $host.get('api/category')
+  const {data} = await $host.get('api/category/all')
   return data
 }
 
