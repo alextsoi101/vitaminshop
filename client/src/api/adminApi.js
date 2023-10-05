@@ -62,7 +62,7 @@ export const fetchProducts = async (categoryId, name, page, limit, minPrice, max
 }
 
 export const fetchProductInfo = async (id) => {
-  const {data} = await $host.get('api/product/product' + id)
+  const {data} = await $host.get('api/product/product/' + id)
   return data
 }
 
@@ -93,7 +93,10 @@ export const createProduct = async (
   formData.append('description', description);
   formData.append('shortDescription', shortDescription);
   formData.append('instock', instock);
-  formData.append('imageGallery', imageGallery);
+
+  imageGallery.map(image => {
+    formData.append('imageGallery', image);
+  })
 
   const {data} = await $host.post('api/product', formData, {
     headers: {
@@ -132,7 +135,10 @@ export const updateProduct = async (
   formData.append('description', description);
   formData.append('shortDescription', shortDescription);
   formData.append('instock', instock);
-  formData.append('imageGallery', imageGallery);
+  
+  imageGallery.map(image => {
+    formData.append('imageGallery', image);
+  })
 
   const {data} = await $host.put('api/product', formData, {
     headers: {
