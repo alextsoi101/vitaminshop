@@ -1,6 +1,6 @@
 import React from "react";
+import AdminPagination from "./AdminPagination";
 import ProductListCard from "../cards/ProductListCard";
-import Pagination from '@mui/material/Pagination';
 
 const ProductList = (props) => {
 
@@ -37,7 +37,7 @@ const ProductList = (props) => {
     props.changeLimit(e.target.value)
   }
 
-  const handlePageChange = (event, value) => {
+  const handlePageChange = (value) => {
     props.setPage(value)
     props.changePage(value)
   }
@@ -199,11 +199,8 @@ const ProductList = (props) => {
           per page
         </div>
         <div>
-          <Pagination 
-            size="medium"
-            count={props.pageCount}
-            shape="rounded"
-            variant="outlined"
+          <AdminPagination 
+            pageCount={props.pageCount}
             onChange={handlePageChange}
           />
         </div>

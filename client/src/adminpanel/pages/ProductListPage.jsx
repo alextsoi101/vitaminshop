@@ -31,23 +31,13 @@ const ProductListPage = () => {
       maxPrice: 1000,
       inStock: null
     }))
-    .then(response => calculatePageCount(response.payload.count, limit))
-    .then(count => setPageCount(count))
   }, [])
 
-  const handleApply = () => {
-    dispatch(loadProducts({
-      categoryId: categoryId,
-      name: name,
-      page: page,
-      limit: limit,
-      minPrice: minPrice,
-      maxPrice: maxPrice,
-      inStock: inStock
-    }))
-    .then(response => calculatePageCount(response.payload.count, limit))
-    .then(count => setPageCount(count))
-  }
+  useEffect(() => {
+    if (products) {
+      setPageCount(calculatePageCount(products.count, limit))
+    }
+  }, [products])
 
   const changeLimit = (newLimit) => {
     dispatch(loadProducts({
@@ -59,8 +49,6 @@ const ProductListPage = () => {
       maxPrice: maxPrice,
       inStock: inStock
     }))
-    .then(response => calculatePageCount(response.payload.count, limit))
-    .then(count => setPageCount(count))
   }
 
   const changePage = (newPage) => {
@@ -73,8 +61,18 @@ const ProductListPage = () => {
       maxPrice: maxPrice,
       inStock: inStock
     }))
-    .then(response => calculatePageCount(response.payload.count, limit))
-    .then(count => setPageCount(count))
+  }
+
+  const handleApply = () => {
+    dispatch(loadProducts({
+      categoryId: categoryId,
+      name: name,
+      page: page,
+      limit: limit,
+      minPrice: minPrice,
+      maxPrice: maxPrice,
+      inStock: inStock
+    }))
   }
 
   const clickNewProduct = () => {
