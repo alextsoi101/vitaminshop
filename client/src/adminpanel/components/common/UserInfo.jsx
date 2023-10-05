@@ -9,7 +9,11 @@ const UserInfo = (props) => {
           FULL NAME
         </div>
         <div className="item-value">
-          Alex Tsoi
+          {props.firstname || props.lastname ? 
+            `${props.firstname} ${props.lastname}`
+            :
+            'No name'
+          }
         </div>
       </div>
       <div className="userinfo-item">
@@ -17,7 +21,7 @@ const UserInfo = (props) => {
           EMAIL
         </div>
         <div className="item-value">
-          alex@gmail.com
+          {props.email}
         </div>
       </div>
       <div className="userinfo-item">
@@ -25,7 +29,7 @@ const UserInfo = (props) => {
           ROLE
         </div>
         <div className="item-value">
-          USER
+          {props.role}
         </div>
       </div>
       <div className="userinfo-item">
@@ -33,7 +37,7 @@ const UserInfo = (props) => {
           CREATED AT
         </div>
         <div className="item-value">
-          Sep 19, 2023
+          {props.createdAt}
         </div>
       </div>
     </div>
