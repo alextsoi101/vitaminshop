@@ -1,8 +1,18 @@
 import React from "react";
 import CategoryListCard from "../cards/CategoryListCard";
-import Pagination from '@mui/material/Pagination';
+import AdminPagination from "./AdminPagination";
 
-const CategoryList = () => {
+const CategoryList = (props) => {
+
+  const handleLimitSelect = (e) => {
+    props.setLimit(e.target.value)
+    props.changeLimit(e.target.value)
+  }
+
+  const handlePageChange = (value) => {
+    props.setPage(value)
+    props.changePage(value)
+  }
 
   return (
     <div className="categorylist">
@@ -26,42 +36,40 @@ const CategoryList = () => {
           </tr>
         </thead>
         <tbody>
-          <CategoryListCard 
-
-          />
-          <CategoryListCard 
-
-          />
-          <CategoryListCard 
-
-          />
-          <CategoryListCard 
-
-          />
+          {
+            props.categories.rows.map(category => 
+              <CategoryListCard 
+                key={category.id}
+                id={category.id}
+                name={category.name}
+              />
+            )
+          }
         </tbody>
       </table>
       <div className="categorylist-pagination">
         <div className="pagination-results-per-page">
           Show
-          <select className="select-per-page">
-            <option>
+          <select 
+            className="select-per-page"
+            onChange={(e) => handleLimitSelect(e)}
+          >
+            <option value={10}>
               10
             </option>
-            <option>
+            <option value={15}>
               15
             </option>
-            <option>
+            <option value={20}>
               20
             </option>
           </select>
           per page
         </div>
         <div>
-          <Pagination 
-            size="medium"
-            count={10} 
-            shape="rounded"
-            variant="outlined"
+          <AdminPagination 
+            pageCount={props.pageCount}
+            onChange={handlePageChange}
           />
         </div>
       </div>

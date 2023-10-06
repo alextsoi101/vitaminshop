@@ -6,14 +6,14 @@ const CategoryListCard = (props) => {
       <td>
         <div className="td-content td-id">
           <button className="link-button">
-            #232
+            #{props.id}
           </button>
         </div>
       </td>
       <td>
         <div className="td-content td-categoryname">
           <button className="link-button">
-            For men
+            {props.name}
           </button>
         </div>
       </td>
