@@ -6,6 +6,9 @@
 @import '../layout/_adminnavbar';
 @import '../layout/_adminheader';
 
+//Modal:
+@import '../modal/_confirmmodal';
+
 // Components:
 @import '../components/_admindropdown';
 
@@ -57,7 +60,7 @@
         position: fixed;
         box-sizing: border-box;
         width: 230px;
-        height: 100vh;
+        height: calc(100vh - 60px);
         background: $white;
         border-right: 1px solid $border-grey;
       }

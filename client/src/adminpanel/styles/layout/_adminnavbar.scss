@@ -133,13 +133,24 @@
     margin-top: 10px;
     width: 230px;
 
+    .adminnavbar-block {
+      margin-top: 10px;
+      padding-bottom: 10px;
+
+      .block-main-text {
+        @include font-size($font-size-xs, $font-weight-medium, $text-dark);
+        margin-left: 10px;
+        padding-bottom: 5px;
+      }
+    }
+
     .list-item {
       @include flex-center-y;
-      height: 45px;
+      height: 40px;
       cursor: pointer;
 
       .left-mark {
-        height: 39px;
+        height: 37px;
         width: 4px;
         background: $green-dark;
         border-radius: 0px 5px 5px 0px;
@@ -150,7 +161,7 @@
         @include font-size($font-size-sm, $font-weight-medium, $text-dark);
         margin-left: 10px;
         width: 210px;
-        height: 39px;
+        height: 37px;
         border-radius: 5px;
         transition: color 0.2s;
         transition: background-color 0.2s;
@@ -163,7 +174,7 @@
 
         .icon-wrapper {
           @include flex-center;
-          margin-left: 12px;
+          margin-left: 20px;
         }
         
         span {
@@ -176,13 +187,13 @@
         @include font-size($font-size-sm, $font-weight-medium, $text-green-dark);
         margin-left: 6px;
         width: 210px;
-        height: 39px;
+        height: 37px;
         background: $grey-semilight;
         border-radius: 5px;
 
         .icon-wrapper {
           @include flex-center;
-          margin-left: 12px;
+          margin-left: 20px;
         }
         
         span {
