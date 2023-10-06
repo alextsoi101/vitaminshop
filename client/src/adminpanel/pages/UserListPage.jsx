@@ -39,7 +39,7 @@ const UserListPage = () => {
       name: name,
       email: email,
       limit: newLimit,
-      page: page
+      page: 1
     }))
   }
 
@@ -59,7 +59,7 @@ const UserListPage = () => {
       name: name,
       email: email,
       limit: limit,
-      page: page
+      page: 1
     }))
   }
 

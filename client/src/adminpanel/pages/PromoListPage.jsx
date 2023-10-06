@@ -32,7 +32,7 @@ const PromoListPage = () => {
   const changeLimit = (newLimit) => {
     dispatch(loadPromocodes({
       limit: newLimit,
-      page: page,
+      page: 1,
     }))
   }
 

@@ -36,7 +36,7 @@ const OrderListPage = () => {
       id: id,
       email: email,
       limit: newLimit,
-      page: page
+      page: 1
     }))
   }
 
@@ -54,7 +54,7 @@ const OrderListPage = () => {
       id: id,
       email: email,
       limit: limit,
-      page: page
+      page: 1
     }))
   }
 

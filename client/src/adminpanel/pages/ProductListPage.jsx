@@ -43,7 +43,7 @@ const ProductListPage = () => {
     dispatch(loadProducts({
       categoryId: categoryId,
       name: name,
-      page: page,
+      page: 1,
       limit: newLimit,
       minPrice: minPrice,
       maxPrice: maxPrice,
@@ -67,7 +67,7 @@ const ProductListPage = () => {
     dispatch(loadProducts({
       categoryId: categoryId,
       name: name,
-      page: page,
+      page: 1,
       limit: limit,
       minPrice: minPrice,
       maxPrice: maxPrice,
