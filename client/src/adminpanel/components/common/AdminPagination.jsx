@@ -16,7 +16,7 @@ const AdminPagination = (props) => {
   }
 
   return (
-    <div className="userlistpage">
+    <div className="adminpagination">
       {count > 0 &&
         <Pagination 
         size="medium"
