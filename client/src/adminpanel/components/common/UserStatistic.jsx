@@ -8,7 +8,7 @@ const UserStatistic = () => {
         <div className="userstatistic-header-text">
           Users statistic
         </div>
-        <div className="userstatistic-header-buttons">
+        {/* <div className="userstatistic-header-buttons">
           <button 
             className="range-btn"
           >
@@ -24,7 +24,7 @@ const UserStatistic = () => {
           >
             Monthly
           </button>
-        </div>
+        </div> */}
       </div>
       <UsersChart />
     </div>
