@@ -9,10 +9,14 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DiscountIcon from '@mui/icons-material/Discount';
 import CategoryIcon from '@mui/icons-material/Category';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { useDispatch } from "react-redux";
+import { adminLogout, adminLoginCheck } from "../../store/adminSlice";
 
 const AdminNavBar = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const {pathname} = useLocation();
   const [currentLocation, setCurrentLocation] = useState(pathname);
 
@@ -57,8 +61,9 @@ const AdminNavBar = () => {
   }
 
   const handleLogout = () => {
-    setCurrentLocation('signout')
-    navigate('users')
+    setCurrentLocation('/admin/login')
+    dispatch(adminLogout())
+    dispatch(adminLoginCheck())
   }
 
   return (
