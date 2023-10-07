@@ -104,19 +104,28 @@ const ShopPage = () => {
                 description={categoryDescription}
               />
             }
-            <ShopPagination 
-              fetchByPage={fetchByPage}
-              totalPages={totalPages}
-            />
+            { products.length > 0 &&
+              <ShopPagination 
+                fetchByPage={fetchByPage}
+                totalPages={totalPages}
+              />
+            }
             { isProductsLoading ? <ShopGalleryLoader limit={9} /> :
               <ShopGallery 
                 products={products}
               />
             }
-            <ShopPagination 
-              fetchByPage={fetchByPage}
-              totalPages={totalPages}
-            />
+            { products.length > 0 &&
+              <ShopPagination 
+                fetchByPage={fetchByPage}
+                totalPages={totalPages}
+              />
+            }
+            { products.length === 0 &&
+              <div style={{fontSize: '18px', fontWeight: '500', color:'#46494F'}}>
+                The products with these parameters were not found.
+              </div>
+            }
           </div>
         </div>
 
