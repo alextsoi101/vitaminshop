@@ -1,4 +1,17 @@
-import { $host } from "./api";
+import { $host, $authAdminHost } from "./api";
+import jwt_decode from "jwt-decode";
+
+export const adminLogin = async (email, password) => {
+  const {data} = await $host.post('api/user/login-admin', {email, password})
+  localStorage.setItem('adminToken', data.token)
+  return jwt_decode(data.token)
+}
+
+export const adminCheck = async () => {
+  const {data} = await $authAdminHost.get('api/user/auth-admin')
+  localStorage.setItem('adminToken', data.token)
+  return jwt_decode(data.token)
+}
 
 export const fetchOrderStatistic = async (startDate, lastDate) => {
   const {data} = await $host.get('api/order/orderstatistic', {params: {startDate, lastDate}})

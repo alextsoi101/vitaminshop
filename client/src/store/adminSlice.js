@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { 
+  adminLogin,
+  adminCheck,
   fetchOrderStatistic,
   fetchSaleStatistic,
   fetchLifetimeOrders,
@@ -21,6 +23,8 @@ import {
   fetchCategories } from '../api/adminApi';
 
 const initialState = {
+  isAdminLogin: false,
+  adminInfo: null,
   orderStatistic: [],
   saleStatistic: [],
   lifetimeOrders: null,
@@ -39,6 +43,8 @@ const initialState = {
   errorMessage: null,
 
   //Loadings:
+  isAdminLoginLoading: false,
+  isAdminLoginCheckLoading: false,
   isOrderStatisticLoading: true,
   isSaleStatisticLoading: true,
   isLifetimeOrdersLoading: true,
@@ -59,6 +65,39 @@ const initialState = {
   isEditPromocodeLoading: false,
   isCategoriesLoading: false,
 }
+
+export const adminSignIn = createAsyncThunk(
+  'admin/adminSignIn',
+  async (arg) => {
+    try {
+      const response = await adminLogin(arg.email, arg.password);
+      return response;
+    }
+    catch (error) {
+      throw error.response.data
+    }
+  }
+)
+
+export const adminLoginCheck = createAsyncThunk(
+  'admin/adminLoginCheck',
+  async () => {
+    try {
+      const response = await adminCheck();
+      return response;
+    }
+    catch (error) {
+      throw error.response.data
+    }
+  }
+)
+
+export const adminLogout = createAsyncThunk(
+  'admin/adminLogout',
+  async () => {
+    localStorage.removeItem('adminToken');
+  }
+)
 
 export const loadOrderStatistic = createAsyncThunk(
   'admin/loadOrderStatistic',
@@ -224,6 +263,7 @@ export const addNewProduct = createAsyncThunk(
   'admin/addNewProduct',
   async (arg) => {
     try {
+      console.log('image gallery api: ' + arg.imageGallery);
       const response = await createProduct(
         arg.categoriesId, 
         arg.name, 
@@ -341,13 +381,35 @@ export const loadCategories = createAsyncThunk(
 const adminSlice = createSlice({
   name: 'admin',
   initialState,
-  reducers: {
-    // setProductId: (state, action) => {
-    //   state.productId = action.payload
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(adminSignIn.pending, (state) => {
+        state.isAdminLoginLoading = true;
+      })
+      .addCase(adminSignIn.fulfilled, (state, action) => {
+        state.isAdminLogin = true;
+        state.isAdminLoginLoading = false;
+      })
+      .addCase(adminSignIn.rejected, (state, action) => {
+        state.errorMessage = action.error.message;
+        state.isAdminLogin = false;
+        state.isAdminLoginLoading = false;
+      })
+
+      .addCase(adminLoginCheck.pending, (state, action) => {
+        state.isAdminLoginCheckLoading = true;
+      })
+      .addCase(adminLoginCheck.fulfilled, (state, action) => {
+        state.isAdminLogin = true;
+        state.adminInfo = action.payload;
+        state.isAdminLoginCheckLoading = false;
+      })
+      .addCase(adminLoginCheck.rejected, (state, action) => {
+        state.isAdminLogin = false;
+        state.isAdminLoginCheckLoading = false;
+      })
+
       .addCase(loadOrderStatistic.pending, (state) => {
         state.isOrderStatisticLoading = true;
       })
