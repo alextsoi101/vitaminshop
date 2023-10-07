@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { calculatePageCount } from '../utils/calculatePageCount';
 import ShopBenefits from '../components/common/ShopBenefits';
 import FilterSection from '../components/common/FilterSection';
 import ShopFilter from '../components/common/ShopFilter';
@@ -30,7 +31,6 @@ const ShopPage = () => {
 
   const products = useSelector(state => state.shop.products);
   const totalCount = useSelector(state => state.shop.totalCount);
-  const totalPages = useSelector(state => state.shop.totalCount);
   const categoryName = useSelector(state => state.shop.categoryName);
   const categoryDescription = useSelector(state => state.shop.categoryDescription);
   const isProductsLoading = useSelector(state => state.shop.isProductsLoading);
@@ -42,7 +42,9 @@ const ShopPage = () => {
   const ratings = searchParams.getAll('rating').map(Number) || [1, 2, 3, 4, 5];
   const stringrating = ratings.toString()
   const sortBy = searchParams.get('order') || 'default';
-  const limit = 9;
+  const limit = 6;
+
+  const totalPages = calculatePageCount(totalCount, limit);
 
   useEffect(() => {
     dispatch(loadAllCategories())
