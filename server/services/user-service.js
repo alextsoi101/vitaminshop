@@ -4,11 +4,15 @@ const jwt = require('jsonwebtoken');
 const {User, Cart, Address} = require('../db/models/models');
 const { Op } = require("sequelize");
 
-const SECRET_KEY = 'mysecretkey';
-
 const generateJwt = (id, email, role) => {
   return jwt.sign(
-    {id, email, role}, SECRET_KEY, {expiresIn: '24h'}
+    {id, email, role}, process.env.SECRET_KEY, {expiresIn: '24h'}
+  )
+}
+
+const generateAdminJwt = (id, email, role) => {
+  return jwt.sign(
+    {id, email, role}, process.env.ADMIN_SECRET_KEY, {expiresIn: '24h'}
   )
 }
 
@@ -40,8 +44,34 @@ class UserService {
     return token
   }
 
+  async adminLogin(email, password) {
+    const user = await User.findOne({
+      where: {
+        [Op.and]: [
+          {email: email},
+          {role: {[Op.or]: ['ADMIN', 'TESTADMIN']}}
+        ]
+      }
+    })
+    if (!user) {
+      throw ApiError.internal('User is not admin')
+    }
+    let comparePassword = bcrypt.compareSync(password, user.password)
+    if (!comparePassword) {
+      throw ApiError.internal('Incorrect password')
+    }
+    const token = generateAdminJwt(user.id, user.email, user.role)
+
+    return token
+  }
+
   async check(userId, userEmail, userRole) {
     const token = generateJwt(userId, userEmail, userRole)
+    return token
+  }
+
+  async adminCheck(adminId, adminEmail, adminRole) {
+    const token = generateAdminJwt(adminId, adminEmail, adminRole)
     return token
   }
 

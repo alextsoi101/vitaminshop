@@ -57,6 +57,33 @@ class UserController {
     }
   }
 
+  async adminLogin(req, res, next) {
+    const {email, password} = req.body
+
+    if (!email || !password) {
+      return next(ApiError.badRequest('Incorrect email or password'))
+    }
+    if (typeof email !== "string") {
+      return next(ApiError.internal('Email is not a string'))
+    }
+    if (typeof password !== "string") {
+      return next(ApiError.internal('Password is not a string'))
+    }
+
+    const validEmail = validateEmail(email)
+    if (!validEmail) {
+      return next(ApiError.internal('Incorrect Email'))
+    }
+
+    try {
+      const token = await UserService.adminLogin(email, password)
+      return res.json({token})
+      
+    } catch (error) {
+      return next(error)
+    }
+  }
+
   async check(req, res, next) {
     const userId = req.user.id
     const userEmail = req.user.email
@@ -74,6 +101,29 @@ class UserController {
 
     try {
       const token = await UserService.check(userId, userEmail, userRole)
+      return res.json({token})
+    } catch (error) {
+      return next(error)
+    }
+  }
+
+  async adminCheck(req, res, next) {
+    const adminId = req.admin.id
+    const adminEmail = req.admin.email
+    const adminRole = req.admin.role
+
+    if (!adminId) {
+      return next(ApiError.badRequest('adminId cannot be null'))
+    }
+    if (!adminEmail) {
+      return next(ApiError.badRequest('Admin Email cannot be null'))
+    }
+    if (!adminRole) {
+      return next(ApiError.badRequest('Admin Role cannot be null'))
+    }
+
+    try {
+      const token = await UserService.adminCheck(adminId, adminEmail, adminRole)
       return res.json({token})
     } catch (error) {
       return next(error)
