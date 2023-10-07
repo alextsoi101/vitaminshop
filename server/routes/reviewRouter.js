@@ -1,6 +1,7 @@
 const Router = require('express');
-const router = new Router();
 const reviewController = require('../controllers/reviewController');
+
+const router = new Router();
 
 router.post('/', reviewController.create)
 router.get('/all/:limit', reviewController.getAll)

@@ -1,6 +1,7 @@
 const Router = require('express');
-const router = new Router();
 const productController = require('../controllers/productController');
+
+const router = new Router();
 
 router.get('/:text', productController.search)
 

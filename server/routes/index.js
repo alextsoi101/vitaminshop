@@ -1,6 +1,5 @@
 const Router = require('express');
 
-const router = new Router()
 const userRouter = require('./userRouter')
 const categoryRouter = require('./categoryRouter')
 const productRouter = require('./productRouter')
@@ -9,6 +8,8 @@ const orderRouter = require('./orderRouter')
 const promoRouter = require('./promoRouter')
 const searchRouter = require('./searchRouter')
 const reviewRouter = require('./reviewRouter')
+
+const router = new Router()
 
 router.use('/user', userRouter)
 router.use('/category', categoryRouter)

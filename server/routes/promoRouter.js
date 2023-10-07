@@ -1,11 +1,13 @@
 const Router = require('express');
-const router = new Router();
 const promoController = require('../controllers/promoController');
+const checkRoleMiddleware = require('../middleware/checkRoleMiddleware');
 
-router.post('/', promoController.create)
+const router = new Router();
+
+router.post('/', checkRoleMiddleware, promoController.create)
 router.post('/check', promoController.check)
-router.put('/', promoController.update)
-router.get('/all', promoController.getAll)
+router.put('/', checkRoleMiddleware, promoController.update)
+router.get('/all', checkRoleMiddleware, promoController.getAll)
 router.get('/one/:promocode', promoController.getOne)
 
 module.exports = router;

@@ -1,11 +1,13 @@
 const Router = require('express');
-const router = new Router();
 const productController = require('../controllers/productController');
+const checkRoleMiddleware = require('../middleware/checkRoleMiddleware');
 
-router.post('/', productController.create)
-router.put('/', productController.update)
+const router = new Router();
+
+router.post('/', checkRoleMiddleware, productController.create)
+router.put('/', checkRoleMiddleware, productController.update)
 router.get('/all', productController.getAll)
-router.get('/all-admin', productController.getAllAdmin)
+router.get('/all-admin', checkRoleMiddleware, productController.getAllAdmin)
 router.get('/product/:id', productController.getOne)
 router.get('/totalcount', productController.getTotalCount)
 
