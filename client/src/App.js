@@ -5,13 +5,13 @@ import AppRouter from './routes/AppRouter';
 import AppLoader from './components/loaders/AppLoader';
 import { useSelector, useDispatch } from 'react-redux';
 import { userCheck, loadUserInfo, loadUserAddress } from './store/userSlice';
+import { adminLoginCheck } from './store/adminSlice';
 import { loadCartProducts, checkLocalCart } from './store/cartSlice';
 import './styles/globalstyles/app.scss';
 
 function App() {
 
   const dispatch = useDispatch();
-  const userRole = useSelector(state => state.user.role);
   const userId = useSelector(state => state.user.userId);
   const cartSubTotal = useSelector(state => state.cart.subTotal);
   const isLoading = useSelector(state => state.user.isLoading);
@@ -25,6 +25,8 @@ function App() {
           dispatch(loadUserAddress(data.payload.id))
         }
       })
+
+    dispatch(adminLoginCheck())
   }, [])
 
   useEffect(() => {
