@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import AdminHeader from '../adminpanel/layout/AdminHeader';
 import AdminNavBar from '../adminpanel/layout/AdminNavBar';
@@ -18,11 +18,12 @@ import PromoEditPage from '../adminpanel/pages/PromoEditPage';
 import OrderListPage from '../adminpanel/pages/OrderListPage';
 import OrderInfoPage from '../adminpanel/pages/OrderInfoPage';
 import CategoryListPage from '../adminpanel/pages/CategoryListPage';
+import { useSelector } from 'react-redux';
 import '../adminpanel/styles/globalstyles/adminpanel.scss';
 
 const AdminRouter = () => {
 
-  const isAdminLogin = true;
+  const isAdminLogin = useSelector(state => state.admin.isAdminLogin);
   
   return (
     <Routes>
@@ -45,12 +46,15 @@ const AdminRouter = () => {
             </div>
             :
             <div>
-              <Outlet />
+              <AdminSuccessSnackbar />
+              <AdminErrorSnackbar />
+              <Navigate to="/admin/login" />
+              <LoginPage />
             </div>
         }
       >
         <Route path='/' element={<DashboardPage/>} />
-        <Route path='login' element={<LoginPage/>} />
+        {/* <Route path='login' element={<LoginPage/>} /> */}
         <Route path='products' element={<ProductListPage/>} />
         <Route path='products/new' element={<ProductNewPage/>} />
         <Route path='products/edit/:id' element={<ProductEditPage/>} />
