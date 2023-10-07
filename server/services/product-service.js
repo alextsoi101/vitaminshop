@@ -315,9 +315,9 @@ class ProductService {
 
           break;
       }
-      if (products.count === 0) {
-        throw ApiError.badRequest('Something went wrong')
-      }
+      // if (products.count === 0) {
+      //   throw ApiError.badRequest('Something went wrong')
+      // }
       return products
     }
   }
