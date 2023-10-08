@@ -4,7 +4,9 @@ const { validateEmail } = require('../helpers/validateEmail');
 
 class UserController {
   async registration(req, res, next) {
-    const {email, password, role} = req.body
+    const {email, password} = req.body
+
+    const role = 'USER'
 
     if (!email || !password) {
       return next(ApiError.badRequest('Incorrect email or password'))
