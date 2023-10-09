@@ -77,7 +77,7 @@ const Order = sequelize.define('order', {
   lastName: {type: DataTypes.STRING, allowNull: false},
   country: {type: DataTypes.STRING, allowNull: false},
   addressLineOne: {type: DataTypes.STRING, allowNull: false},
-  addressLineTwo: {type: DataTypes.STRING, allowNull: false},
+  addressLineTwo: {type: DataTypes.STRING},
   city: {type: DataTypes.STRING, allowNull: false},
   state: {type: DataTypes.STRING, allowNull: false},
   zip: {type: DataTypes.STRING, allowNull: false},
