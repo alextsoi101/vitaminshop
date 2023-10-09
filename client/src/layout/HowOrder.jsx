@@ -57,7 +57,7 @@ const HowOrder = () => {
           description={
             `Your product will be packaged discretely and shipped by US 
             Post Service. We will provide you with a tracking number so then 
-            you can follow your mail order marijuana every step of the way.`
+            you can follow your mail order every step of the way.`
           }
         />
       </div>
