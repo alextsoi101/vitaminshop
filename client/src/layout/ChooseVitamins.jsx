@@ -72,6 +72,7 @@ const ChooseVitamins = (props) => {
                 categories={product.categories}
                 price={product.price}
                 sizes={product.sizes}
+                instock={product.instock}
               />
             )
           }
@@ -89,6 +90,7 @@ const ChooseVitamins = (props) => {
                 categories={product.categories}
                 price={product.price}
                 sizes={product.sizes}
+                instock={product.instock}
               />
             )
           }
@@ -106,6 +108,7 @@ const ChooseVitamins = (props) => {
                 categories={product.categories}
                 price={product.price}
                 sizes={product.sizes}
+                instock={product.instock}
               />
             )
             
