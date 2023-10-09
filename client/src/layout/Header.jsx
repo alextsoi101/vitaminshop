@@ -51,7 +51,7 @@ const Header = () => {
           <div className="logintoggle-cart">
             <LoginToggle />
             <div className="cartbtn-wrapper">
-              {isLogin ? <OpenCartModal /> : ''}
+              <OpenCartModal />
             </div>
           </div>
         </div>

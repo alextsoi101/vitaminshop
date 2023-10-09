@@ -41,11 +41,11 @@
     justify-content: flex-end;
     height: 100%;
     // width: 180px;
-    margin-right: 10px;
+    margin-right: 5px;
   
     .login-btn {
-      @include font-size($font-size-sm, $font-weight-regular, $text-dark);
-      padding: 5px 10px;
+      @include font-size($font-size-xs, $font-weight-regular, $text-dark);
+      padding: 3px 6px;
       background: $grey-light;
       border: none;
       border-radius: 100px;
@@ -59,9 +59,9 @@
     }
   
     .signup-btn {
-      @include font-size($font-size-sm, $font-weight-regular, $text-white);
+      @include font-size($font-size-xs, $font-weight-regular, $text-white);
       margin-left: 6px;
-      padding: 5px 10px;
+      padding: 3px 6px;
       background: $btn-green;
       border: none;
       border-radius: 100px;
