@@ -118,7 +118,7 @@ const PlaceOrder = () => {
         </li>
         <li className="placeorder-item">
           <div className="item-name">Shipping</div>
-          <div className="item-value">New York, NY</div>
+          <div className="item-value">{city}, {state}</div>
         </li>
         <li className="placeorder-item">
           <div className="item-name">Shipping cost</div>
