@@ -15,6 +15,7 @@ const CheckoutOrder = () => {
   const total = useSelector(state => state.cart.total);
   const percentDiscount = useSelector(state => state.promo.percentDiscount);
   const discount = useSelector(state => state.cart.discount);
+  const isShippingFree = useSelector(state => state.cart.isShippingFree);
 
   useEffect(() => {
     const newDiscount = Math.floor(subTotal * (percentDiscount / 100));
@@ -33,7 +34,7 @@ const CheckoutOrder = () => {
         </li>
         <li className="checkoutcard-item">
           <div className="item-name">Shipping cost</div>
-          <div className="item-value">$50.00</div>
+          <div className="item-value">${isShippingFree ? '0' : '50'}.00</div>
         </li>
         <li className="checkoutcard-item">
           <div className="item-name">Coupon</div>
@@ -43,7 +44,7 @@ const CheckoutOrder = () => {
           <div className="item-name">Total</div>
           <div className="item-value">
             {discount > 0 ? <span className="oldtotalprice">${total + discount}.00</span> : ''}
-            <span className="totalprice">${total}.00</span>
+            <span className="totalprice">${isShippingFree ? total : total + 50}.00</span>
           </div>
         </li>
       </ul>
