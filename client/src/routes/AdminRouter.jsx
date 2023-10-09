@@ -18,13 +18,15 @@ import PromoEditPage from '../adminpanel/pages/PromoEditPage';
 import OrderListPage from '../adminpanel/pages/OrderListPage';
 import OrderInfoPage from '../adminpanel/pages/OrderInfoPage';
 import CategoryListPage from '../adminpanel/pages/CategoryListPage';
+import ScreenWidthErrorPage from '../adminpanel/pages/ScreenWidthErrorPage';
 import { useSelector } from 'react-redux';
 import '../adminpanel/styles/globalstyles/adminpanel.scss';
 
 const AdminRouter = () => {
 
   const isAdminLogin = useSelector(state => state.admin.isAdminLogin);
-  
+  const screenWidth = window.innerWidth;
+
   return (
     <Routes>
       <Route
@@ -49,7 +51,7 @@ const AdminRouter = () => {
               <AdminSuccessSnackbar />
               <AdminErrorSnackbar />
               <Navigate to="/admin/login" />
-              <LoginPage />
+              {screenWidth >= 1000 ? <LoginPage /> : <ScreenWidthErrorPage />}
             </div>
         }
       >
