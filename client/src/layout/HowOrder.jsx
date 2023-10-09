@@ -37,7 +37,7 @@ const HowOrder = () => {
           maintext="SHOP"
           description={
             `Decide on what you want to purchase. We stock a wide 
-            range of edibles,flowers , concentrates and mushrooms 
+            range of vitamins, supplements and probiotics
             there is bound to be something for everyone.`
           }
         />
@@ -55,8 +55,8 @@ const HowOrder = () => {
           image={relaximage}
           maintext="RELAX"
           description={
-            `Your product will be packaged discretely and shipped by Canada 
-            Post Xpresspost. We will provide you with a tracking number so then 
+            `Your product will be packaged discretely and shipped by US 
+            Post Service. We will provide you with a tracking number so then 
             you can follow your mail order marijuana every step of the way.`
           }
         />

@@ -11,10 +11,10 @@ const Benefits = () => {
           image={delivery}
           name={`Reliable Shipping`}
           description={
-            `Green Society provides Canada
-            Post Xpress Shipping right to your doorstep!
+            `Our delivery service provides
+            Xpress Shipping right to your doorstep!
             You can also opt in for shipping insurance.
-            For orders over $149, shipping is free`
+            For orders over $100, shipping is free`
           }
         />
         <BenefitCard
@@ -32,7 +32,7 @@ const Benefits = () => {
           image={pricing}
           name={`Best Quality & Pricing`}
           description={
-            `Here at Green Society, we take pride in the 
+            `Here at Vitamin Shop, we take pride in the 
             quality of our products and service. 
             Our prices are set to ensure you receive your 
             medication at a reasonable price and safely`

@@ -14,7 +14,11 @@ const BestSellers = (props) => {
           <InfoCard 
             image={image}
             maintext="Shop our Best Sellers"
-            description="Lorem ipsum dolor sit amet consectetur. Ullamcorper ipsum varius lorem blandit lectus magnis feugiat."
+            description={
+              `Discover our Shop Best Sellers, 
+              where you can explore the most popular 
+              and highly-rated products`
+            }
             link="shop"
           />
           <div className="bestsellers-product-cards">
