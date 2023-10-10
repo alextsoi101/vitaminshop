@@ -85,7 +85,7 @@ VitaminShop offers a wide range of features:
 
 #### Admin panel
 - Sale and user statistic
-- Create and edit new product, promocodes
+- Create, edit and delete products, promocodes
 - View all products, categories, users, orders, promocodes
 
 
