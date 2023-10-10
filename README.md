@@ -89,6 +89,10 @@ VitaminShop offers a wide range of features:
 - View all products, categories, users, orders, promocodes
 
 
+## License
+[GPL-3.0 License](https://github.com/alextsoi101/vitaminshop/blob/master/LICENSE)
+
+
 
 
 
