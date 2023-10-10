@@ -1,13 +1,39 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useDispatch } from "react-redux";
+import { deleteProduct } from "../../../store/adminSlice";
+import { 
+  openSuccessSnackbar, 
+  openErrorSnackbar, 
+  openAdminModal, 
+  closeAdminModal } from "../../../store/modalSlice";
 
 const ProductListCard = (props) => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToProductEditPage = () => {
     navigate(`edit/${props.id}`)
+  }
+
+  const handleDelete = () => {
+    dispatch(deleteProduct(props.id))
+    .then(data => {
+      if (data.type === 'admin/deleteProduct/fulfilled') {
+        dispatch(openSuccessSnackbar('Product successfully deleted'))
+        dispatch(closeAdminModal())
+      }
+      if (data.type === 'admin/deleteProduct/rejected') {
+        dispatch(openErrorSnackbar(data.error.message))
+        dispatch(closeAdminModal())
+      }
+    })
+  }
+
+  const onClickDelete = () => {
+    dispatch(openAdminModal({text: `Delete product ${props.name}`, callback: handleDelete}))
   }
 
   return (
@@ -64,7 +90,7 @@ const ProductListCard = (props) => {
         <div className="td-content td-remove">
           <button 
             className="delete-product-btn"
-            // onClick={}
+            onClick={onClickDelete}
           >
             <DeleteIcon 
               sx={{fontSize: "20px"}}

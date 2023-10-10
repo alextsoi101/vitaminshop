@@ -161,6 +161,11 @@ export const updateProduct = async (
   return data
 }
 
+export const removeProduct = async (id) => {
+  const {data} = await $authAdminHost.delete('api/product/' + id)
+  return data
+}
+
 export const fetchPromocodes = async (limit, page) => {
   const {data} = await $authAdminHost.get('api/promo/all', {params: {
     limit, page

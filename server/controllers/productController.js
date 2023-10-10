@@ -332,6 +332,23 @@ class ProductController {
       return next(error)
     }
   }
+
+  async delete(req, res, next) {
+    const {id} = req.params
+
+    if (!id) {
+      return next(ApiError.internal('Product id cannot be null'))
+    }
+
+    try {
+      const product = await Product.destroy({
+        where: {id: id},
+      });
+      return res.json(product)
+    } catch (error) {
+      return next(error)
+    }
+  }
 }
 
 module.exports = new ProductController();

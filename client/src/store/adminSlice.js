@@ -16,6 +16,7 @@ import {
   fetchProductInfo,
   createProduct,
   updateProduct,
+  removeProduct,
   fetchPromocodes,
   fetchPromocodeInfo,
   createPromocode,
@@ -305,6 +306,19 @@ export const editProduct = createAsyncThunk(
         arg.instock,
         arg.imageGallery
       );
+      return response;
+    }
+    catch (error) {
+      throw error.response.data
+    }
+  }
+)
+
+export const deleteProduct = createAsyncThunk(
+  'admin/deleteProduct',
+  async (id) => {
+    try {
+      const response = await removeProduct(id);
       return response;
     }
     catch (error) {
