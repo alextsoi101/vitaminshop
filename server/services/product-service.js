@@ -73,6 +73,7 @@ class ProductService {
           if (inStock === 'all') {
             products = await Product.findAndCountAll(
               {
+                order: [['createdAt', 'DESC']],
                 include: [
                   {model: Category, as: 'categories'},
                   {model: Review, as: 'reviews'}
@@ -89,6 +90,7 @@ class ProductService {
           } else {
             products = await Product.findAndCountAll(
               {
+                order: [['createdAt', 'DESC']],
                 include: [
                   {model: Category, as: 'categories'},
                   {model: Review, as: 'reviews'}
@@ -207,6 +209,7 @@ class ProductService {
           if (inStock === 'all') {
             products = await Product.findAndCountAll(
               {
+                order: [['createdAt', 'DESC']],
                 include: [
                   {model: Category, as: 'categories'},
                   {model: Review, as: 'reviews'}
@@ -222,6 +225,7 @@ class ProductService {
           } else {
             products = await Product.findAndCountAll(
               {
+                order: [['createdAt', 'DESC']],
                 include: [
                   {model: Category, as: 'categories'},
                   {model: Review, as: 'reviews'}
