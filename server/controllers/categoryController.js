@@ -25,7 +25,11 @@ class CategoryController {
     try {
       const categories = await Category.findAll({
         order: [['id', 'ASC']],
-        include: [{model: Product, as: 'products'}]
+        include: [{
+          model: Product, 
+          as: 'products',
+          attributes: ['id']
+        }]
       })
       return res.json(categories)
     } catch (error) {
