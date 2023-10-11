@@ -38,7 +38,7 @@ const ShopPage = () => {
 
   const categoryId = searchParams.get('category_id') || 'all';
   const minPrice = Number(searchParams.get('min_price')) || 0;
-  const maxPrice = Number(searchParams.get('max_price')) || 1000;
+  const maxPrice = Number(searchParams.get('max_price')) || 100;
   const ratings = searchParams.getAll('rating').map(Number) || [1, 2, 3, 4, 5];
   const stringrating = ratings.toString()
   const sortBy = searchParams.get('order') || 'default';

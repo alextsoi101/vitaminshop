@@ -54,7 +54,7 @@ const PriceSlider = (props) => {
         value={props.priceRangeUI}
         onChange={handleChange}
         valueLabelDisplay='auto'
-        max={1000}
+        max={100}
       />
     );
   }

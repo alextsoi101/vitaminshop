@@ -21,7 +21,7 @@ const ShopFilter = (props) => {
   const order = searchParams.get('order');
 
   const [checkedRatings, setCheckedRatings] = useState(ratings || []);
-  const [priceRangeUI, setPriceRangeUI] = useState([min_price || 0, max_price || 1000]);
+  const [priceRangeUI, setPriceRangeUI] = useState([min_price || 0, max_price || 100]);
 
   const chooseCategory = (categoryId) => {
     let params = {}
@@ -95,7 +95,7 @@ const ShopFilter = (props) => {
       params.order = order
     }
     setSearchParams(params)
-    setPriceRangeUI([0, 1000])
+    setPriceRangeUI([0, 100])
     setCheckedRatings([])
   }
 
