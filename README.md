@@ -3,8 +3,8 @@
 </p>
 
 <h4 align="center">
-    <a href="https://incomparable-beignet-a958d8.netlify.app/shop">Demo</a> |
-    <a href="https://incomparable-beignet-a958d8.netlify.app/admin">Admin panel</a>
+    <a href="https://vitaminpic.com/shop">Demo</a> |
+    <a href="https://vitaminpic.com/admin">Admin panel</a>
 </h4>
 
 <p align="center">
@@ -21,12 +21,12 @@ VitaminShop is a fullstack ecommerce platform with fully responsible design.
 ## Demo
 <p>
   <b>Explore our store:</b> <br/>
-  <a href="https://incomparable-beignet-a958d8.netlify.app/shop">Store</a> <br/>
+  <a href="https://vitaminpic.com/shop">Store</a> <br/>
 </p>
 
 <p>
   <b>Explore our admin panel:</b> <br/>
-  <a href="https://incomparable-beignet-a958d8.netlify.app/admin/login">Admin panel</a> <br/>
+  <a href="https://vitaminpic.com/admin/login">Admin panel</a> <br/>
   Email: test-admin@gmail.com <br/>
   Password: 12345
 </p>
