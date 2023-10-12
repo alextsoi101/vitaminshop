@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img alt="vitaminshop" src="https://github.com/alextsoi101/vitaminshop/assets/116392740/5a658cee-ee8f-44d4-82db-020bae44a2a3" />
+  <img alt="vitaminshop" src="https://github.com/alextsoi101/vitaminshop/assets/116392740/3150497f-2c00-49e6-b6d8-9682b7de50d2" />
 </p>
 
 ## Introduction
