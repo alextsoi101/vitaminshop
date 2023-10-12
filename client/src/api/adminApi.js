@@ -107,9 +107,11 @@ export const createProduct = async (
   formData.append('shortDescription', shortDescription);
   formData.append('instock', instock);
 
-  imageGallery.map(image => {
-    formData.append('imageGallery', image);
-  })
+  if (imageGallery) {
+    imageGallery.map(image => {
+      formData.append('imageGallery', image);
+    })
+  }
 
   const {data} = await $authAdminHost.post('api/product', formData, {
     headers: {
