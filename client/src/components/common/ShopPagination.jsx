@@ -8,7 +8,8 @@ const ShopPagination = (props) => {
   const dispatch = useDispatch();
 
   const page = useSelector(state => state.shop.currentPage);
-  const totalResults = useSelector(state => state.shop.totalCount);
+  const totalCount = useSelector(state => state.shop.totalCount);
+  const totalResults = useSelector(state => state.shop.totalResults);
 
   const handleChange = (event, value) => {
     dispatch(setCurrentPage(value))
@@ -17,7 +18,7 @@ const ShopPagination = (props) => {
 
   return (
     <div className="shop-pagination">
-      <div className="pagination-info">Showing {page}-12 of <span>{totalResults}</span> results</div>
+      <div className="pagination-info">Showing {page}-{totalResults} of <span>{totalCount}</span> results</div>
       <div className="pagination-wrapper">
         <PagePagination 
           page={page}
