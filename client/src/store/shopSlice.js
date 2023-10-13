@@ -143,7 +143,7 @@ const shopSlice = createSlice({
       .addCase(loadProducts.fulfilled, (state, action) => {
         state.products = action.payload.rows;
         state.totalCount = action.payload.count;
-        state.totalResults = action.payload.length;
+        state.totalResults = action.payload.rows.length;
         state.isLoading = false;
         state.isProductsLoading = false;
       })
@@ -158,7 +158,7 @@ const shopSlice = createSlice({
       .addCase(loadProductsByCategory.fulfilled, (state, action) => {
         state.products = action.payload.rows;
         state.totalCount = action.payload.count;
-        state.totalResults = action.payload.length;
+        state.totalResults = action.payload.rows.length;
         state.isLoading = false;
         state.isProductsLoading = false;
       })
