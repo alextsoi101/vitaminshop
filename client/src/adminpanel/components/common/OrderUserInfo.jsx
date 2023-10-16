@@ -13,9 +13,11 @@ const OrderUserInfo = (props) => {
     <div className="orderuserinfo">
       <div className="orderuserinfo-header">
         User 
-        <span onClick={goToUserInfo} style={{marginLeft: '10px'}}>
+        { props.userId &&
+          <span onClick={goToUserInfo} style={{marginLeft: '10px'}}>
           #{props.userId}
-        </span>
+          </span>
+        }
       </div>
       <div className="orderuserinfo-item">
         <div className="item-header">
