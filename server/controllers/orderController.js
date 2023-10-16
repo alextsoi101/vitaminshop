@@ -1,5 +1,6 @@
 const ApiError = require('../error/ApiError');
 const OrderService = require('../services/order-service');
+const { validateEmail } = require('../helpers/validateEmail');
 
 class OrderController {
 
@@ -42,6 +43,11 @@ class OrderController {
     if (!zip) {
       return next(ApiError.badRequest('ZIP-code cannot be empty'))
     } 
+
+    const validEmail = validateEmail(email)
+    if (!validEmail) {
+      return next(ApiError.internal('Incorrect Email'))
+    }
 
     try {
       const order = await OrderService.create(
