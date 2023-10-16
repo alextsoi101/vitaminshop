@@ -102,8 +102,15 @@ const PlaceOrder = () => {
         total: subTotal
       }))
       .then(data => {
-        if (data.error) return
-        else navigate('/ordercomplete')
+        if (data.type === 'order/placeOrder/fulfilled') {
+          dispatch(openSuccessSnackbar('Order placed succesfully!'))
+          dispatch(setPlaceOrderError('')) 
+          navigate('/ordercomplete')
+        }
+        else {
+          dispatch(openErrorSnackbar(data.error.message))
+          dispatch(setPlaceOrderError(data.error.message))
+        }
       })
     }
   }
