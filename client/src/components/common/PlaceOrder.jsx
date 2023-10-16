@@ -102,7 +102,7 @@ const PlaceOrder = () => {
         total: subTotal
       }))
       .then(data => {
-        if (data.type === 'order/placeOrder/fulfilled') {
+        if (data.type === 'order/placeOrderNoAuth/fulfilled') {
           dispatch(openSuccessSnackbar('Order placed succesfully!'))
           dispatch(setPlaceOrderError('')) 
           navigate('/ordercomplete')
