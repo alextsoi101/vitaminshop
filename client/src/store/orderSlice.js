@@ -163,6 +163,7 @@ const orderSlice = createSlice({
       })
       .addCase(placeOrderNoAuth.pending, (state) => {
         state.isLoading = true;
+        state.isPlaceOrderLoading = true;
       })
       .addCase(placeOrderNoAuth.fulfilled, (state, action) => {
         state.email = action.payload.email;
@@ -180,6 +181,12 @@ const orderSlice = createSlice({
         state.shippingCost = action.payload.shippingCost;
         state.total = action.payload.total;
         state.isLoading = false;
+        state.isPlaceOrderLoading = false;
+      })
+      .addCase(placeOrderNoAuth.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isPlaceOrderLoading = false;
+        state.placeOrderError = action.error.message
       })
       .addCase(loadUserOrders.fulfilled, (state, action) => {
         state.userOrders = action.payload
