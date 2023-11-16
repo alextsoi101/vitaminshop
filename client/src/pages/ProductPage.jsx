@@ -33,7 +33,7 @@ const ProductPage = () => {
           navigate('/error')
         }
       })
-  }, [reviewsCount])
+  }, [id])
 
   useEffect(() => {
     dispatch(loadFeaturedProducts());
